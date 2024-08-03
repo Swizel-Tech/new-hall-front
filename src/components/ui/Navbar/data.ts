@@ -51,7 +51,7 @@ export const navData: SideNavProps[] = [
       //   text: "Nursery Two",
       // },
       {
-        href: "junior-elementary",
+        href: "elementary",
         text: "Primary",
       },
       // {

@@ -1,17 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import TimerSlider from "../components/ui/display/Slider/TimerSlider";
-import {
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-} from "../assets";
+import { slider1, slider2, slider3, slider4 } from "../assets";
 import Slider from "react-slick";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -23,32 +12,32 @@ import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 const autoplaySpeed = 3000;
 const newsItems = [
   {
-    imgSrc: ND4_500_5151,
+    imgSrc: slider1,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
   {
-    imgSrc: ND4_500_5174,
+    imgSrc: slider2,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
   {
-    imgSrc: ND4_500_5246,
+    imgSrc: slider3,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
   {
-    imgSrc: ND4_500_5247,
+    imgSrc: slider4,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
   {
-    imgSrc: ND4_500_5282,
+    imgSrc: slider3,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
   {
-    imgSrc: ND4_500_5286,
+    imgSrc: slider4,
     date: "13 Sep",
     title: "Better Times Magazine - Issues 16",
   },
@@ -116,7 +105,7 @@ const Home = () => {
       });
     }
   };
-  const images = [ND4_9515, ND4_9537, ND4_9495, ND4_9507, ND4_9515, ND4_9537];
+  const images = [slider1, slider2, slider3, slider4];
 
   const handleViewNewsClick = () => {
     // Handle view news feed button click
@@ -193,7 +182,7 @@ const Home = () => {
             <div className="relative m-0 p-0 w-[100%]">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={ND4_9495}
+                src={slider3}
                 alt="Slide 1"
                 className="w-full h-full object-cover"
               />
@@ -201,7 +190,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={ND4_9507}
+                src={slider4}
                 alt="Slide 2"
                 className="w-full h-full object-cover"
               />
@@ -209,7 +198,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={ND4_9515}
+                src={slider3}
                 alt="Slide 3"
                 className="w-full h-full object-cover"
               />
@@ -217,7 +206,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={ND4_9537}
+                src={slider4}
                 alt="Slide 4"
                 className="w-full h-full object-cover"
               />
@@ -249,7 +238,7 @@ const Home = () => {
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(${ND4_500_5282})` }}
+          style={{ backgroundImage: `url(${slider4})` }}
         ></div>
         <div className="absolute top-0 left-8 mt-10 z-10">
           <div className="flex justify-start items-center gap-3">

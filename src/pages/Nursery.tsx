@@ -1,61 +1,48 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import {
-  DSC_0779,
-  DSC_0785,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
-} from "../assets";
+import { slider1, slider2, slider3, slider4 } from "../assets";
 import Slider from "react-slick";
-import { useRef } from "react";
-import { GameChangers } from "../components/ui/display/Slider/GameChangers";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
-import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+// import { useRef } from "react";
+// import { GameChangers } from "../components/ui/display/Slider/GameChangers";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 
-const newsItems = [
-  {
-    imgSrc: ND4_500_5151,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5174,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5246,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5247,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5282,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5286,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-];
+// const newsItems = [
+//   {
+//     imgSrc: slider1,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider2,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider3,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider4,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider2,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider4,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+// ];
 
 const Nursery = () => {
   let navigate = useNavigate();
-  const refbottom = useRef<HTMLDivElement>(null);
+  // const refbottom = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     navigate("/home");
@@ -72,42 +59,33 @@ const Nursery = () => {
     arrows: false,
   };
 
-  const scrollLeft = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: -refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-    // Add more events here if needed
-  ];
-  const scrollRight = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const images = [
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-  ];
+  // const scrollLeft = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: -refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const events = [
+  //   { date: "22 Aug 2024", title: "A-level Result Day" },
+  //   { date: "15 Aug 2024", title: "GCSE Result Day" },
+  //   // Add more events here if needed
+  // ];
+  // const scrollRight = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const images = [slider1, slider2, slider3, slider4];
 
-  const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
-  };
+  // const handleViewNewsClick = () => {
+  //   // Handle view news feed button click
+  //   console.log("View News Feed button clicked");
+  // };
 
   return (
     <div className="mt-10 lg:mt-[10rem]">
@@ -129,9 +107,9 @@ const Nursery = () => {
             Nursery
           </p>
         </div>
-        <div className="px-4 my-6 lg:my-[5%] lg:px-[8%]">
+        <div className="px-4 my-6 lg:pb-[3rem] lg:px-[8%]">
           <div className="w-full gap-6">
-            <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full text-[#000]">
+            <h2 className="font-OpenSans mb-4 font-semibold italic text-[24px] leading-[61px] w-full text-[#000]">
               Nursery One
             </h2>
             <p className="font-Lato text-[16px] mb-4 font-semibold leading-[25.6px] text-justify">
@@ -141,7 +119,7 @@ const Nursery = () => {
               characteristics such as leadership and sensitivity.
             </p>
             <div className="w-full">
-              <img src={DSC_0779} alt="nursery" className="w-[80%]" />
+              <img src={slider4} alt="nursery" className="w-[80%]" />
             </div>
             <p className="font-Lato text-[16px] my-4 font-normal leading-[25.6px] text-justify">
               They tell us what they are making and inform us of their progress.
@@ -192,7 +170,7 @@ const Nursery = () => {
             </p>
           </div>
           <div className="w-full gap-6">
-            <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full text-[#000]">
+            <h2 className="font-OpenSans mb-5 font-semibold italic text-[24px] leading-[61px] w-full text-[#000]">
               Nursery Two
             </h2>
             <p className="font-Lato text-[16px] mb-4 font-semibold leading-[25.6px] text-justify">
@@ -203,10 +181,10 @@ const Nursery = () => {
             </p>
             <Slider {...settings}>
               <div className="w-full">
-                <img src={DSC_0779} alt="nursery" className="w-[80%]" />
+                <img src={slider1} alt="nursery" className="w-[80%]" />
               </div>
               <div className="w-full">
-                <img src={DSC_0785} alt="nursery" className="w-[80%]" />
+                <img src={slider2} alt="nursery" className="w-[80%]" />
               </div>
             </Slider>
             <p className="font-Lato text-[16px] my-4 font-semibold italic leading-[25.6px] text-justify">
@@ -272,7 +250,7 @@ const Nursery = () => {
             </p>
           </div>
         </div>
-        <div>
+        {/* <div>
           <NewsSlider
             newsItems={newsItems}
             title="News"
@@ -289,7 +267,7 @@ const Nursery = () => {
         </div>
         <div>
           <EventsCalendar events={events} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

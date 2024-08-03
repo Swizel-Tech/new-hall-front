@@ -1,62 +1,48 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import {
-  DSC_6479,
-  DSC_6508,
-  DSC_6519,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
-} from "../assets";
+import { slider1, slider2, slider3 } from "../assets";
 import Slider from "react-slick";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
-import { GameChangers } from "../components/ui/display/Slider/GameChangers";
-import EventsCalendar from "../components/ui/display/Calendar/Calendar";
-import { useRef } from "react";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import { GameChangers } from "../components/ui/display/Slider/GameChangers";
+// import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+// import { useRef } from "react";
 
-const newsItems = [
-  {
-    imgSrc: ND4_500_5151,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5174,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5246,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5247,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5282,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5286,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-];
+// const newsItems = [
+//   {
+//     imgSrc: slider1,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider2,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider3,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider4,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider2,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider4,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+// ];
 
 const PreSchool = () => {
   let navigate = useNavigate();
-  const refbottom = useRef<HTMLDivElement>(null);
+  // const refbottom = useRef<HTMLDivElement>(null);
 
   // const [activeMenu, setActiveMenu] = useState("pre-school");
   const handleClick = () => {
@@ -79,42 +65,33 @@ const PreSchool = () => {
     arrows: false,
   };
 
-  const scrollLeft = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: -refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-    // Add more events here if needed
-  ];
-  const scrollRight = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const images = [
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-  ];
+  // const scrollLeft = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: -refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const events = [
+  //   { date: "22 Aug 2024", title: "A-level Result Day" },
+  //   { date: "15 Aug 2024", title: "GCSE Result Day" },
+  //   // Add more events here if needed
+  // ];
+  // const scrollRight = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const images = [slider1, slider2, slider3, slider4];
 
-  const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
-  };
+  // const handleViewNewsClick = () => {
+  //   // Handle view news feed button click
+  //   console.log("View News Feed button clicked");
+  // };
   return (
     <div className="mt-10 lg:mt-[10rem]">
       <div className="">
@@ -156,16 +133,16 @@ const PreSchool = () => {
           <div className="w-full">
             <Slider {...settings}>
               <div className="w-full">
-                <img src={DSC_6479} alt="facility1" className="w-[80%]" />
+                <img src={slider1} alt="facility1" className="w-[80%]" />
               </div>
               {/* <div className="w-full">
                 <img src={DSC_6500} alt="facility1" className="w-[80%]" />
               </div> */}
               <div className="w-full">
-                <img src={DSC_6508} alt="facility1" className="w-[80%]" />
+                <img src={slider2} alt="facility1" className="w-[80%]" />
               </div>
               <div className="w-full">
-                <img src={DSC_6519} alt="facility1" className="w-[80%]" />
+                <img src={slider3} alt="facility1" className="w-[80%]" />
               </div>
             </Slider>
             <p className="font-OpenSans text-[16px] my-4 font-normal leading-[25.6px] text-justify">
@@ -205,7 +182,7 @@ const PreSchool = () => {
             </p>
           </div>
         </div>
-        <div>
+        {/* <div>
           <NewsSlider
             newsItems={newsItems}
             title="News"
@@ -222,7 +199,7 @@ const PreSchool = () => {
         </div>
         <div>
           <EventsCalendar events={events} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

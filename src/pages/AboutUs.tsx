@@ -1,4 +1,4 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 // import { SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
@@ -7,57 +7,46 @@ import Accordion from "../components/ui/display/accordion/Accordion";
 // import { menus } from "../components/data/constants";
 // import { motion } from "framer-motion";
 // import { FaPlus, FaMinus } from "react-icons/fa6";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
-import {
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-} from "../assets";
-import { GameChangers } from "../components/ui/display/Slider/GameChangers";
-import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import { slider1, slider2, slider3, slider4 } from "../assets";
+// import { GameChangers } from "../components/ui/display/Slider/GameChangers";
+// import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 
-const newsItems = [
-  {
-    imgSrc: ND4_500_5151,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5174,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5246,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5247,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5282,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: ND4_500_5286,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-];
+// const newsItems = [
+//   {
+//     imgSrc: slider1,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider2,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider3,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider4,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider1,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+//   {
+//     imgSrc: slider1,
+//     date: "13 Sep",
+//     title: "Better Times Magazine - Issues 16",
+//   },
+// ];
 
 const AboutUs = () => {
-  const refbottom = useRef<HTMLDivElement>(null);
+  // const refbottom = useRef<HTMLDivElement>(null);
   let navigate = useNavigate();
   // const [activeMenu, setActiveMenu] = useState("aboutus");
   // const [menuactive, setmenuactive] = useState(false);
@@ -77,41 +66,32 @@ const AboutUs = () => {
     navigate("/home");
   };
 
-  const scrollLeft = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: -refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-  ];
-  const scrollRight = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const images = [
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-  ];
+  // const scrollLeft = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: -refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const events = [
+  //   { date: "22 Aug 2024", title: "A-level Result Day" },
+  //   { date: "15 Aug 2024", title: "GCSE Result Day" },
+  // ];
+  // const scrollRight = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const images = [slider1, slider2, slider3, slider4];
 
-  const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
-  };
+  // const handleViewNewsClick = () => {
+  //   // Handle view news feed button click
+  //   console.log("View News Feed button clicked");
+  // };
   // const handleMenuClick = (menu: { href: SetStateAction<string> }) => {
   //   setActiveMenu(menu.href);
   //   navigate(`/${menu.href}`);
@@ -240,7 +220,7 @@ const AboutUs = () => {
             <Accordion items={accordionItems} />
           </div>
         </div>
-        <div>
+        {/* <div>
           <NewsSlider
             newsItems={newsItems}
             title="News"
@@ -257,7 +237,7 @@ const AboutUs = () => {
         </div>
         <div>
           <EventsCalendar events={events} />
-        </div>
+        </div> */}
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col sm:flex-row justify-between items-start">
           <div className=" w-full flex flex-col justify-start items-start lg:w-[65%]">
             <h2 className="font-Raleway mb-8 text-[26px] lg:text-[36px] font-normal text-left leading-[44px]">

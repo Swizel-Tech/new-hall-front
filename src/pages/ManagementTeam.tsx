@@ -3,111 +3,96 @@ import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
 import {
   managment,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
+  // slider1,
+  // slider2,
+  // slider3,
+  // slider4,
   teacher1,
   teacher2,
   teacher3,
 } from "../assets";
 // import { menus } from "../components/data/constants";
 // import { motion } from "framer-motion";
-import { GameChangers } from "../components/ui/display/Slider/GameChangers";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
-import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+// import { GameChangers } from "../components/ui/display/Slider/GameChangers";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 
 const ManagementTeam = () => {
   let navigate = useNavigate();
   // const [activeMenu, setActiveMenu] = useState("management-team");
   // const [menuactive, setmenuactive] = useState(false);
-  const refbottom = useRef<HTMLDivElement>(null);
+  // const refbottom = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     navigate("/home");
   };
 
-  const images = [
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-  ];
+  // const images = [slider1, slider2, slider3, slider4];
 
-  const newsItems = [
-    {
-      imgSrc: ND4_500_5151,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5174,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5246,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5247,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5282,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5286,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-  ];
+  // const newsItems = [
+  //   {
+  //     imgSrc: slider1,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider2,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider3,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider4,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider1,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider3,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  // ];
 
   // const handleMenuClick = (menu: { href: SetStateAction<string> }) => {
   //   setActiveMenu(menu.href);
   //   navigate(`/${menu.href}`);
   // };
 
-  const scrollLeft = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: -refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-    // Add more events here if needed
-  ];
-  const scrollRight = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scrollLeft = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: -refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const events = [
+  //   { date: "22 Aug 2024", title: "A-level Result Day" },
+  //   { date: "15 Aug 2024", title: "GCSE Result Day" },
+  //   // Add more events here if needed
+  // ];
+  // const scrollRight = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
-  };
+  // const handleViewNewsClick = () => {
+  //   // Handle view news feed button click
+  //   console.log("View News Feed button clicked");
+  // };
 
   return (
     <div className="mt-10 lg:mt-[10rem]">
@@ -299,7 +284,7 @@ const ManagementTeam = () => {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <NewsSlider
             newsItems={newsItems}
             title="News"
@@ -316,7 +301,7 @@ const ManagementTeam = () => {
         </div>
         <div>
           <EventsCalendar events={events} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

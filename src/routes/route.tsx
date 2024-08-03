@@ -7,6 +7,7 @@ import AimsObjectives from "../pages/AimsObjectives";
 import PreSchool from "../pages/PreSchool";
 import PreNursery from "../pages/PreNursery";
 import Nursery from "../pages/Nursery";
+import Primary from "../pages/Primary";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "nursery",
         element: <Nursery />,
+      },
+      {
+        path: "elementary",
+        element: <Primary />,
       },
     ],
   },

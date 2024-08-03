@@ -1,74 +1,63 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import {
-  ND4_9495,
-  ND4_9507,
-  ND4_9515,
-  ND4_9537,
-  ND4_500_5151,
-  ND4_500_5174,
-  ND4_500_5246,
-  ND4_500_5247,
-  ND4_500_5282,
-  ND4_500_5286,
-} from "../assets";
+import { slider2, slider4 } from "../assets";
 import List from "../components/ui/list/List";
 // import { menus } from "../components/data/constants";
 // import { motion } from "framer-motion";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
-import { GameChangers } from "../components/ui/display/Slider/GameChangers";
-import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import { GameChangers } from "../components/ui/display/Slider/GameChangers";
+// import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 
 const AimsObjectives = () => {
   let navigate = useNavigate();
   // const [activeMenu, setActiveMenu] = useState("aims-and-objectives");
   // const [menuactive, setmenuactive] = useState(false);
-  const refbottom = useRef<HTMLDivElement>(null);
+  // const refbottom = useRef<HTMLDivElement>(null);
 
-  const images = [
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-    ND4_9495,
-    ND4_9507,
-    ND4_9515,
-    ND4_9537,
-  ];
+  // const images = [
+  //   slider1,
+  //   slider2,
+  //   slider3,
+  //   slider4,
+  //   slider1,
+  //   slider2,
+  //   slider3,
+  //   slider4,
+  // ];
 
-  const newsItems = [
-    {
-      imgSrc: ND4_500_5151,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5174,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5246,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5247,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5282,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-    {
-      imgSrc: ND4_500_5286,
-      date: "13 Sep",
-      title: "Better Times Magazine - Issues 16",
-    },
-  ];
+  // const newsItems = [
+  //   {
+  //     imgSrc: slider1,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider2,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider3,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider4,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider2,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  //   {
+  //     imgSrc: slider4,
+  //     date: "13 Sep",
+  //     title: "Better Times Magazine - Issues 16",
+  //   },
+  // ];
 
   const items = [
     {
@@ -121,32 +110,32 @@ const AimsObjectives = () => {
   //   navigate(`/${menu.href}`);
   // };
 
-  const scrollLeft = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: -refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-    // Add more events here if needed
-  ];
-  const scrollRight = () => {
-    if (refbottom.current) {
-      refbottom.current.scrollBy({
-        left: refbottom.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scrollLeft = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: -refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+  // const events = [
+  //   { date: "22 Aug 2024", title: "A-level Result Day" },
+  //   { date: "15 Aug 2024", title: "GCSE Result Day" },
+  //   // Add more events here if needed
+  // ];
+  // const scrollRight = () => {
+  //   if (refbottom.current) {
+  //     refbottom.current.scrollBy({
+  //       left: refbottom.current.clientWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
-  };
+  // const handleViewNewsClick = () => {
+  //   // Handle view news feed button click
+  //   console.log("View News Feed button clicked");
+  // };
 
   return (
     <div className="mt-10 lg:mt-[10rem]">
@@ -211,12 +200,12 @@ const AimsObjectives = () => {
           </div> */}
           <div className="w-full gap-6 flex flex-col justify-between items-center">
             <div className="w-full  flex flex-col justify-start items-start gap-2">
-              <img src={ND4_9495} alt="aims_and_obj" className="w-[100%]" />
+              <img src={slider2} alt="aims_and_obj" className="w-[100%]" />
               <List items={items} />
             </div>
             <div className="w-full  flex flex-col sm:flex-row justify-between items-center">
               <div className="w-full mr-4">
-                <img src={ND4_9507} alt="facility1" className="w-[100%]" />
+                <img src={slider4} alt="facility1" className="w-[100%]" />
                 <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
                   Our Vision
                 </h2>
@@ -227,7 +216,7 @@ const AimsObjectives = () => {
                 </p>
               </div>
               <div className="w-full">
-                <img src={ND4_9515} alt="facility1" className="w-[100%]" />
+                <img src={slider4} alt="facility1" className="w-[100%]" />
                 <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
                   Our Mission
                 </h2>
@@ -241,7 +230,7 @@ const AimsObjectives = () => {
 
             <div className="w-full mt-2 lg:mt-6 flex flex-col sm:flex-row justify-between items-center">
               <div className="w-full mr-4">
-                <img src={ND4_9537} alt="facility1" className="w-[100%]" />
+                <img src={slider2} alt="facility1" className="w-[100%]" />
                 <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
                   Core Beliefs
                 </h2>
@@ -252,7 +241,7 @@ const AimsObjectives = () => {
                 </p>
               </div>
               <div className="w-full">
-                <img src={ND4_500_5151} alt="facility1" className="w-[100%]" />
+                <img src={slider2} alt="facility1" className="w-[100%]" />
                 <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
                   Pupil Care
                 </h2>
@@ -265,7 +254,7 @@ const AimsObjectives = () => {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <NewsSlider
             newsItems={newsItems}
             title="News"
@@ -282,7 +271,7 @@ const AimsObjectives = () => {
         </div>
         <div>
           <EventsCalendar events={events} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
