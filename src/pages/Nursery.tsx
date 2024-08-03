@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { slider1, slider2, slider3, slider4 } from "../assets";
+import { slider1, slider2, slider4 } from "../assets";
 import Slider from "react-slick";
 // import { useRef } from "react";
 // import { GameChangers } from "../components/ui/display/Slider/GameChangers";
