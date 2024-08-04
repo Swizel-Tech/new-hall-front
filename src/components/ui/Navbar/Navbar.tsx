@@ -43,21 +43,19 @@ export const Navbar: React.FC = () => {
         <div className="flex w-full mb-3 justify-between items-center px-4">
           <div className="flex justify-start items-center">
             <h2
-              className={`font-OpenSans text-[14px] font-semibold leading-normal text-[#000] px-8 py-1 ${getTextColor()}`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal text-blue-500 px-8 py-1`}
             >
               Calendar
             </h2>
             <h2
-              className={`font-OpenSans text-[14px] leading-normal font-semibold px-4 py-1 border-l-[1.5px] ${
-                scrolled ? "border-[#000] text-[#000]" : "border-[#fff]"
-              } ${getTextColor()}`}
+              className={`font-OpenSans text-[14px] leading-normal font-semibold border-blue-500 px-4 py-1 text-blue-500 border-l-[1.5px]`}
             >
               Career @ Newhall
             </h2>
           </div>
           <div className="flex justify-start items-center">
             <h2
-              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-[#000] ${getTextColor()}`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}
             >
               Webmail
             </h2>

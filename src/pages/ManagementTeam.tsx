@@ -102,7 +102,7 @@ const ManagementTeam = () => {
             Management Team
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
+        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
             className="text-[14px] font-normal font-Raleway"
@@ -110,14 +110,14 @@ const ManagementTeam = () => {
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-[#FF7264]">
+          <p className="text-[14px] font-normal font-Raleway text-blue-500">
             Management Team
           </p>
         </div>
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
           {/* <div className="border-[1px] shadow-xl mb-5 lg:mb-0 border-[#F3F3F3] w-full flex flex-col justify-start items-start lg:w-[20%]">
             <button
-              className="bg-[#FF7264] px-2 w-full flex justify-between items-center"
+              className="bg-blue-500 px-2 w-full flex justify-between items-center"
               onClick={() => setmenuactive(!menuactive)}
             >
               <h2
@@ -143,7 +143,7 @@ const ManagementTeam = () => {
                   <button
                     key={menu.href}
                     onClick={() => handleMenuClick(menu)}
-                    className={`h-[50px] w-full text-[16px] font-OpenSans font-normal text-left border-b-[1px] hover:text-[#FF7264] px-3 ${
+                    className={`h-[50px] w-full text-[16px] font-OpenSans font-normal text-left border-b-[1px] hover:text-blue-500 px-3 ${
                       activeMenu === menu.href
                         ? "bg-[#000] text-[#fff]"
                         : "bg-[#fff] text-[#282E3F]"
@@ -188,10 +188,10 @@ const ManagementTeam = () => {
               <div className="flex flex-col sm:flex-row  justify-between items-center gap-3">
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher1} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Deborah David
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">
@@ -201,10 +201,10 @@ const ManagementTeam = () => {
                 </div>
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher2} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Carol A. Swainson
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">
@@ -214,10 +214,10 @@ const ManagementTeam = () => {
                 </div>
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher3} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Chris Cook
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">
@@ -243,10 +243,10 @@ const ManagementTeam = () => {
               <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher1} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Deborah David
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">
@@ -256,10 +256,10 @@ const ManagementTeam = () => {
                 </div>
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher2} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Carol A. Swainson
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">
@@ -269,10 +269,10 @@ const ManagementTeam = () => {
                 </div>
                 <div className="border-[1.5px] pb-2 border-[#DDD]">
                   <img src={teacher3} alt="teacher1" />
-                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-[#FF7264] cursor-pointer">
+                  <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                     Chris Cook
                   </h2>
-                  <p className="font-Lato text-[16px] px-2 my-2 text-[#FF7264] font-semibold leading-[25px] text-left">
+                  <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">
                     Teacher of the first grade
                   </p>
                   <p className="font-Lato text-[16px] px-2 my-2 font-normal leading-[25.6px] text-left">

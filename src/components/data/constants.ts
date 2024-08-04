@@ -44,35 +44,11 @@ export const programs = [
 ];
 export const colleges = [
   {
-    href: "boarding",
-    text: "New Hall Boarding School",
-  },
-  {
-    href: "curriculum",
-    text: "Curriculum",
-  },
-  {
-    href: "co-curriculum",
-    text: "Co-Curriculum",
-  },
-  {
     href: "subjects-offered-jss",
     text: "Subjects Offered (JSS)",
   },
   {
     href: "subjects-offered-sss",
     text: "Subjects Offered (SSS)",
-  },
-  {
-    href: "examinations",
-    text: "Examination",
-  },
-  {
-    href: "sports",
-    text: "Sports",
-  },
-  {
-    href: "houses",
-    text: "Houses",
   },
 ];

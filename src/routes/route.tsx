@@ -8,6 +8,9 @@ import PreSchool from "../pages/PreSchool";
 import PreNursery from "../pages/PreNursery";
 import Nursery from "../pages/Nursery";
 import Primary from "../pages/Primary";
+import College from "../pages/College";
+import Application from "../pages/Application";
+import TuitionFees from "../pages/TuitionFees";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,18 @@ const router = createBrowserRouter([
       {
         path: "elementary",
         element: <Primary />,
+      },
+      {
+        path: "thecollege",
+        element: <College />,
+      },
+      {
+        path: "applying-to-new-hall",
+        element: <Application />,
+      },
+      {
+        path: "tuition-and-fees",
+        element: <TuitionFees />,
       },
     ],
   },

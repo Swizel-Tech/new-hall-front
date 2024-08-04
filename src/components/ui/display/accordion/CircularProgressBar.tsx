@@ -13,7 +13,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   text,
 }) => {
   return (
-    <div className="w-[50%] lg:w-[100%]">
+    <div className="w-[100%] lg:w-[50%]">
       <CircularProgressbar
         value={percentage}
         text={text || `${percentage}%`}

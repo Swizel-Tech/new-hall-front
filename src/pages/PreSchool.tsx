@@ -100,7 +100,7 @@ const PreSchool = () => {
             Pre-School
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
+        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
             className="text-[14px] font-normal font-Raleway"
@@ -108,7 +108,7 @@ const PreSchool = () => {
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-[#FF7264]">
+          <p className="text-[14px] font-normal font-Raleway text-blue-500">
             Pre-School
           </p>
         </div>

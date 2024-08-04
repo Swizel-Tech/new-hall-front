@@ -40,7 +40,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
       ref={refbottom}
       initial={{ y: "10%", opacity: 0 }}
       animate={controlsbottom}
-      className="w-full px-4 overflow-x-auto relative flex flex-col justify-center items-center bg-black h-[800px] py-8"
+      className="w-full px-4 overflow-x-auto overflow-y-hidden relative flex flex-col justify-center items-center bg-black h-[800px] py-8"
     >
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
@@ -73,7 +73,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
         </div>
         <div
           ref={sliderRef}
-          className="flex justify-between items-center overflow-x-auto scroll-container gap-4 h-[500px]"
+          className="flex justify-between items-center overflow-x-auto overflow-y-hidden scroll-container gap-4 h-[500px]"
         >
           {images.map((image, index) => (
             <motion.div

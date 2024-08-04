@@ -1,5 +1,5 @@
 import logo from "./images/logo.png";
-import slider1 from "./images/slider1.jpeg";
+import slider1 from "./images/newhall/ND4_9919.jpg";
 import slider2 from "./images/slider2.jpg";
 import slider3 from "./images/slider3.jpg";
 import slider4 from "./images/slider4.jpg";

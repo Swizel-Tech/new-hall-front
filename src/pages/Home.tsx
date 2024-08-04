@@ -48,6 +48,7 @@ const Home = () => {
   const [percentage] = useState(70);
   const [teachers] = useState(90);
   const refbottomn = useRef<HTMLDivElement>(null);
+  // const sliderRef = useRef<HTMLDivElement>(null);
 
   const { ref: refLeft, inView: inViewLeft } = useInView({
     threshold: 0.1,
@@ -112,6 +113,13 @@ const Home = () => {
     console.log("View News Feed button clicked");
   };
 
+  // const sliderRef = useRef<HTMLDivElement>(null);
+
+  // const scrollLeft = () => {
+  //   if (sliderRef.current) {
+  //     sliderRef.current.scrollBy({ left: -380, behavior: "smooth" });
+  //   }
+  // };
   useEffect(() => {
     const interval = setInterval(() => {
       const images = document.querySelectorAll<HTMLElement>(".image-slide");
@@ -251,77 +259,43 @@ const Home = () => {
             Celebrating Success
           </h2>
         </div>
-        <div className="relative w-full lg:w-[80%]">
-          {/* <div className="absolute w-[50px] right-0 top-1/2 z-10 transform -translate-y-1/2">
-            <motion.button
-              className="text-[16px] w-full flex justify-center items-center h-[60px] text-[#fff] font-normal font-OpenSans text-center"
-              initial="initial"
-              whileHover="hover"
-              variants={btnVariants}
-              onClick={scrollLeft}
-              transition={{ duration: 0.5 }}
-              value="Send"
-              type="submit"
-            >
-              <GoArrowRight className="text-[20px]" />
-            </motion.button>
-            <motion.button
-              className="text-[16px] w-full flex justify-center items-center h-[60px] text-[#fff] font-normal font-OpenSans text-center"
-              initial="initial"
-              whileHover="hover"
-              variants={btnVariants}
-              onClick={scrollRight}
-              transition={{ duration: 0.5 }}
-              value="Send"
-              type="submit"
-            >
-              <GoArrowLeft className="text-[20px]" />
-            </motion.button>
-          </div> */}
-          <div
-            // ref={sliderRef}
-            className="flex justify-evenly items-center overflow-x-auto w-full scroll-container h-full"
-          >
-            <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center flex-shrink-0 animate">
-              <CircularProgressBar
-                percentage={teachers}
-                text={`${teachers}%`}
-              />
-              <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-                Certified Teachers
-              </h2>
-            </div>
-            <div className="m-0 p-0 cursor-pointer h-full flex-shrink-0 animate">
-              <CircularProgressBar
-                percentage={percentage}
-                text={`${percentage}%`}
-              />
-              <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-                Students Enrolled
-              </h2>
-            </div>
-            <div className="m-0 p-0 cursor-pointer h-full flex-shrink-0 animate">
-              <CircularProgressBar
-                percentage={percentage}
-                text={`${percentage}%`}
-              />
-              <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-                Passing to Universities
-              </h2>
-            </div>
-            <div className="m-0 p-0 cursor-pointer h-full flex-shrink-0 animate">
-              <CircularProgressBar
-                percentage={percentage}
-                text={`${percentage}%`}
-              />
-              <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-                Satisfied Parents
-              </h2>
-            </div>
+        <div className="w-full flex justify-evenly items-center lg:w-[80%]">
+          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
+            <CircularProgressBar percentage={teachers} text={`${teachers}%`} />
+            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
+              Certified Teachers
+            </h2>
           </div>
+          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
+            <CircularProgressBar
+              percentage={percentage}
+              text={`${percentage}%`}
+            />
+            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
+              Students Enrolled
+            </h2>
+          </div>
+          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
+            <CircularProgressBar
+              percentage={percentage}
+              text={`${percentage}%`}
+            />
+            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
+              Passing to Universities
+            </h2>
+          </div>
+          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
+            <CircularProgressBar
+              percentage={percentage}
+              text={`${percentage}%`}
+            />
+            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
+              Satisfied Parents
+            </h2>
+          </div>
+          <motion.div></motion.div>
         </div>
       </motion.div>
-      {/*  */}
       <div>
         <EventsCalendar events={events} />
       </div>
