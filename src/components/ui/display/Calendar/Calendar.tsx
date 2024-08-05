@@ -23,8 +23,8 @@ const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
       <div className="w-full mt-10 mb-8 border-b-[1px] border-[#b9b6b6] flex lg:w-[90%] justify-between items-center p-0">
         <div className="flex flex-col justify-start items-start gap-3 w-[50%] lg:w-[80%]">
           <div className="flex justify-start items-center gap-3">
-            <div className="w-[40px] h-[1px] bg-[#BC0E7E]"></div>
-            <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#BC0E7E]">
+            <div className="w-[40px] h-[1px] bg-[#3D83F6]"></div>
+            <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#3D83F6]">
               Events
             </h2>
           </div>

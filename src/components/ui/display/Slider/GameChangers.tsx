@@ -19,7 +19,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
   const { ref: refbottom, inView: inviewbottom } = useInView();
 
   const btnVariants = {
-    initial: { backgroundColor: "#FF014F" },
+    initial: { backgroundColor: "#3D83F6" },
     hover: { backgroundColor: "#202942" },
   };
 
@@ -88,7 +88,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
                 className="w-[300px] h-full object-cover"
               />
               <div className="absolute h-[60px] flex justify-center items-center bottom-0 w-full bg-black z-10">
-                <h2 className="text-[#FF014F] font-semibold text-[16px] font-OpenSans uppercase">
+                <h2 className="text-[#3D83F6] font-semibold text-[16px] font-OpenSans uppercase">
                   Name
                 </h2>
               </div>

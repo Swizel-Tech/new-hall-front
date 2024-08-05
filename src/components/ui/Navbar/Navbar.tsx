@@ -3,8 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
-import { logo2 } from "../../../assets";
-import { motion } from "framer-motion";
+// import { logo2 } from "../../../assets";
+// import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +34,7 @@ export const Navbar: React.FC = () => {
     }
   };
 
-  const isHomeRoute = location.pathname === "/home";
+  // const isHomeRoute = location.pathname === "/home";
 
   const handleClick = () => {
     navigate("/calendar");
@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
               Career @ Newhall
             </h2>
           </div>
-          {isHomeRoute && (
+          {/* {isHomeRoute && (
             <div className="w-[20%] flex justify-center items-center">
               <motion.img
                 src={logo2}
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
                 transition={{ duration: 0.5 }}
               />
             </div>
-          )}
+          )} */}
           <div className="w-[40%] flex justify-end items-center">
             <h2
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}

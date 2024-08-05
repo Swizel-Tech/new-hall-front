@@ -30,7 +30,7 @@ const TimerSlider: React.FC = () => {
   };
 
   const boxVariants = {
-    initial: { backgroundColor: "#FF014F" },
+    initial: { backgroundColor: "#3D83F6" },
     hover: { backgroundColor: "#202942" },
   };
 
@@ -122,9 +122,9 @@ const TimerSlider: React.FC = () => {
       <div className="absolute flex bg-black mb-0 opacity-65 justify-center items-center bottom-0 w-full h-[60px]">
         <div className="w-[50%] flex justify-between items-center">
           <motion.button
-            className="text-[14px] lg:block hidden text-[#fff] uppercase font-normal font-OpenSans text-center hover:text-[red]"
+            className="text-[14px] lg:block hidden text-[#fff] uppercase font-normal font-OpenSans text-center hover:text-[#3D83F6]"
             initial={{ color: "#fff" }}
-            whileHover={{ color: "red" }}
+            whileHover={{ color: "#3D83F6" }}
             transition={{
               duration: 1,
               ease: "easeInOut",
@@ -134,9 +134,9 @@ const TimerSlider: React.FC = () => {
             News & Media
           </motion.button>
           <motion.button
-            className="text-[14px] lg:block hidden text-[#fff] uppercase font-normal font-OpenSans text-center hover:text-[red]"
+            className="text-[14px] lg:block hidden text-[#fff] uppercase font-normal font-OpenSans text-center hover:text-[#3D83F6]"
             initial={{ color: "#fff" }}
-            whileHover={{ color: "red" }}
+            whileHover={{ color: "#3D83F6" }}
             transition={{
               duration: 1,
               ease: "easeInOut",
@@ -174,7 +174,7 @@ const TimerSlider: React.FC = () => {
         </motion.button>
       </div>
       <div className="">
-        <button className="bg-[#FF014F] absolute bottom-0 right-2 w-[60px] h-[60px] font-normal flex justify-center items-center">
+        <button className="bg-[#3D83F6] absolute bottom-0 right-2 w-[60px] h-[60px] font-normal flex justify-center items-center">
           <motion.div
             className="w-full h-full flex justify-center items-center"
             whileHover={{

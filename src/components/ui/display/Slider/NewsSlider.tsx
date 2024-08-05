@@ -17,7 +17,7 @@ interface NewsSliderProps {
 }
 
 const btnVariants = {
-  initial: { backgroundColor: "#FF014F" },
+  initial: { backgroundColor: "#3D83F6" },
   hover: { backgroundColor: "#202942" },
 };
 export const NewsSlider: React.FC<NewsSliderProps> = ({

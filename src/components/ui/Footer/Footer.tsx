@@ -30,9 +30,9 @@ export const Footer = () => {
       <div className="absolute top-0 px-4 lg:px-[8%] py-5 bg-black opacity-50 w-full flex justify-center items-center">
         <div className="w-full lg:w-[50%] flex justify-between items-center">
           <motion.button
-            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[red]"
+            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[#3D83F6]"
             initial={{ color: "#fff" }}
-            whileHover={{ color: "red" }}
+            whileHover={{ color: "#3D83F6" }}
             transition={{
               duration: 1,
               ease: "easeInOut",
@@ -42,9 +42,9 @@ export const Footer = () => {
             Adminssion
           </motion.button>
           <motion.button
-            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[red]"
+            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[#3D83F6]"
             initial={{ color: "#fff" }}
-            whileHover={{ color: "red" }}
+            whileHover={{ color: "#3D83F6" }}
             transition={{
               duration: 1,
               ease: "easeInOut",
@@ -54,9 +54,9 @@ export const Footer = () => {
             Calendar
           </motion.button>
           <motion.button
-            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[red]"
+            className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[#3D83F6]"
             initial={{ color: "#fff" }}
-            whileHover={{ color: "red" }}
+            whileHover={{ color: "#3D83F6" }}
             transition={{
               duration: 1,
               ease: "easeInOut",

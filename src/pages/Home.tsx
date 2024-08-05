@@ -159,15 +159,15 @@ const Home = () => {
             animate={controlsLeft}
           >
             <div className="flex justify-start items-center gap-3">
-              <div className="w-[40px] h-[1px] bg-[#BC0E0E]"></div>
-              <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#BC0E0E]">
+              <div className="w-[40px] h-[1px] bg-[#3D83F6]"></div>
+              <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#3D83F6]">
                 Introduction
               </h2>
             </div>
             <h2 className="font-OpenSans  mt-10 font-normal text-[44px] leading-[61px] w-full lg:w-[40%] text-[#000]">
               Welcome to
             </h2>
-            <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full lg:w-[60%] text-[#BC0E0E]">
+            <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full lg:w-[60%] text-[#3D83F6]">
               New Hall International Schools
             </h2>
             <p className="font-OpenSans font-normal w-full lg:w-[80%] text-[18px] text-left text-[#3B3B3B]">
@@ -182,7 +182,7 @@ const Home = () => {
               own both home and abroad.
             </p>
             <motion.button
-              className="text-[14px] w-[50%] lg:w-[15%] mt-7 flex uppercase justify-center items-center h-[50px] text-[#BC0E0E] font-normal font-OpenSans text-center hover:text-[#fff]"
+              className="text-[14px] w-[50%] lg:w-[15%] mt-7 flex uppercase justify-center items-center h-[50px] text-[#3D83F6] font-normal font-OpenSans text-center hover:text-[#fff]"
               initial="initial"
               whileHover="hover"
               variants={boxVariants}
