@@ -62,6 +62,10 @@ export const navData: SideNavProps[] = [
         href: "thecollege",
         text: "College",
       },
+      {
+        href: "calendar",
+        text: "Calendar",
+      },
       // {
       //   href: "boarding",
       //   text: "Boarding School",

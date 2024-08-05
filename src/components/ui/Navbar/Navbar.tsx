@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  let navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -31,6 +32,10 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const handleClick = () => {
+    navigate("/calendar");
+  };
+
   return (
     <nav
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
@@ -42,11 +47,12 @@ export const Navbar: React.FC = () => {
       <div className="relative flex-col items-center w-full">
         <div className="flex w-full mb-3 justify-between items-center px-4">
           <div className="flex justify-start items-center">
-            <h2
+            <button
+              onClick={handleClick}
               className={`font-OpenSans text-[14px] font-semibold leading-normal text-[#BC0E0E] px-8 py-1`}
             >
               Calendar
-            </h2>
+            </button>
             <h2
               className={`font-OpenSans text-[14px] leading-normal font-semibold border-[#BC0E0E] px-4 py-1 text-[#BC0E0E] border-l-[1.5px]`}
             >

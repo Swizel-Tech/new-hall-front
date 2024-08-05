@@ -14,6 +14,7 @@ import TuitionFees from "../pages/TuitionFees";
 import Football from "../pages/Football";
 import BoardingFacility from "../pages/BoardingFacility";
 import ContactUs from "../pages/ContactUs";
+import AcademicCalendar from "../pages/AcademicCalendar";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "applying-to-new-hall",
         element: <Application />,
+      },
+      {
+        path: "calendar",
+        element: <AcademicCalendar />,
       },
       {
         path: "tuition-and-fees",
