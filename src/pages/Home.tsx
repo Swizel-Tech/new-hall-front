@@ -1,6 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import TimerSlider from "../components/ui/display/Slider/TimerSlider";
-import { slider1, slider2, slider3, slider4 } from "../assets";
+import {
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  homeslider1,
+  homeslider2,
+  homeslider3,
+  homeslider4,
+} from "../assets";
 import Slider from "react-slick";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -190,7 +199,7 @@ const Home = () => {
             <div className="relative m-0 p-0 w-[100%]">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider3}
+                src={homeslider1}
                 alt="Slide 1"
                 className="w-full h-full object-cover"
               />
@@ -198,7 +207,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider4}
+                src={homeslider2}
                 alt="Slide 2"
                 className="w-full h-full object-cover"
               />
@@ -206,7 +215,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider3}
+                src={homeslider3}
                 alt="Slide 3"
                 className="w-full h-full object-cover"
               />
@@ -214,7 +223,7 @@ const Home = () => {
             <div className="relative m-0 p-0">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider4}
+                src={homeslider4}
                 alt="Slide 4"
                 className="w-full h-full object-cover"
               />

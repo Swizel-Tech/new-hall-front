@@ -82,18 +82,27 @@ export const navData: SideNavProps[] = [
         href: "tuition-and-fees",
         text: "Tuition & Fees",
       },
-      {
-        href: "child-requirement",
-        text: "Child Requirements",
-      },
+      // {
+      //   href: "child-requirement",
+      //   text: "Child Requirements",
+      // },
     ],
   },
   {
-    href: "/footballacademy",
-    text: "Football Academy",
-    dropdown: false,
+    href: "",
+    text: "Pastoral care",
+    dropdown: true,
     scrolledState: false,
-    children: [],
+    children: [
+      {
+        href: "/footballacademy",
+        text: "Football Academy",
+      },
+      {
+        href: "/co-Curricular",
+        text: "Co-Curricular Activities",
+      },
+    ],
   },
   {
     href: "/boarding",

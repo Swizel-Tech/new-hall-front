@@ -1,10 +1,11 @@
 // import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAngleRight, FaMinus, FaPlus } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import { slider3, slider4 } from "../assets";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 import { useState } from "react";
+import { GoChevronDown, GoChevronUp } from "react-icons/go";
 
 const autoplaySpeed = 3000;
 
@@ -31,9 +32,11 @@ const Application = () => {
   };
 
   return (
-    <div className="mt-10 lg:mt-[10rem]">
+    <div className="mt-10 lg:mt-[12rem]">
       <div className="">
-        <div className={`h-[120px] flex justify-start items-center`}>
+        <div
+          className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}
+        >
           <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Applying to New Hall
           </h2>
@@ -126,26 +129,26 @@ const Application = () => {
                   We offer prospective parents a tour of our facilities and
                   classroom between 10.00am to 4.00pm.
                 </p>
-                <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-4">
+                <div className="w-full flex flex-col lg:flex-row justify-between items-start mt-8 gap-4">
                   <div className="w-full lg:w-[50%]">
                     <button
-                      className="bg-blue-500 shadow-lg mt-[4rem] px-2 w-full flex justify-between items-center"
+                      className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                       onClick={() => setInfoactive(!infoactive)}
                     >
                       <h2
-                        className={`text-[16px] font-OpenSans font-normal w-full text-left p-3 text-[#fff]`}
+                        className={`text-[16px] font-OpenSans font-normal w-full text-left`}
                       >
                         Information Sessions:
                       </h2>
                       {infoactive ? (
-                        <FaMinus className={`text-[#fff]`} />
+                        <GoChevronUp fontSize={25} />
                       ) : (
-                        <FaPlus className={`text-[#fff]`} />
+                        <GoChevronDown fontSize={25} />
                       )}
                     </button>
                     {infoactive && (
                       <motion.div
-                        className="w-full mb-[4rem] shadow-lg p-4"
+                        className="w-full mb-[2rem] shadow-lg p-4"
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
@@ -203,28 +206,44 @@ const Application = () => {
                           New Hall is the appropriate environment for your
                           child.
                         </p>
+                        <h2 className="font-OpenSans  my-4  text-[26px] font-normal text-left leading-[44px]">
+                          ENROLLMENT
+                        </h2>
+                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                          The Admissions Committee offers enrollment to students
+                          after it has been determined that the student and New
+                          Hall School are a good match for each other, and
+                          provided that appropriate placement is available.
+                        </p>
+                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                          Applicants who have completed all necessary steps by
+                          the appropriate deadlines will be notified. Families
+                          must then make an enrollment decision as soon as
+                          possible. Payment of registration fee is required to
+                          reserve your enrollment.
+                        </p>
                       </motion.div>
                     )}
                   </div>
                   <div className="w-full lg:w-[50%]">
                     <button
-                      className="bg-blue-500 shadow-lg mt-[4rem] px-2 w-full flex justify-between items-center"
+                      className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                       onClick={() => setParentactive(!parentactive)}
                     >
                       <h2
-                        className={`text-[16px] font-OpenSans font-normal w-full text-left p-3 text-[#fff]`}
+                        className={`text-[16px] font-OpenSans font-normal w-full text-left text-[#000]`}
                       >
                         PARENT
                       </h2>
-                      {infoactive ? (
-                        <FaMinus className={`text-[#fff]`} />
+                      {parentactive ? (
+                        <GoChevronUp fontSize={25} />
                       ) : (
-                        <FaPlus className={`text-[#fff]`} />
+                        <GoChevronDown fontSize={25} />
                       )}
                     </button>
                     {parentactive && (
                       <motion.div
-                        className="w-full mb-[4rem] shadow-lg p-4"
+                        className="w-full mb-[2rem] shadow-lg p-4"
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
@@ -290,21 +309,6 @@ const Application = () => {
                     )}
                   </div>
                 </div>
-                <h2 className="font-OpenSans  my-4  text-[26px] font-normal text-left leading-[44px]">
-                  ENROLLMENT
-                </h2>
-                <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                  The Admissions Committee offers enrollment to students after
-                  it has been determined that the student and New Hall School
-                  are a good match for each other, and provided that appropriate
-                  placement is available.
-                </p>
-                <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                  Applicants who have completed all necessary steps by the
-                  appropriate deadlines will be notified. Families must then
-                  make an enrollment decision as soon as possible. Payment of
-                  registration fee is required to reserve your enrollment.
-                </p>
               </div>
             </div>
           </div>

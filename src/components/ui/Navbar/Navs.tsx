@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { IoMdArrowDropup } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
@@ -28,7 +28,11 @@ export const Nav = (props: SideNavProps) => {
       return "text-[#000]";
     }
   };
-
+  const fadeVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
   return (
     <>
       {dropdown ? (
@@ -40,7 +44,9 @@ export const Nav = (props: SideNavProps) => {
           >
             <span
               className={`relative w-full text-left font-OpenSans text-[16px] font-normal uppercase  ${
-                scrolledState ? "text-[#000]" : ` ${getTextColor()}`
+                scrolledState
+                  ? "text-[#000]"
+                  : `lg:${getTextColor()} text-[#fff]`
               }`}
             >
               {text}
@@ -85,35 +91,46 @@ export const Nav = (props: SideNavProps) => {
               onClick={() => setClicked(!clicked)}
             >
               <span
-                className={`font-Lato text-[16px] text-left py-4 font-normal uppercase ${
+                className={`font-OpenSans text-[16px] text-[#fff] text-left py-4 font-normal uppercase ${
                   scrolledState ? "text-[#000]" : ` ${getTextColor()}`
                 }`}
               >
                 {text}
               </span>
             </button>
-            {clicked && (
-              <div className="z-20 py-2 w-full px-2">
-                {children.map((child, index) => (
-                  <NavLink key={index} to={child.href}>
-                    <span
-                      className={`font-lato text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
-                        scrolledState ? "text-[#000]" : ` ${getTextColor()}`
-                      }`}
-                    >
-                      {child.text}
-                    </span>
-                  </NavLink>
-                ))}
-              </div>
-            )}
+            <AnimatePresence>
+              {clicked && (
+                <motion.div
+                  className="z-20 py-2 w-full px-2"
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={fadeVariants}
+                  transition={{ duration: 0.5 }} // Adjust the duration as needed
+                >
+                  {children.map((child, index) => (
+                    <NavLink key={index} to={child.href}>
+                      <span
+                        className={`font-OpenSans text-[#fff] text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
+                          scrolledState ? "text-[#000]" : `${getTextColor()}`
+                        }`}
+                      >
+                        {child.text}
+                      </span>
+                    </NavLink>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </>
       ) : (
         <NavLink to={href} className="py-4 lg:py-0 w-full lg:w-auto">
           <span
-            className={`font-Lato text-[16px] text-left font-normal uppercase ${
-              scrolledState ? "text-[#000]" : ` ${getTextColor()}`
+            className={`font-OpenSans text-[16px] text-left font-normal uppercase ${
+              scrolledState
+                ? "text-[#000]"
+                : ` lg:${getTextColor()} text-[#fff]`
             }`}
           >
             {text}

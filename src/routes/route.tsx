@@ -11,6 +11,9 @@ import Primary from "../pages/Primary";
 import College from "../pages/College";
 import Application from "../pages/Application";
 import TuitionFees from "../pages/TuitionFees";
+import Football from "../pages/Football";
+import BoardingFacility from "../pages/BoardingFacility";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +63,18 @@ const router = createBrowserRouter([
       {
         path: "tuition-and-fees",
         element: <TuitionFees />,
+      },
+      {
+        path: "footballacademy",
+        element: <Football />,
+      },
+      {
+        path: "boarding",
+        element: <BoardingFacility />,
+      },
+      {
+        path: "contact_us",
+        element: <ContactUs />,
       },
     ],
   },

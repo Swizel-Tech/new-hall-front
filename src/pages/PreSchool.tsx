@@ -93,9 +93,9 @@ const PreSchool = () => {
   //   console.log("View News Feed button clicked");
   // };
   return (
-    <div className="mt-10 lg:mt-[10rem]">
+    <div className="mt-10 lg:mt-[12rem] ">
       <div className="">
-        <div className="h-[120px] flex justify-start items-center ">
+        <div className="h-[120px] flex justify-start items-center bg-[#F3F3F3]">
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Pre-School
           </h2>

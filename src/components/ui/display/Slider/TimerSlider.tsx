@@ -1,16 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import TimerOverlay from "../Slider/TimerOverlay ";
 import { slider1, slider2, slider3, slider4 } from "../../../../assets";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaRegBell, FaTwitter, FaFacebook } from "react-icons/fa";
 import { BsArrowDown } from "react-icons/bs";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const TimerSlider: React.FC = () => {
   const autoplaySpeed = 3000;
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider>(null);
 
   const settings = {
@@ -24,7 +23,7 @@ const TimerSlider: React.FC = () => {
     autoplaySpeed: autoplaySpeed,
     arrows: false,
     adaptiveHeight: false,
-    beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
+    // beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
     lazyLoad: "ondemand" as "ondemand",
   };
 

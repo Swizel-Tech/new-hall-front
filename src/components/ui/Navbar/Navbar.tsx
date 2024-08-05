@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`w-full hidden px-8 lg:block lg:fixed top-0 z-20 transition-all duration-500 ${
+      className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
         scrolled
           ? "bg-[#fff] text-[#000] h-auto shadow-lg pt-2"
           : "bg-transparent text-[#fff] h-auto pt-10"
@@ -43,19 +43,19 @@ export const Navbar: React.FC = () => {
         <div className="flex w-full mb-3 justify-between items-center px-4">
           <div className="flex justify-start items-center">
             <h2
-              className={`font-OpenSans text-[14px] font-semibold leading-normal text-blue-500 px-8 py-1`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal text-[#BC0E0E] px-8 py-1`}
             >
               Calendar
             </h2>
             <h2
-              className={`font-OpenSans text-[14px] leading-normal font-semibold border-blue-500 px-4 py-1 text-blue-500 border-l-[1.5px]`}
+              className={`font-OpenSans text-[14px] leading-normal font-semibold border-[#BC0E0E] px-4 py-1 text-[#BC0E0E] border-l-[1.5px]`}
             >
               Career @ Newhall
             </h2>
           </div>
           <div className="flex justify-start items-center">
             <h2
-              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-[#BC0E0E]`}
             >
               Webmail
             </h2>
@@ -67,7 +67,9 @@ export const Navbar: React.FC = () => {
           }`}
         >
           <div className="w-[2%]">
-            <FaHome className={`${getTextColor()}`} />
+            <FaHome
+              className={` ${scrolled ? "text-[#000]" : `${getTextColor()}`}`}
+            />
           </div>
           <div
             className={`w-[90%]  flex justify-between items-center ${
@@ -79,7 +81,9 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
           <div className="w-[2%]">
-            <FaSearch className={`${getTextColor()}`} />
+            <FaSearch
+              className={` ${scrolled ? "text-[#000]" : `${getTextColor()}`}`}
+            />
           </div>
         </div>
       </div>
