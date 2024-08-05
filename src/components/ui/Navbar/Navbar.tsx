@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
               alt=""
               className="logo"
               animate={{
-                maxWidth: scrolled ? "80px" : "300px",
+                maxWidth: scrolled ? "80px" : "200px",
               }}
               transition={{ duration: 0.5 }}
             />
