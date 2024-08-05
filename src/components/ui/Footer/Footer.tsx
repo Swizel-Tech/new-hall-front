@@ -8,8 +8,19 @@ import {
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+  let navigate = useNavigate();
+  const handleAdmission = () => {
+    navigate("/applying-to-new-hall");
+  };
+  const handleCalNavigate = () => {
+    navigate("/calendar");
+  };
+  const handlecontact_us = () => {
+    navigate("/contact_us");
+  };
   return (
     <div className="w-full px-8 h-auto relative flex gap-8 flex-col justify-center items-center bg-black pt-6">
       <div
@@ -26,6 +37,7 @@ export const Footer = () => {
               duration: 1,
               ease: "easeInOut",
             }}
+            onClick={handleAdmission}
           >
             Adminssion
           </motion.button>
@@ -37,6 +49,7 @@ export const Footer = () => {
               duration: 1,
               ease: "easeInOut",
             }}
+            onClick={handleCalNavigate}
           >
             Calendar
           </motion.button>
@@ -48,6 +61,7 @@ export const Footer = () => {
               duration: 1,
               ease: "easeInOut",
             }}
+            onClick={handlecontact_us}
           >
             Contact
           </motion.button>

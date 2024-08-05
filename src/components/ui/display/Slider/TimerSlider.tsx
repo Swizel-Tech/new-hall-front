@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaRegBell, FaTwitter, FaFacebook } from "react-icons/fa";
 import { BsArrowDown } from "react-icons/bs";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 
 const TimerSlider: React.FC = () => {
+  let navigate = useNavigate();
   const autoplaySpeed = 3000;
   // const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider>(null);
@@ -44,6 +46,14 @@ const TimerSlider: React.FC = () => {
     }
   };
   // const slideHeight = "500px";
+
+  // const handleApplicationNavigate = () => {
+  //   navigate("/applying-to-new-hall");
+  // };
+
+  const handleCalennNavigate = () => {
+    navigate("/calendar");
+  };
 
   return (
     <div className="relative w-full p-0 m-0">
@@ -119,6 +129,7 @@ const TimerSlider: React.FC = () => {
               duration: 1,
               ease: "easeInOut",
             }}
+            // onClick={handleApplicationNavigate}
           >
             News & Media
           </motion.button>
@@ -130,6 +141,7 @@ const TimerSlider: React.FC = () => {
               duration: 1,
               ease: "easeInOut",
             }}
+            onClick={handleCalennNavigate}
           >
             Calendar
           </motion.button>

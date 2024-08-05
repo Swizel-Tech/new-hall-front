@@ -17,6 +17,7 @@ import { CircularProgressBar } from "../components/ui/display/accordion/Circular
 import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 import EventsCalendar from "../components/ui/display/Calendar/Calendar";
+import { useNavigate } from "react-router-dom";
 
 const autoplaySpeed = 3000;
 const newsItems = [
@@ -53,6 +54,7 @@ const newsItems = [
 ];
 
 const Home = () => {
+  let navigate = useNavigate();
   const controlsLeft = useAnimation();
   const [percentage] = useState(70);
   const [teachers] = useState(90);
@@ -142,6 +144,10 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleNavigate = () => {
+    navigate("/aboutus");
+  };
+
   return (
     <div className="relative">
       <TimerSlider />
@@ -184,6 +190,7 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               value="Send"
               type="submit"
+              onClick={handleNavigate}
             >
               Read More
             </motion.button>

@@ -1,4 +1,5 @@
 import logo from "./images/logo.png";
+import logo2 from "./images/logo2.png";
 import slider1 from "./images/newhall/ND4_9919.jpg";
 import slider2 from "./images/newhall/ND4_9913.jpg";
 import slider3 from "./images/newhall/ND4_9863.jpg";
@@ -35,6 +36,7 @@ import map from "./images/map.png";
 
 export {
   logo,
+  logo2,
   slider1,
   slider2,
   slider3,

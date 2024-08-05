@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
+import { logo2 } from "../../../assets";
+import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,6 +38,10 @@ export const Navbar: React.FC = () => {
     navigate("/calendar");
   };
 
+  const handlehomeNavigate = () => {
+    navigate("/home");
+  };
+
   return (
     <nav
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
@@ -46,7 +52,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="relative flex-col items-center w-full">
         <div className="flex w-full mb-3 justify-between items-center px-4">
-          <div className="flex justify-start items-center">
+          <div className="w-[40%] flex justify-start items-center">
             <button
               onClick={handleClick}
               className={`font-OpenSans text-[14px] font-semibold leading-normal text-blue-500 px-8 py-1`}
@@ -59,7 +65,18 @@ export const Navbar: React.FC = () => {
               Career @ Newhall
             </h2>
           </div>
-          <div className="flex justify-start items-center">
+          <div className="w-[20%] flex justify-center items-center">
+            <motion.img
+              src={logo2}
+              alt=""
+              className="logo"
+              animate={{
+                maxWidth: scrolled ? "80px" : "300px",
+              }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
+          <div className="w-[40%] flex justify-end items-center">
             <h2
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}
             >
@@ -72,11 +89,11 @@ export const Navbar: React.FC = () => {
             scrolled ? "pt-0" : "pt-6"
           }`}
         >
-          <div className="w-[2%]">
+          <button className="w-[2%]" onClick={handlehomeNavigate}>
             <FaHome
               className={` ${scrolled ? "text-[#000]" : `${getTextColor()}`}`}
             />
-          </div>
+          </button>
           <div
             className={`w-[90%]  flex justify-between items-center ${
               scrolled ? "" : "border-b-[1px] border-[#fff]"
@@ -86,11 +103,11 @@ export const Navbar: React.FC = () => {
               <Nav key={data.text} {...data} scrolledState={scrolled} />
             ))}
           </div>
-          <div className="w-[2%]">
+          <button className="w-[2%]">
             <FaSearch
               className={` ${scrolled ? "text-[#000]" : `${getTextColor()}`}`}
             />
-          </div>
+          </button>
         </div>
       </div>
     </nav>

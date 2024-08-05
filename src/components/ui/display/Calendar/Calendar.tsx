@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface Event {
   date: string;
@@ -11,6 +12,12 @@ interface EventsCalendarProps {
 }
 
 const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
+  let navigate = useNavigate();
+
+  const handleCalennNavigate = () => {
+    navigate("/calendar");
+  };
+
   return (
     <div className="w-full p-0 relative bg-[#F8E6E6] flex justify-center items-center flex-col">
       <div className="w-full mt-10 mb-8 border-b-[1px] border-[#b9b6b6] flex lg:w-[90%] justify-between items-center p-0">
@@ -32,6 +39,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
             color: "#BC0E0E",
           }}
           transition={{ duration: 0.5 }}
+          onClick={handleCalennNavigate}
         >
           View Full Calendar
         </motion.button>
