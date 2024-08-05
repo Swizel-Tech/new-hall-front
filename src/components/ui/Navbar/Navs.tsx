@@ -126,7 +126,7 @@ export const Nav = (props: SideNavProps) => {
         <NavLink to={href} className="py-4 lg:py-0 w-full lg:w-auto">
           <span
             className={`font-OpenSans text-[16px] text-left font-normal uppercase ${
-              scrolledState ? "text-[#000]" : `${getTextColor()}`
+              scrolledState ? "text-[#000]" : `lg:${getTextColor()} text-[#fff]`
             }`}
           >
             {text}
