@@ -44,7 +44,7 @@ export const Nav = (props: SideNavProps) => {
           >
             <span
               className={`relative w-full text-left font-OpenSans text-[16px] font-normal uppercase  ${
-                scrolledState ? "text-[#000]" : `lg:${getTextColor()}`
+                scrolledState ? "text-[#000]" : `${getTextColor()}`
               }`}
             >
               {text}
@@ -72,7 +72,7 @@ export const Nav = (props: SideNavProps) => {
                     <NavLink key={index} to={child.href}>
                       <span
                         className={`font-OpenSans text-[16px] text-left py-2 hover:bg-[#618cf9] hover:text-[#fff] px-2 font-normal uppercase block ${
-                          scrolledState ? "text-[#000]" : ` ${getTextColor()}`
+                          scrolledState ? "text-[#000]" : `${getTextColor()}`
                         }`}
                       >
                         {child.text}
@@ -90,7 +90,7 @@ export const Nav = (props: SideNavProps) => {
             >
               <span
                 className={`font-OpenSans text-[16px] text-[#fff] text-left py-4 font-normal uppercase ${
-                  scrolledState ? "text-[#000]" : ` ${getTextColor()}`
+                  scrolledState ? "text-[#000]" : `${getTextColor()}`
                 }`}
               >
                 {text}
@@ -126,7 +126,7 @@ export const Nav = (props: SideNavProps) => {
         <NavLink to={href} className="py-4 lg:py-0 w-full lg:w-auto">
           <span
             className={`font-OpenSans text-[16px] text-left font-normal uppercase ${
-              scrolledState ? "text-[#000]" : ` lg:${getTextColor()}`
+              scrolledState ? "text-[#000]" : `${getTextColor()}`
             }`}
           >
             {text}
