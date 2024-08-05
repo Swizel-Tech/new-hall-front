@@ -104,7 +104,7 @@ export const Nav = (props: SideNavProps) => {
                   animate="visible"
                   exit="exit"
                   variants={fadeVariants}
-                  transition={{ duration: 0.5 }} // Adjust the duration as needed
+                  transition={{ duration: 0.5 }}
                 >
                   {children.map((child, index) => (
                     <NavLink key={index} to={child.href}>
