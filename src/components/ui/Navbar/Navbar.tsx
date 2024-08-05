@@ -34,6 +34,8 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const isHomeRoute = location.pathname === "/home";
+
   const handleClick = () => {
     navigate("/calendar");
   };
@@ -65,17 +67,19 @@ export const Navbar: React.FC = () => {
               Career @ Newhall
             </h2>
           </div>
-          <div className="w-[20%] flex justify-center items-center">
-            <motion.img
-              src={logo2}
-              alt=""
-              className="logo"
-              animate={{
-                maxWidth: scrolled ? "80px" : "200px",
-              }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
+          {isHomeRoute && (
+            <div className="w-[20%] flex justify-center items-center">
+              <motion.img
+                src={logo2}
+                alt=""
+                className="logo"
+                animate={{
+                  maxWidth: scrolled ? "80px" : "200px",
+                }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+          )}
           <div className="w-[40%] flex justify-end items-center">
             <h2
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}
