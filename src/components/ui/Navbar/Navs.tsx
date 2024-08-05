@@ -89,7 +89,7 @@ export const Nav = (props: SideNavProps) => {
               onClick={() => setClicked(!clicked)}
             >
               <span
-                className={`font-OpenSans text-[16px] text-[#fff] text-left py-4 font-normal uppercase ${
+                className={`font-OpenSans text-[16px] text-[#000] text-left py-4 font-normal uppercase ${
                   scrolledState ? "text-[#000]" : `${getTextColor()}`
                 }`}
               >
@@ -109,7 +109,7 @@ export const Nav = (props: SideNavProps) => {
                   {children.map((child, index) => (
                     <NavLink key={index} to={child.href}>
                       <span
-                        className={`font-OpenSans text-[#fff] text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
+                        className={`font-OpenSans text-[#000] text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
                           scrolledState ? "text-[#000]" : `${getTextColor()}`
                         }`}
                       >
@@ -126,7 +126,7 @@ export const Nav = (props: SideNavProps) => {
         <NavLink to={href} className="py-4 lg:py-0 w-full lg:w-auto">
           <span
             className={`font-OpenSans text-[16px] text-left font-normal uppercase ${
-              scrolledState ? "text-[#000]" : `lg:${getTextColor()} text-[#fff]`
+              scrolledState ? "text-[#000]" : `${getTextColor()}`
             }`}
           >
             {text}
