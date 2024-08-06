@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import ThemeButton from "../theme-switcher";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
+import { useTheme } from "../../../context/theme/ThemeProvider";
 // import { logo2 } from "../../../assets";
 // import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   let navigate = useNavigate();
+  const { theme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -28,13 +31,11 @@ export const Navbar: React.FC = () => {
 
   const getTextColor = () => {
     if (location.pathname === "/home") {
-      return "text-[#FFF]"; // Example: Red text for a specific route
+      return "text-[#FFF]";
     } else {
-      return "text-[#000]";
+      return theme === "dark" ? "text-[#fff]" : "text-[#333]";
     }
   };
-
-  // const isHomeRoute = location.pathname === "/home";
 
   const handleClick = () => {
     navigate("/calendar");
@@ -43,7 +44,6 @@ export const Navbar: React.FC = () => {
   const handlehomeNavigate = () => {
     navigate("/home");
   };
-
   return (
     <nav
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
@@ -57,12 +57,18 @@ export const Navbar: React.FC = () => {
           <div className="w-[40%] flex justify-start items-center">
             <button
               onClick={handleClick}
-              className={`font-OpenSans text-[14px] font-semibold leading-normal text-blue-500 px-8 py-1`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal px-8 py-1 ${
+                scrolled ? "text-[#000]" : `${getTextColor()}`
+              }`}
             >
               Calendar
             </button>
             <h2
-              className={`font-OpenSans text-[14px] leading-normal font-semibold border-blue-500 px-4 py-1 text-blue-500 border-l-[1.5px]`}
+              className={`font-OpenSans text-[14px] leading-normal font-semibold border-[#000] px-4 py-1  border-l-[1.5px] ${
+                scrolled
+                  ? "text-[#000] border-[#000]"
+                  : `${getTextColor()} border-[#fff]`
+              }`}
             >
               Career @ Newhall
             </h2>
@@ -81,8 +87,11 @@ export const Navbar: React.FC = () => {
             </div>
           )} */}
           <div className="w-[40%] flex justify-end items-center">
+            <ThemeButton />
             <h2
-              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 text-blue-500`}
+              className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 ${
+                scrolled ? "text-[#000]" : `${getTextColor()}`
+              }`}
             >
               Webmail
             </h2>

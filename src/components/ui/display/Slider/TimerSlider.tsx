@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import TimerOverlay from "../Slider/TimerOverlay ";
 import { slider1, slider2, slider3, slider4 } from "../../../../assets";
 import { motion } from "framer-motion";
 import { FaInstagram, FaRegBell, FaTwitter, FaFacebook } from "react-icons/fa";
@@ -116,9 +115,6 @@ const TimerSlider: React.FC = () => {
           />
         </div>
       </Slider>
-      <div className="absolute top-0 right-5">
-        <TimerOverlay autoplaySpeed={autoplaySpeed} />
-      </div>
       <div className="absolute flex bg-black mb-0 opacity-65 justify-center items-center bottom-0 w-full h-[60px]">
         <div className="w-[50%] flex justify-between items-center">
           <motion.button
