@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
 import { Director, british, AISEN } from "../assets";
 import Accordion from "../components/ui/display/accordion/Accordion";
-import { useTheme } from "../context/theme/ThemeProvider";
+import { useEffect, useState } from "react";
 // import { menus } from "../components/data/constants";
 // import { motion } from "framer-motion";
 // import { FaPlus, FaMinus } from "react-icons/fa6";
@@ -47,9 +47,27 @@ import { useTheme } from "../context/theme/ThemeProvider";
 // ];
 
 const AboutUs = () => {
-  const { theme } = useTheme();
   // const refbottom = useRef<HTMLDivElement>(null);
   let navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   // const [activeMenu, setActiveMenu] = useState("aboutus");
   // const [menuactive, setmenuactive] = useState(false);
   const accordionItems = [
@@ -103,7 +121,7 @@ const AboutUs = () => {
       <div className="">
         <div
           className={`h-[120px] flex justify-start items-center ${
-            theme === "light" ? "bg-[#F3F3F3]" : "bg-transparent"
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
