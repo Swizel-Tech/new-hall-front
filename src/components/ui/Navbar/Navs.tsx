@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoMdArrowDropup } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
-import { useTheme } from "../../../context/theme/ThemeProvider";
 
 export interface SideNavProps {
   text: string;
@@ -18,26 +17,36 @@ export interface SideNavProps {
 }
 
 export const Nav = (props: SideNavProps) => {
-  const { theme } = useTheme();
   const location = useLocation();
   const { href, text, scrolledState, dropdown, children } = props;
   const [clicked, setClicked] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // const getTextColor = () => {
-  //   if (location.pathname === "/home") {
-  //     return "text-[#FFF]"; // Example: Red text for a specific route
-  //   } else {
-  //     return "text-[#000]";
-  //   }
-  // };
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const getTextColor = () => {
     if (location.pathname === "/home") {
       return "text-[#FFF]";
     } else {
-      return theme === "dark" ? "text-[#fff]" : "text-[#333]";
+      return isDarkMode ? "text-[#fff]" : "text-[#000]";
     }
   };
+
   const fadeVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },

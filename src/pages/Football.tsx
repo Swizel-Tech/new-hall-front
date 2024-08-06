@@ -11,7 +11,7 @@ import {
   player8,
 } from "../assets";
 import Slider from "react-slick";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoChevronUp, GoChevronDown } from "react-icons/go";
 import { motion } from "framer-motion";
 import { BaseTable } from "../components/table/Table";
@@ -27,6 +27,25 @@ const autoplaySpeed = 3000;
 
 const Football = () => {
   let navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   const [dropdowns, setDropdowns] = useState<Record<DropdownKey, boolean>>({
     vision: false,
     mission: false,
@@ -120,7 +139,9 @@ const Football = () => {
     <div className="mt-10 lg:mt-[12rem]">
       <div className="">
         <div
-          className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}
+          className={`h-[120px] flex justify-start items-center ${
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+          }`}
         >
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Academy

@@ -23,6 +23,24 @@ const ContactUs = () => {
   let navigate = useNavigate();
   let { id } = useParams<{ id: string }>();
   const [newsData, setNewsData] = useState<NewsArticle | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   useEffect(() => {
     // Mock fetch the article data based on the ID
@@ -66,7 +84,9 @@ const ContactUs = () => {
     <div className="mt-20 lg:mt-[12rem]">
       <div className="">
         <div
-          className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}
+          className={`h-[120px] flex justify-start items-center ${
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+          }`}
         >
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Contact Us

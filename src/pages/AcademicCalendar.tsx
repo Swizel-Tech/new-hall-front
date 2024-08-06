@@ -2,6 +2,7 @@ import Events from "../components/ui/display/Calendar/Events";
 import { Event } from "../types/globa";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const events: Event[] = [
   {
@@ -62,13 +63,35 @@ const events: Event[] = [
 
 const AcademicCalendar = () => {
   let navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const handleClick = () => {
     navigate("/home");
   };
   return (
     <div className="mt-10 lg:mt-[12rem]">
-      <div className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}>
+      <div
+        className={`h-[120px] flex justify-start items-center ${
+          isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+        }`}
+      >
         <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
           Academic Calendar
         </h2>

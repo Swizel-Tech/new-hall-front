@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
 import { slider1, slider2, slider3 } from "../assets";
 import Slider from "react-slick";
+import { useEffect, useState } from "react";
 // import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 // import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 // import EventsCalendar from "../components/ui/display/Calendar/Calendar";
@@ -42,6 +43,24 @@ import Slider from "react-slick";
 
 const PreSchool = () => {
   let navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   // const refbottom = useRef<HTMLDivElement>(null);
 
   // const [activeMenu, setActiveMenu] = useState("pre-school");
@@ -95,7 +114,11 @@ const PreSchool = () => {
   return (
     <div className="mt-10 lg:mt-[12rem] ">
       <div className="">
-        <div className="h-[120px] flex justify-start items-center bg-[#F3F3F3]">
+        <div
+          className={`h-[120px] flex justify-start items-center ${
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+          }`}
+        >
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Pre-School
           </h2>

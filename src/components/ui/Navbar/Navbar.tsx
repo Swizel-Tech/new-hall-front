@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from "react";
-import ThemeButton from "../theme-switcher";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
-import { useTheme } from "../../../context/theme/ThemeProvider";
 // import { logo2 } from "../../../assets";
 // import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   let navigate = useNavigate();
-  const { theme } = useTheme();
   const location = useLocation();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +48,7 @@ export const Navbar: React.FC = () => {
     if (location.pathname === "/home") {
       return "text-[#FFF]";
     } else {
-      return theme === "dark" ? "text-[#fff]" : "text-[#333]";
+      return isDarkMode ? "text-[#fff]" : "text-[#000]";
     }
   };
 
@@ -49,7 +64,7 @@ export const Navbar: React.FC = () => {
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
         scrolled
           ? "bg-[#fff] text-[#000] h-auto shadow-lg pt-2"
-          : "bg-transparent text-[#fff] h-auto pt-10"
+          : `bg-transparent h-auto pt-10 ${getTextColor()}`
       }`}
     >
       <div className="relative flex-col items-center w-full">
@@ -87,7 +102,6 @@ export const Navbar: React.FC = () => {
             </div>
           )} */}
           <div className="w-[40%] flex justify-end items-center">
-            <ThemeButton />
             <h2
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 ${
                 scrolled ? "text-[#000]" : `${getTextColor()}`

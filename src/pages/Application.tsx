@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { slider3, slider4 } from "../assets";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
 
 const autoplaySpeed = 3000;
@@ -13,6 +13,25 @@ const Application = () => {
   let navigate = useNavigate();
   const [infoactive, setInfoactive] = useState(false);
   const [parentactive, setParentactive] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   const handleClick = () => {
     navigate("/home");
   };
@@ -35,7 +54,9 @@ const Application = () => {
     <div className="mt-10 lg:mt-[12rem]">
       <div className="">
         <div
-          className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}
+          className={`h-[120px] flex justify-start items-center ${
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+          }`}
         >
           <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Applying to New Hall

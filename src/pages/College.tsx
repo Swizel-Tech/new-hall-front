@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight, FaMinus, FaPlus } from "react-icons/fa";
 import { slider2 } from "../assets";
@@ -10,6 +10,24 @@ const College = () => {
   const [menuactive, setmenuactive] = useState(false);
   const [isJssSubject, setisJssSubject] = useState(false);
   const [isSssSubject, setisSssSubject] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   const handleClick = () => {
     navigate("/home");
   };
@@ -210,7 +228,9 @@ const College = () => {
     <div className="mt-10 lg:mt-[12rem]">
       <div className="">
         <div
-          className={`h-[120px] flex justify-start items-center bg-[#F3F3F3]`}
+          className={`h-[120px] flex justify-start items-center ${
+            isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
+          }`}
         >
           <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Welcome to NewHall College
