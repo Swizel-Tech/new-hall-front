@@ -1,13 +1,7 @@
 import { SideNavProps } from "./Navs";
+import { logo2 } from "../../../assets";
 
 export const navData: SideNavProps[] = [
-  {
-    href: "/",
-    text: "Home",
-    dropdown: false,
-    scrolledState: false,
-    children: [],
-  },
   {
     href: "",
     text: "About Us",
@@ -27,6 +21,7 @@ export const navData: SideNavProps[] = [
         text: "Aims and Objective",
       },
     ],
+    image: "",
   },
   {
     href: "",
@@ -62,15 +57,16 @@ export const navData: SideNavProps[] = [
         href: "thecollege",
         text: "College",
       },
-      {
-        href: "calendar",
-        text: "Calendar",
-      },
+      // {
+      //   href: "calendar",
+      //   text: "Calendar",
+      // },
       // {
       //   href: "boarding",
       //   text: "Boarding School",
       // },
     ],
+    image: "",
   },
   {
     href: "",
@@ -91,6 +87,15 @@ export const navData: SideNavProps[] = [
       //   text: "Child Requirements",
       // },
     ],
+    image: "",
+  },
+  {
+    href: "/",
+    text: "",
+    dropdown: false,
+    scrolledState: false,
+    children: [],
+    image: `${logo2}`,
   },
   {
     href: "",
@@ -107,6 +112,7 @@ export const navData: SideNavProps[] = [
         text: "Co-Curricular Activities",
       },
     ],
+    image: "",
   },
   {
     href: "/boarding",
@@ -114,6 +120,7 @@ export const navData: SideNavProps[] = [
     dropdown: false,
     scrolledState: false,
     children: [],
+    image: "",
   },
   {
     href: "/contact_us",
@@ -121,5 +128,6 @@ export const navData: SideNavProps[] = [
     dropdown: false,
     scrolledState: false,
     children: [],
+    image: "",
   },
 ];

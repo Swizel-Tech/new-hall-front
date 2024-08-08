@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -13,13 +13,34 @@ interface EventsCalendarProps {
 
 const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
   let navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   const handleCalennNavigate = () => {
     navigate("/calendar");
   };
 
   return (
-    <div className="w-full p-0 relative bg-[#F8E6E6] flex justify-center items-center flex-col">
+    <div
+      className={`w-full p-0 relative flex justify-center items-center flex-col ${
+        isDarkMode ? "bg-transparent" : "bg-[#ddd]"
+      }`}
+    >
       <div className="w-full mt-10 mb-8 border-b-[1px] border-[#b9b6b6] flex lg:w-[90%] justify-between items-center p-0">
         <div className="flex flex-col justify-start items-start gap-3 w-[50%] lg:w-[80%]">
           <div className="flex justify-start items-center gap-3">

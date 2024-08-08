@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { LiaDotCircle } from "react-icons/lia";
@@ -27,6 +27,24 @@ export const NewsSlider: React.FC<NewsSliderProps> = ({
   onViewNewsClick,
 }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const scrollLeft = () => {
     if (sliderRef.current) {
@@ -61,7 +79,11 @@ export const NewsSlider: React.FC<NewsSliderProps> = ({
           {viewNewsText}
         </motion.button>
       </div>
-      <div className="relative px-8 pb-8 lg:pb-[8rem] w-full py-6 bg-[#F8E6E6]">
+      <div
+        className={`relative px-8 pb-8 lg:pb-[8rem] w-full py-6 ${
+          isDarkMode ? "bg-transparent" : "bg-[#ddd]"
+        }`}
+      >
         <div className="absolute w-[50px] right-8 top-1/4 z-10 transform -translate-y-1/2">
           <motion.button
             className="text-[16px] w-full flex justify-center items-center h-[60px] text-[#fff] font-normal font-OpenSans text-center"

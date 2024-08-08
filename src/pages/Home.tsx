@@ -59,6 +59,24 @@ const Home = () => {
   const [percentage] = useState(70);
   const [teachers] = useState(90);
   const refbottomn = useRef<HTMLDivElement>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Detect dark mode using the 'prefers-color-scheme' media query
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    setIsDarkMode(darkModeMediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener("change", handleChange);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
   // const sliderRef = useRef<HTMLDivElement>(null);
 
   const { ref: refLeft, inView: inViewLeft } = useInView({
@@ -152,7 +170,11 @@ const Home = () => {
     <div className="relative">
       <TimerSlider />
       <div className="flex flex-col lg:flex-row  justify-between items-center relative w-full">
-        <div className="w-full lg:w-[60%] px-4 lg:px-[6rem] py-4 lg:py-[4rem] relative bg-[#F8E6E6]">
+        <div
+          className={`w-full lg:w-[60%] px-4 lg:px-[6rem] py-4 lg:py-[4rem] relative ${
+            isDarkMode ? "bg-transparent" : "bg-[#ddd]"
+          }`}
+        >
           <motion.div
             ref={refLeft}
             initial={{ x: "-5%", opacity: 0 }}
@@ -197,7 +219,9 @@ const Home = () => {
           </motion.div>
         </div>
         <motion.div
-          className="w-full lg:w-[40%] lg:absolute left-[54%] bg-[#F8E6E6] lg:bg-transparent"
+          className={`w-full lg:w-[40%] lg:absolute left-[54%] bg-[#F8E6E6] lg:bg-transparent ${
+            isDarkMode ? "bg-transparent" : "bg-[#fff]"
+          }`}
           // ref={refRight}
           // initial={{ x: "5%", opacity: 0 }}
           // animate={controlsRight}

@@ -3,8 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { navData } from "./data";
 import { Nav } from "./Navs";
 import { FaHome, FaSearch } from "react-icons/fa";
-// import { logo2 } from "../../../assets";
-// import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -63,8 +61,8 @@ export const Navbar: React.FC = () => {
     <nav
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
         scrolled
-          ? "bg-[#fff] text-[#000] h-auto shadow-lg pt-2"
-          : `bg-transparent h-auto pt-10 ${getTextColor()}`
+          ? "bg-[#fff] text-[#000] h-auto shadow-lg pt-6"
+          : `bg-transparent h-auto pt-16 ${getTextColor()}`
       }`}
     >
       <div className="relative flex-col items-center w-full">
@@ -88,19 +86,7 @@ export const Navbar: React.FC = () => {
               Career @ Newhall
             </h2>
           </div>
-          {/* {isHomeRoute && (
-            <div className="w-[20%] flex justify-center items-center">
-              <motion.img
-                src={logo2}
-                alt=""
-                className="logo"
-                animate={{
-                  maxWidth: scrolled ? "80px" : "200px",
-                }}
-                transition={{ duration: 0.5 }}
-              />
-            </div>
-          )} */}
+
           <div className="w-[40%] flex justify-end items-center">
             <h2
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 ${
@@ -113,7 +99,7 @@ export const Navbar: React.FC = () => {
         </div>
         <div
           className={`w-full flex justify-between items-center ${
-            scrolled ? "pt-0" : "pt-6"
+            scrolled ? "pt-0" : "pt-4"
           }`}
         >
           <button className="w-[2%]" onClick={handlehomeNavigate}>
@@ -122,7 +108,7 @@ export const Navbar: React.FC = () => {
             />
           </button>
           <div
-            className={`w-[90%]  flex justify-between items-center ${
+            className={`w-[90%] flex justify-between items-center ${
               scrolled ? "" : "border-b-[1px] border-[#fff]"
             }`}
           >

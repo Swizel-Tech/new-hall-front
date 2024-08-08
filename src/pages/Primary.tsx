@@ -114,7 +114,7 @@ const Primary = () => {
           }`}
         >
           <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
-            Elementary
+            Primary
           </h2>
         </div>
         <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
@@ -126,7 +126,7 @@ const Primary = () => {
           </button>
           <FaAngleRight />
           <p className="text-[14px] font-normal font-OpenSans text-blue-500">
-            Elementary
+            Primary
           </p>
         </div>
         <div className="px-4 my-6 lg:pb-[3rem] lg:px-[8%]">

@@ -14,11 +14,12 @@ export interface SideNavProps {
     href: string;
     text: string;
   }[];
+  image: string;
 }
 
 export const Nav = (props: SideNavProps) => {
   const location = useLocation();
-  const { href, text, scrolledState, dropdown, children } = props;
+  const { href, text, scrolledState, dropdown, children, image } = props;
   const [clicked, setClicked] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -52,12 +53,13 @@ export const Nav = (props: SideNavProps) => {
     visible: { opacity: 1 },
     exit: { opacity: 0 },
   };
+
   return (
     <>
       {dropdown ? (
         <>
           <button
-            className="group w-full lg:w-auto relative max-sm:hidden flex h-[70px] justify-center items-center gap-1"
+            className="group w-full lg:w-auto relative max-sm:hidden flex h-[68px] justify-center items-center gap-1"
             onMouseEnter={() => setClicked(true)}
             onMouseLeave={() => setClicked(false)}
           >
@@ -71,7 +73,7 @@ export const Nav = (props: SideNavProps) => {
             <FaPlus className="lg:hidden block" />
             {clicked && (
               <motion.span
-                className="absolute bottom-0 h-[2px] bg-[#B4BDD5] w-full"
+                className="absolute bottom-0 h-[3px] bg-[#B4BDD5] w-full"
                 initial={{ x: "-100%" }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -79,21 +81,17 @@ export const Nav = (props: SideNavProps) => {
             )}
             {clicked && (
               <motion.div
-                className="z-20 top-[70px] py-2 absolute flex flex-col justify-center items-center bg-transparent w-[380px]"
+                className="z-20 top-[70px] py-2 absolute left-0 flex flex-col justify-center items-center bg-transparent w-[380px]"
                 initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "10%", opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <IoMdArrowDropup className="text-[#B4BDD5] m-0 text-[50px]" />
-                <div className="bg-[#B4BDD5] w-full p-2 m-0 shadow-lg">
+                <div className="bg-[#3D83F6] w-full p-2 m-0 shadow-lg">
                   {children.map((child, index) => (
                     <NavLink key={index} to={child.href}>
-                      <span
-                        className={`font-OpenSans text-[16px] text-left py-2 hover:bg-[#618cf9] hover:text-[#fff] px-2 font-normal uppercase block ${
-                          scrolledState ? "text-[#000]" : `${getTextColor()}`
-                        }`}
-                      >
+                      <span className="font-OpenSans text-[16px] text-left py-2 hover:bg-[#6fa2f4] hover:text-[#fff] px-2 font-normal uppercase block">
                         {child.text}
                       </span>
                     </NavLink>
@@ -142,7 +140,30 @@ export const Nav = (props: SideNavProps) => {
           </div>
         </>
       ) : (
-        <NavLink to={href} className="py-4 lg:py-0 w-full lg:w-auto">
+        <NavLink
+          to={href}
+          className="relative py-4 lg:py-0 w-full lg:w-auto flex items-center"
+        >
+          {image && (
+            <div className="absolute bottom-[-10px] w-[200px] left-[-90px] flex flex-col justify-center items-center">
+              <motion.img
+                src={image}
+                alt=""
+                className=""
+                animate={{
+                  maxWidth: scrolledState ? "60px" : "100px",
+                }}
+                transition={{ duration: 0.5 }}
+              />
+              <h2
+                className={`font-OpenSans text-[16px] text-center font-normal uppercase ${
+                  scrolledState ? "text-[#000]" : `${getTextColor()}`
+                }`}
+              >
+                New Hall International Schools
+              </h2>
+            </div>
+          )}
           <span
             className={`font-OpenSans text-[16px] text-left font-normal uppercase ${
               scrolledState ? "text-[#000]" : `${getTextColor()}`

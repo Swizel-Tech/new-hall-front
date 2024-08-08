@@ -1,4 +1,4 @@
-import { logo, map } from "../../../assets";
+import { map } from "../../../assets";
 import {
   FaLinkedin,
   FaSquareFacebook,
@@ -39,7 +39,7 @@ export const Footer = () => {
             }}
             onClick={handleAdmission}
           >
-            Adminssion
+            Admission
           </motion.button>
           <motion.button
             className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center hover:text-[#3D83F6]"
@@ -67,28 +67,30 @@ export const Footer = () => {
           </motion.button>
         </div>
       </div>
-      <div className="w-full lg:w-[50%] flex justify-center items-center mt-20">
+      {/* <div className="w-full lg:w-[50%] flex justify-center items-center mt-20">
         <img src={logo} alt="Logo" />
+      </div> */}
+      <div className="flex flex-col mt-20 lg:flex-row justify-between items-center">
+        <div className="w-full lg:w-[40%]">
+          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+            12 Adegbenle Street, Chevy View Estate, Off Chevron Drive, Off Udeco
+            Medical Road, Lekki, Lagos, Nigeria.
+          </h2>
+        </div>
+        <div className="w-full flex flex-col sm:flex-row  justify-between items-center lg:w-[20%]">
+          <FaPhone fontSize={30} className="text-[#fff]" />
+          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+            014530845, 014530846, 014530847, 08033395673
+          </h2>
+        </div>
+        <div className="w-full flex flex-col sm:flex-row justify-between items-center lg:w-[20%]">
+          <MdEmail fontSize={30} className="text-[#fff]" />
+          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+            info@newhallschool.com.ng
+          </h2>
+        </div>
       </div>
-      <div className="w-full lg:w-[40%]">
-        <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
-          12 Adegbenle Street, Chevy View Estate, Off Chevron Drive, Off Udeco
-          Medical Road, Lekki, Lagos, Nigeria.
-        </h2>
-      </div>
-      <div className="w-full flex flex-col sm:flex-row  justify-between items-center lg:w-[20%]">
-        <FaPhone fontSize={30} className="text-[#fff]" />
-        <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
-          014530845, 014530846, 014530847, 08033395673
-        </h2>
-      </div>
-      <div className="w-full flex flex-col sm:flex-row justify-between items-center lg:w-[20%]">
-        <MdEmail fontSize={30} className="text-[#fff]" />
-        <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
-          info@newhallschool.com.ng
-        </h2>
-      </div>
-      <div className="flex mb-20 justify-between items-center w-[50%] lg:w-[10%]">
+      <div className="flex mb-20 justify-start items-center w-full">
         <button>
           <FaLinkedin fontSize={30} className="text-[#fff]" />
         </button>
@@ -102,7 +104,7 @@ export const Footer = () => {
           <FaSquareXTwitter fontSize={30} className="text-[#fff]" />
         </button>
       </div>
-      <div className="absolute bottom-0 px-4 lg:px-[8%] py-5 bg-black opacity-70 w-full">
+      <div className="absolute bottom-0 px-6 py-5 bg-black opacity-70 w-full">
         <div className="w-full lg:w-[50%] flex justify-between items-center">
           <h2 className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center">
             Copyright © 2018 | New Hall International School, Lekki. All Rights
