@@ -145,7 +145,7 @@ export const Nav = (props: SideNavProps) => {
           className="relative py-4 lg:py-0 w-full lg:w-auto flex items-center"
         >
           {image && (
-            <div className="absolute bottom-[-10px] w-[200px] left-[-90px] flex flex-col justify-center items-center">
+            <div className="absolute bottom-[-10px] w-[200px] left-[-100px] flex flex-col justify-center items-center">
               <motion.img
                 src={image}
                 alt=""
@@ -156,7 +156,7 @@ export const Nav = (props: SideNavProps) => {
                 transition={{ duration: 0.5 }}
               />
               <h2
-                className={`font-OpenSans text-[16px] text-center font-normal uppercase ${
+                className={`font-OpenSans text-[14px] text-center font-bold uppercase ${
                   scrolledState ? "text-[#000]" : `${getTextColor()}`
                 }`}
               >
