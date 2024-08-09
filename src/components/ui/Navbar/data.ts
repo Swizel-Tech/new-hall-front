@@ -108,7 +108,7 @@ export const navData: SideNavProps[] = [
         text: "Football Academy",
       },
       {
-        href: "/co-Curricular",
+        href: "/co-curriculum",
         text: "Co-Curricular Activities",
       },
     ],

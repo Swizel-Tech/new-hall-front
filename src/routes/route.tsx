@@ -15,6 +15,7 @@ import Football from "../pages/Football";
 import BoardingFacility from "../pages/BoardingFacility";
 import ContactUs from "../pages/ContactUs";
 import AcademicCalendar from "../pages/AcademicCalendar";
+import Cocurriculum from "../pages/Cocurriculum";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "contact_us",
         element: <ContactUs />,
+      },
+      {
+        path: "co-curriculum",
+        element: <Cocurriculum />,
       },
     ],
   },
