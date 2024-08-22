@@ -28,6 +28,7 @@ const College = () => {
       darkModeMediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
+
   const handleClick = () => {
     navigate("/home");
   };

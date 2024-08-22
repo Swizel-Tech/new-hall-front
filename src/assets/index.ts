@@ -31,8 +31,14 @@ import STADIUM from "./images/boarding/STADIUM.jpg";
 import boarding1 from "./images/boarding/boarding1.jpg";
 import boarding4 from "./images/boarding/boarding4.jpg";
 import boarding5 from "./images/boarding/boarding5.jpg";
+import career from "./images/staff/career-development-logo-1.png";
 
 import map from "./images/map.png";
+import avatar from "./images/avatar.png";
+
+// files
+import EducatorNewHallform from "./images/form/Amended-New-Hall-form.pdf";
+import NewHallform from "./images/form/Application-Form-For-Management-Staffs.pdf";
 
 export {
   logo,
@@ -67,4 +73,8 @@ export {
   boarding1,
   boarding4,
   boarding5,
+  career,
+  EducatorNewHallform,
+  NewHallform,
+  avatar,
 };

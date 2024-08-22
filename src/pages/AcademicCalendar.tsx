@@ -3,67 +3,12 @@ import { Event } from "../types/globa";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
-
-const events: Event[] = [
-  {
-    id: 1,
-    title: "First Day of School",
-    date: "2023-09-01",
-    description: "Welcome back to school!",
-  },
-  {
-    id: 2,
-    title: "Parent-Teacher Conference",
-    date: "2023-10-15",
-    description: "Discussing student progress.",
-  },
-  {
-    id: 3,
-    title: "Winter Break",
-    date: "2023-12-20",
-    description: "School closed for winter break.",
-  },
-  {
-    id: 4,
-    title: "First Day of School",
-    date: "2023-09-01",
-    description: "Welcome back to school!",
-  },
-  {
-    id: 5,
-    title: "Parent-Teacher Conference",
-    date: "2023-10-15",
-    description: "Discussing student progress.",
-  },
-  {
-    id: 6,
-    title: "Winter Break",
-    date: "2023-12-20",
-    description: "School closed for winter break.",
-  },
-  {
-    id: 7,
-    title: "First Day of School",
-    date: "2023-09-01",
-    description: "Welcome back to school!",
-  },
-  {
-    id: 8,
-    title: "Parent-Teacher Conference",
-    date: "2023-10-15",
-    description: "Discussing student progress.",
-  },
-  {
-    id: 9,
-    title: "Winter Break",
-    date: "2023-12-20",
-    description: "School closed for winter break.",
-  },
-];
+import { get_all_event } from "../utils/apiService";
 
 const AcademicCalendar = () => {
   let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [events, setEvents] = useState<Event[]>([]);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
@@ -85,6 +30,21 @@ const AcademicCalendar = () => {
   const handleClick = () => {
     navigate("/home");
   };
+
+  const getallEvent = async () => {
+    try {
+      const allEvent = await get_all_event();
+      console.log(allEvent.data);
+      setEvents(allEvent.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getallEvent();
+  }, []);
+
   return (
     <div className="mt-10 lg:mt-[12rem]">
       <div
@@ -109,9 +69,6 @@ const AcademicCalendar = () => {
         </p>
       </div>
       <div className="w-full">
-        {/* <h2 className="font-OpenSans px-4 lg:px-[8%] text-[26px] font-normal text-left leading-[44px]">
-          THEME FOR THE SESSION: TRANSFORMATIONAL LEADERSHIP
-        </h2> */}
         <Events events={events} eventsPerPage={2} />
       </div>
     </div>

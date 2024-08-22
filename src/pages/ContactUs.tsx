@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 import MapComponent from "../components/ui/Map/MapComponent";
 import { FiMapPin } from "react-icons/fi";
 import { FaSquarePhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { contact_us } from "../utils/apiService";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface NewsArticle {
   id: number;
@@ -21,10 +22,29 @@ export interface NewsArticle {
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
   let navigate = useNavigate();
-  let { id } = useParams<{ id: string }>();
-  const [newsData, setNewsData] = useState<NewsArticle | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMailSent, setisMailSent] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    user_phone: "",
+    message: "",
+  });
 
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const fadeVariants = {
+    hidden: { opacity: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
@@ -42,42 +62,32 @@ const ContactUs = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Mock fetch the article data based on the ID
-    const fetchedNewsData: NewsArticle = {
-      id: 1,
-      title: "School Science Fair",
-      date: "2024-07-21",
-      createdBy: "Rafael",
-      category: "Event",
-      description:
-        "Education is the process of facilitating learning. Knowledge, skills, values, beliefs, and habits of a group of people are transferred to other people, through storytelling, discussion, teaching, training, or research. Education frequently takes place under the guidance of educators, but learners may also educate themselves in a process called autodidactic learning. Any experience that has a formative effect on the",
-      images: [
-        "https://newhallschool.com.ng/wp-content/uploads/2023/12/david-700x480.jpeg",
-        "https://newhallschool.com.ng/wp-content/uploads/2023/12/david-700x480.jpeg",
-      ],
-    };
-
-    setNewsData(fetchedNewsData);
-    // if (id && Number(id) === fetchedNewsData.id) {
-    // }
-  }, [id]);
-
   const handleClick = () => {
     navigate("/home");
   };
-
-  if (!newsData) {
-    return <div>Loading...</div>;
-  }
 
   const boxVariants = {
     initial: { backgroundColor: "#3B82F6" },
     hover: { backgroundColor: "#202942" },
   };
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  const sendEmail = async (e: React.FormEvent) => {
+    try {
+      e.preventDefault();
+      await contact_us(formData);
+      setisMailSent(true);
+      setFormData({
+        user_name: "",
+        user_email: "",
+        user_phone: "",
+        message: "",
+      });
+      setTimeout(() => {
+        setisMailSent(false);
+      }, 3000);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -173,7 +183,7 @@ const ContactUs = () => {
               <h2 className="font-Raleway text-[26px] font-semibold text-center my-3 leading-[44px]">
                 Send Us a Message
               </h2>
-              <form ref={form} onSubmit={sendEmail}>
+              <form ref={form}>
                 <motion.input
                   initial={{ border: "none" }}
                   whileFocus={{
@@ -189,6 +199,8 @@ const ContactUs = () => {
                   type="text"
                   name="user_name"
                   placeholder="Full Name"
+                  value={formData.user_name}
+                  onChange={handleInputChange}
                 />
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
                   <motion.input
@@ -206,6 +218,8 @@ const ContactUs = () => {
                     type="email"
                     name="user_email"
                     placeholder="Email"
+                    value={formData.user_email}
+                    onChange={handleInputChange}
                   />
                   <motion.input
                     initial={{ border: "none" }}
@@ -222,6 +236,8 @@ const ContactUs = () => {
                     type="text"
                     name="user_phone"
                     placeholder="Phone"
+                    value={formData.user_phone}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <motion.textarea
@@ -241,6 +257,8 @@ const ContactUs = () => {
                   name="message"
                   cols={30}
                   rows={6}
+                  value={formData.message}
+                  onChange={handleInputChange}
                 ></motion.textarea>
                 <motion.button
                   className="text-[17px] font-semibold font-Manrop leading-[25.5px] text-white px-8 py-2 mt-4 lg:mt-[2rem]"
@@ -250,8 +268,31 @@ const ContactUs = () => {
                   transition={{ duration: 0.5 }}
                   value="Send"
                   type="submit"
+                  onClick={sendEmail}
                 >
-                  Submit
+                  <AnimatePresence mode="wait">
+                    {isMailSent ? (
+                      <motion.p
+                        key="sent"
+                        variants={fadeVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                      >
+                        Sent
+                      </motion.p>
+                    ) : (
+                      <motion.p
+                        key="submit"
+                        variants={fadeVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                      >
+                        Submit
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
                 </motion.button>
               </form>
             </div>

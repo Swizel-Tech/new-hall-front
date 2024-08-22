@@ -57,6 +57,10 @@ export const Navbar: React.FC = () => {
   const handlehomeNavigate = () => {
     navigate("/home");
   };
+
+  const handleCareerNavigate = () => {
+    navigate("/career-newhall-school");
+  };
   return (
     <nav
       className={`w-full hidden px-8 lg:block lg:fixed top-0 z-40 transition-all duration-500 ${
@@ -76,7 +80,8 @@ export const Navbar: React.FC = () => {
             >
               Calendar
             </button>
-            <h2
+            <button
+              onClick={handleCareerNavigate}
               className={`font-OpenSans text-[14px] leading-normal font-semibold border-[#000] px-4 py-1  border-l-[1.5px] ${
                 scrolled
                   ? "text-[#000] border-[#000]"
@@ -84,17 +89,19 @@ export const Navbar: React.FC = () => {
               }`}
             >
               Career @ Newhall
-            </h2>
+            </button>
           </div>
 
           <div className="w-[40%] flex justify-end items-center">
-            <h2
+            <a
+              href="https://webmail.newhallschool.com.ng/"
+              target="_blank"
               className={`font-OpenSans text-[14px] font-semibold leading-normal px-4 py-1 ${
                 scrolled ? "text-[#000]" : `${getTextColor()}`
               }`}
             >
               Webmail
-            </h2>
+            </a>
           </div>
         </div>
         <div

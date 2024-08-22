@@ -41,30 +41,14 @@ export const navData: SideNavProps[] = [
         href: "nursery",
         text: "Nursery",
       },
-      // {
-      //   href: "nursery-2",
-      //   text: "Nursery Two",
-      // },
       {
         href: "elementary",
         text: "Primary",
       },
-      // {
-      //   href: "junior-elementary-2",
-      //   text: "Upper Primary",
-      // },
       {
         href: "thecollege",
         text: "College",
       },
-      // {
-      //   href: "calendar",
-      //   text: "Calendar",
-      // },
-      // {
-      //   href: "boarding",
-      //   text: "Boarding School",
-      // },
     ],
     image: "",
   },
@@ -82,10 +66,6 @@ export const navData: SideNavProps[] = [
         href: "tuition-and-fees",
         text: "Tuition & Fees",
       },
-      // {
-      //   href: "child-requirement",
-      //   text: "Child Requirements",
-      // },
     ],
     image: "",
   },

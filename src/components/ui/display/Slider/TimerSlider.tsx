@@ -46,9 +46,9 @@ const TimerSlider: React.FC = () => {
   };
   // const slideHeight = "500px";
 
-  // const handleApplicationNavigate = () => {
-  //   navigate("/applying-to-new-hall");
-  // };
+  const handleNewsNavigate = () => {
+    navigate("/news");
+  };
 
   const handleCalennNavigate = () => {
     navigate("/calendar");
@@ -125,7 +125,7 @@ const TimerSlider: React.FC = () => {
               duration: 1,
               ease: "easeInOut",
             }}
-            // onClick={handleApplicationNavigate}
+            onClick={handleNewsNavigate}
           >
             News & Media
           </motion.button>

@@ -6,8 +6,6 @@ import { Nav } from "./Navs";
 import { navData } from "./data";
 import { FaSearch } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
-import ThemeButton from "../theme-switcher";
-
 export const MobileNav = () => {
   const [menuClicked, setmenuClicked] = useState(false);
 
@@ -22,7 +20,6 @@ export const MobileNav = () => {
           )}
         </button>
         <img src={logo} alt="logo" className="w-[200px]" />
-        <ThemeButton />
         <FaSearch fontSize={25} className="text-[#fff]" />
       </div>
       {menuClicked && (

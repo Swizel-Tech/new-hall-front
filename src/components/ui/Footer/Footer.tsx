@@ -83,14 +83,17 @@ export const Footer = () => {
             014530845, 014530846, 014530847, 08033395673
           </h2>
         </div>
-        <div className="w-full flex flex-col sm:flex-row justify-between items-center lg:w-[20%]">
+        <div className="w-full z-10 flex flex-col sm:flex-row justify-between items-center lg:w-[20%]">
           <MdEmail fontSize={30} className="text-[#fff]" />
-          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+          <a
+            href="mailto:info@newhallschool.com.ng"
+            className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center no-underline"
+          >
             info@newhallschool.com.ng
-          </h2>
+          </a>
         </div>
       </div>
-      <div className="flex mb-20 justify-start items-center w-full">
+      <div className="flex z-10 mb-20 justify-start items-center w-full">
         <button>
           <FaLinkedin fontSize={30} className="text-[#fff]" />
         </button>

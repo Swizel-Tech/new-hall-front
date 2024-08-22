@@ -110,8 +110,8 @@ const Home = () => {
   };
 
   const boxVariants = {
-    initial: { y: 0, backgroundColor: "#F8E6E6" },
-    hover: { y: -10, backgroundColor: "#BC0E0E" },
+    initial: { y: 0, backgroundColor: "#3D83F6" },
+    hover: { y: -10, backgroundColor: "#5c93ec" },
   };
 
   const scrollrrLeft = () => {
@@ -138,8 +138,7 @@ const Home = () => {
   const images = [slider1, slider2, slider3, slider4];
 
   const handleViewNewsClick = () => {
-    // Handle view news feed button click
-    console.log("View News Feed button clicked");
+    navigate("/news");
   };
 
   // const sliderRef = useRef<HTMLDivElement>(null);
@@ -204,7 +203,7 @@ const Home = () => {
               own both home and abroad.
             </p>
             <motion.button
-              className="text-[14px] w-[50%] lg:w-[15%] mt-7 flex uppercase justify-center items-center h-[50px] text-[#3D83F6] font-normal font-OpenSans text-center hover:text-[#fff]"
+              className="text-[14px] w-[50%] lg:w-[15%] mt-7 flex uppercase justify-center items-center h-[50px] text-[#fff] font-normal font-OpenSans text-center hover:text-[#fff]"
               initial="initial"
               whileHover="hover"
               variants={boxVariants}

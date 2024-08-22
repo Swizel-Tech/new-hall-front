@@ -16,6 +16,9 @@ import BoardingFacility from "../pages/BoardingFacility";
 import ContactUs from "../pages/ContactUs";
 import AcademicCalendar from "../pages/AcademicCalendar";
 import Cocurriculum from "../pages/Cocurriculum";
+import Career from "../pages/Career";
+import News from "../pages/News";
+import Post from "../pages/Post";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +88,18 @@ const router = createBrowserRouter([
       {
         path: "co-curriculum",
         element: <Cocurriculum />,
+      },
+      {
+        path: "career-newhall-school",
+        element: <Career />,
+      },
+      {
+        path: "news",
+        element: <News />,
+      },
+      {
+        path: "post/:blogId",
+        element: <Post />,
       },
     ],
   },

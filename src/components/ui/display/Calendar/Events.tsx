@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Event } from "../../../../types/globa";
 import { format, parseISO } from "date-fns";
-import { FaRegCalendarPlus } from "react-icons/fa6";
+import { FaFilePdf, FaRegCalendarPlus } from "react-icons/fa6";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { get_pdf, download_calendar } from "../../../../utils/apiService";
+import { saveAs } from "file-saver";
 
 interface CalendarProps {
   events: Event[];
@@ -14,6 +16,7 @@ interface CalendarProps {
 const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedMonth, setSelectedMonth] = useState("");
+  const [pdfUrl, setPdfUrl] = useState("");
 
   const groupedEvents = groupEventsByMonth(events);
   const months = Object.keys(groupedEvents);
@@ -37,11 +40,28 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
       setCurrentPage(currentPage + 1);
     }
   };
+  useEffect(() => {
+    const calendar_pdf = async () => {
+      try {
+        const res = await get_pdf("Calendar.pdf");
+        if (res.message === "File exists") {
+          setPdfUrl(res.fileName);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    calendar_pdf();
+  }, []);
+
+  useEffect(() => {
+    console.log(events);
+  }, []);
 
   const addToCalendar = (event: Event) => {
-    const startDate = format(parseISO(event.date), "yyyyMMdd'T'HHmmss'Z'");
+    const startDate = format(parseISO(event.startDate), "yyyyMMdd'T'HHmmss'Z'");
     const endDate = format(
-      new Date(parseISO(event.date).getTime() + 60 * 60 * 1000),
+      new Date(parseISO(event.startDate).getTime() + 60 * 60 * 1000),
       "yyyyMMdd'T'HHmmss'Z'"
     );
     const title = encodeURIComponent(event.title);
@@ -52,6 +72,16 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
     const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${description}`;
 
     window.open(googleCalendarUrl, "_blank");
+  };
+
+  const downloadpdf = async () => {
+    try {
+      const fileName = "Calendar.pdf";
+      const blob = await download_calendar(fileName);
+      saveAs(blob, fileName);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -84,12 +114,12 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
                   {(selectedMonth ? filteredEvents : groupedEvents[month]).map(
                     (event) => (
                       <li
-                        key={event.id}
+                        key={event._id}
                         className="py-[20px] w-full flex justify-start items-center border-b-4 border-[#ddd]"
                       >
                         <div className="w-[20%] lg:w-[10%] mr-4 p-2 bg-[#898989]">
                           <p className="text-[14px] text-[#fff] font-semibold font-OpenSans">
-                            {format(parseISO(event.date), "MMM do, yyyy")}
+                            {format(parseISO(event.startDate), "MMM do, yyyy")}
                           </p>
                         </div>
                         <div className="w-[70%] lg:w-[90%] flex justify-between items-center">
@@ -105,7 +135,7 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
                           </div>
                           <div className="flex items-center">
                             <Tooltip
-                              id={`tooltip-${event.id}`}
+                              id={`tooltip-${event._id}`}
                               className="border-[1px] border-gray-700 text-white rounded"
                             />
                             <button
@@ -113,7 +143,7 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
                               className="rounded mr-2"
                               data-tooltip-content="Add to Calendar"
                               data-tooltip-place="left"
-                              data-tooltip-id={`tooltip-${event.id}`}
+                              data-tooltip-id={`tooltip-${event._id}`}
                             >
                               <FaRegCalendarPlus
                                 fontSize={30}
@@ -129,6 +159,23 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
               </div>
             </div>
           ))}
+          <div className="flex justify-end items-end px-3 ">
+            {pdfUrl ? (
+              <>
+                <FaFilePdf fontSize={70} className="text-red-600" />
+                <button
+                  className="font-semibold text-blue-500 text-left w-full text-[16px] font-DMSans ml-3"
+                  onClick={downloadpdf}
+                >
+                  Download Calendar
+                </button>
+              </>
+            ) : (
+              <b className="font-bold text-left w-full text-[20px] font-DMSans my-4">
+                No file Uploaded
+              </b>
+            )}
+          </div>
         </div>
       </div>
 
@@ -158,7 +205,7 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
 
 const groupEventsByMonth = (events: Event[]) => {
   return events.reduce((acc, event) => {
-    const eventDate = parseISO(event.date);
+    const eventDate = parseISO(event.startDate);
     const month = format(eventDate, "MMM yyyy");
 
     if (!acc[month]) {

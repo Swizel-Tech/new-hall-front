@@ -23,6 +23,10 @@ export const Nav = (props: SideNavProps) => {
   const [clicked, setClicked] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useEffect(() => {
+    console.log(image);
+  }, []);
+
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
@@ -145,7 +149,7 @@ export const Nav = (props: SideNavProps) => {
           className="relative py-4 lg:py-0 w-full lg:w-auto flex items-center"
         >
           {image && (
-            <div className="absolute bottom-[-10px] w-[200px] left-[-100px] flex flex-col justify-center items-center">
+            <div className="absolute hidden bottom-[-10px] w-[200px] left-[-100px] lg:flex flex-col justify-center items-center">
               <motion.img
                 src={image}
                 alt=""
