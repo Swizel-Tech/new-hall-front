@@ -11,7 +11,6 @@ const Nursery = () => {
   const [isNurserytwo, setIsNurserytwo] = useState(false);
   const [isNurseryone, setIsNurseryone] = useState(false);
 
-  // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: dark)"
