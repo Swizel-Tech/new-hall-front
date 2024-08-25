@@ -40,6 +40,16 @@ import avatar from "./images/avatar.png";
 import EducatorNewHallform from "./images/form/Amended-New-Hall-form.pdf";
 import NewHallform from "./images/form/Application-Form-For-Management-Staffs.pdf";
 
+// About Imports
+import happypyjamas from "./images/about/happypyjamas.jpg";
+import playground from "./images/about/playground.jpg";
+import playingstudent from "./images/about/studentplayingmusic.jpg";
+
+// preschool
+import DSC_5277 from "./images/preschool/DSC_5277.jpg";
+import DSC_5272 from "./images/preschool/DSC_6472.jpg";
+import DSC_5273 from "./images/preschool/LEG_6972.jpg";
+
 export {
   logo,
   logo2,
@@ -77,4 +87,14 @@ export {
   EducatorNewHallform,
   NewHallform,
   avatar,
+
+  // about
+  happypyjamas,
+  playground,
+  playingstudent,
+
+  // preschool
+  DSC_5277,
+  DSC_5272,
+  DSC_5273,
 };

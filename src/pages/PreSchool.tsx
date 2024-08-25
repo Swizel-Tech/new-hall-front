@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { slider1, slider2, slider3 } from "../assets";
+import { DSC_5277, DSC_5272, DSC_5273 } from "../assets";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
 // import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
@@ -154,20 +154,22 @@ const PreSchool = () => {
             ))}
           </div> */}
           <div className="w-full">
-            <Slider {...settings}>
-              <div className="w-full">
-                <img src={slider1} alt="facility1" className="w-[80%]" />
-              </div>
-              {/* <div className="w-full">
-                <img src={DSC_6500} alt="facility1" className="w-[80%]" />
-              </div> */}
-              <div className="w-full">
-                <img src={slider2} alt="facility1" className="w-[80%]" />
-              </div>
-              <div className="w-full">
-                <img src={slider3} alt="facility1" className="w-[80%]" />
-              </div>
-            </Slider>
+            <div className="w-full lg:w-[50%]">
+              <Slider {...settings}>
+                <div className="w-full relative">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+                  <img src={DSC_5277} alt="facility1" className="w-full" />
+                </div>
+                <div className="w-full relative">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+                  <img src={DSC_5272} alt="facility1" className="w-full" />
+                </div>
+                <div className="w-full relative">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+                  <img src={DSC_5273} alt="facility1" className="w-full" />
+                </div>
+              </Slider>
+            </div>
             <p className="font-OpenSans text-[16px] my-4 font-normal leading-[25.6px] text-justify">
               Montessori curriculum is used at this early stage to help students
               learn independency, practical and cultural skills.

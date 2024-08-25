@@ -1,4 +1,4 @@
-import { map } from "../../../assets";
+import { AISEN, british, map } from "../../../assets";
 import {
   FaLinkedin,
   FaSquareFacebook,
@@ -106,6 +106,17 @@ export const Footer = () => {
         <button>
           <FaSquareXTwitter fontSize={30} className="text-[#fff]" />
         </button>
+      </div>
+      <div className="z-10 mb-20 w-full flex flex-col sm:flex-row justify-between items-start">
+        <div className=" w-full flex flex-col justify-start items-start">
+          <h2 className="font-Raleway mb-8 text-[26px] lg:text-[36px] font-normal text-left leading-[44px]">
+            Membership/Partnership
+          </h2>
+          <div className="flex justify-start overflow-x-auto items-center gap-4">
+            <img src={british} alt="british" className=" w-[200px] p-3" />
+            <img src={AISEN} alt="AISEN" className="w-[200px] p-3" />
+          </div>
+        </div>
       </div>
       <div className="absolute bottom-0 px-6 py-5 bg-black opacity-70 w-full">
         <div className="w-full lg:w-[50%] flex justify-between items-center">

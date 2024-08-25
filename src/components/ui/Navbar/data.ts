@@ -12,14 +12,6 @@ export const navData: SideNavProps[] = [
         href: "aboutus",
         text: "About the School",
       },
-      {
-        href: "management-team",
-        text: "Management Team",
-      },
-      {
-        href: "aims-and-objectives",
-        text: "Aims and Objective",
-      },
     ],
     image: "",
   },

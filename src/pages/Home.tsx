@@ -56,8 +56,6 @@ const newsItems = [
 const Home = () => {
   let navigate = useNavigate();
   const controlsLeft = useAnimation();
-  const [percentage] = useState(70);
-  const [teachers] = useState(90);
   const refbottomn = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -185,21 +183,21 @@ const Home = () => {
                 Introduction
               </h2>
             </div>
-            <h2 className="font-OpenSans  mt-10 font-normal text-[44px] leading-[61px] w-full lg:w-[40%] text-[#000]">
+            <h2 className={`font-OpenSans  mt-10 font-normal text-[44px] leading-[61px] w-full lg:w-[40%] ${isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"}`}>
               Welcome to
             </h2>
             <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full lg:w-[60%] text-[#3D83F6]">
               New Hall International Schools
             </h2>
-            <p className="font-OpenSans font-normal w-full lg:w-[80%] text-[18px] text-left text-[#3B3B3B]">
-              New Hall International runs academic programmes in Pre -Nursery,
+            <p className={`font-OpenSans font-normal w-full lg:w-[80%] text-[18px] text-left ${isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"}`}>
+              New Hall International runs academic programmes in Pre-Nursery,
               Nursery, Primary and Secondary education as approved by Lagos
               State Ministry of Education and in line with International Schools
               Standards. Emphasis is on National and British curricula. Using
               their professional expertise, the school management and teaching
-              staff delivers a robust scheme of work in various subjects based
+              staff deliver a robust scheme of work in various subjects based
               on both curricula. The results are strong and very vast learners
-              who thrive above and ahead of their contemporaries, can hold their
+              who thrive above and ahead of their contemporaries and can hold their
               own both home and abroad.
             </p>
             <motion.button
@@ -291,48 +289,64 @@ const Home = () => {
           <div className="flex justify-start items-center gap-3">
             <div className="w-[40px] h-[1px] bg-[#fff]"></div>
             <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#fff]">
-              Statistics
+            Achievements
             </h2>
           </div>
           <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full text-[#fff]">
             Celebrating Success
           </h2>
         </div>
-        <div className="w-full flex justify-evenly items-center lg:w-[80%]">
-          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
-            <CircularProgressBar percentage={teachers} text={`${teachers}%`} />
-            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-              Certified Teachers
+        <div className="w-full h-[300px]">
+        <Slider {...settings}>
+          <div className="m-0 h-full p-0">
+            <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            AISEN Spelling Bee Competition (Junior Category State Level) March 2024 - 1st Position
             </h2>
           </div>
-          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
-            <CircularProgressBar
-              percentage={percentage}
-              text={`${percentage}%`}
-            />
-            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-              Students Enrolled
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {90} text="90%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            AISEN Mathematics Competition 2023/2024 September 2023 – 2nd Position
             </h2>
           </div>
-          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
-            <CircularProgressBar
-              percentage={percentage}
-              text={`${percentage}%`}
-            />
-            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-              Passing to Universities
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1 bronze
             </h2>
           </div>
-          <div className="m-0 p-0 cursor-pointer h-full flex flex-col justify-center items-center">
-            <CircularProgressBar
-              percentage={percentage}
-              text={`${percentage}%`}
-            />
-            <h2 className="font-OpenSans font-normal text-[18px] lg:text-[24px] text-[#fff]">
-              Satisfied Parents
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {90} text="90%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            AISEN Mathematics Competition 2022/2023 session - 15th October, 2022 – 2nd Position
             </h2>
           </div>
-          <motion.div></motion.div>
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            National Spelling Bee Competition (Junior Category State Level) June 2022- 1st Position
+            </h2>
+          </div>
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022 – 1st Position
+            </h2>
+          </div>
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022 – 1st position
+            </h2>
+          </div>
+          <div className="m-0  h-full p-0">
+          <CircularProgressBar percentage = {100} text="100%"/>
+            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+            African Best in class School of the Year Award 2022 - April, 2022 
+            </h2>
+          </div>
+        </Slider>
         </div>
       </motion.div>
       <div>

@@ -49,7 +49,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       {items.map((item, index) => (
         <AccordionItem
           key={index}

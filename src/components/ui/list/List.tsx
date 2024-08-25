@@ -12,11 +12,11 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({ items }) => {
   return (
-    <ul className="mt-8">
+    <ul className="mt-6 w-full">
       {items.map((item) => (
         <li
           key={item.id}
-          className="h-full py-2 border-t-[1px] border-b-[1px] border-[#DDD] flex gap-6 justify-start items-center"
+          className="h-full w-full py-2 flex gap-6 justify-start items-center"
         >
           <FaCheck />
           <p>{item.description}</p>

@@ -49,7 +49,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
               Events
             </h2>
           </div>
-          <h2 className="font-OpenSans font-normal text-[44px] leading-[61px] w-full text-[#000]">
+          <h2 className={`font-OpenSans font-normal text-[44px] leading-[61px] w-full ${isDarkMode ? "text-[#fff]": "text-[#3B3B3B]"}`}>
             Calendar
           </h2>
         </div>
