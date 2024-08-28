@@ -85,7 +85,7 @@ export const Nav = (props: SideNavProps) => {
             )}
             {clicked && (
               <motion.div
-                className="z-20 top-[70px] py-2 absolute left-0 flex flex-col justify-center items-center bg-transparent w-[380px]"
+                className="z-20 top-[70px] py-2 absolute left-[-100px] flex flex-col justify-center items-center bg-transparent w-[300px]"
                 initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "10%", opacity: 0 }}
