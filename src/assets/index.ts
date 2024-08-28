@@ -50,6 +50,16 @@ import DSC_5277 from "./images/preschool/DSC_5277.jpg";
 import DSC_5272 from "./images/preschool/DSC_6472.jpg";
 import DSC_5273 from "./images/preschool/LEG_6972.jpg";
 
+// Nursery
+import DSC_6564 from "./images/nursery/DSC_6564.jpg";
+import LEG_0246 from "./images/nursery/LEG_0246.jpg";
+import LEG_6871 from "./images/nursery/LEG_6871.jpg";
+
+// primary
+import primary1 from "./images/primary/Primarystudents1.jpg";
+import primary2 from "./images/primary/Primarystudents2.jpg";
+import primary3 from "./images/primary/Primarystudents3.jpg";
+
 export {
   logo,
   logo2,
@@ -97,4 +107,14 @@ export {
   DSC_5277,
   DSC_5272,
   DSC_5273,
+
+  // nursery
+  DSC_6564,
+  LEG_0246,
+  LEG_6871,
+
+  // nursery
+  primary1,
+  primary2,
+  primary3,
 };

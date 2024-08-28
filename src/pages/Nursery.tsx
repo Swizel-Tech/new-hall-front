@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { slider1 } from "../assets";
+import { DSC_6564, LEG_0246, LEG_6871 } from "../assets";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -66,28 +66,28 @@ const Nursery = () => {
             Nursery
           </p>
         </div>
-        <div className="px-4 lg:pb-[3rem] lg:px-[8%] w-full lg:w-[50%]">
+        <div className="px-4 lg:px-[8%] w-full lg:w-[50%]">
           <Slider {...settings}>
-            <div className="relative m-0 p-0 w-[30$]">
+            <div className="relative m-0 p-0 w-full">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider1}
+                src={DSC_6564}
                 alt="Slide 1"
                 className="w-full object-cover"
               />
             </div>
-            <div className="relative m-0 p-0 w-[30$]">
+            <div className="relative m-0 p-0 w-full">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider1}
+                src={LEG_0246}
                 alt="Slide 2"
                 className="w-full object-cover"
               />
             </div>
-            <div className="relative m-0 p-0 w-[30$]">
+            <div className="relative m-0 p-0 w-full">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
-                src={slider1}
+                src={LEG_6871}
                 alt="Slide 3"
                 className="w-full object-cover"
               />

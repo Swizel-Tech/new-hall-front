@@ -47,7 +47,7 @@ const College = () => {
     },
     {
       SN: 4,
-      Description: " CREATIVE AND CULTURAL ARTS",
+      Description: "CREATIVE AND CULTURAL ARTS (MUSIC)",
     },
     {
       SN: 5,
@@ -96,7 +96,7 @@ const College = () => {
     },
     {
       SN: 2,
-      Description: "DATA PROCESSING",
+      Description: " DATA PROCESSING/ICT",
     },
     {
       SN: 3,
@@ -116,13 +116,13 @@ const College = () => {
     },
     {
       SN: 7,
-      Description: "ICT",
+      Description: "Government",
     },
   ];
   const ssssecondItem = [
     {
       SN: 8,
-      Description: "COMMERCE",
+      Description: "Commerce/Business Studies",
     },
     {
       SN: 9,
@@ -134,11 +134,11 @@ const College = () => {
     },
     {
       SN: 11,
-      Description: "SOCIOLOGY",
+      Description: "Government/Sociology",
     },
     {
       SN: 12,
-      Description: "CRS",
+      Description: "Christian Religious Studies/ Islamic Religious Studies",
     },
     {
       SN: 13,
@@ -151,10 +151,6 @@ const College = () => {
     {
       SN: 15,
       Description: "CIVIC EDUCATION",
-    },
-    {
-      SN: 16,
-      Description: "PHE",
     },
   ];
 
@@ -177,7 +173,7 @@ const College = () => {
     },
     {
       SN: 21,
-      Description: "ACCOUNTS ",
+      Description: "Financial Accounting",
     },
     {
       SN: 22,
@@ -186,6 +182,10 @@ const College = () => {
     {
       SN: 23,
       Description: "TECHNICAL DRAWING ",
+    },
+    {
+      SN: 24,
+      Description: "PHE",
     },
   ];
 
@@ -214,13 +214,13 @@ const College = () => {
 
   const getClassNames = () => {
     if (isJssSubject && isSssSubject === false) {
-      return "bg-[#000] text-[#fff]";
+      return "bg-transparent text-[#fff]";
     }
     return "";
   };
   const getSSSClassNames = () => {
     if (isSssSubject && isJssSubject === false) {
-      return "bg-[#000] text-[#fff]";
+      return "bg-transparent text-[#fff]";
     }
     return "";
   };
@@ -278,25 +278,31 @@ const College = () => {
                   onClick={handleSetJSS}
                   className={`h-[50px] w-full text-[16px] font-OpenSans font-normal text-left border-b-[1px] hover:text-blue-500 px-3 ${getClassNames()}`}
                 >
-                  Subjects Offered (JSS)
+                  Subjects Offered - JSS/Year 7-9
                 </button>
                 <button
                   onClick={handleSetSSS}
                   className={`h-[50px] w-full text-[16px] font-OpenSans font-normal text-left border-b-[1px] hover:text-blue-500 px-3 ${getSSSClassNames()}`}
                 >
-                  Subjects Offered (SSS)
+                  Subjects Offered - SSS/Year 10-12
                 </button>
               </motion.div>
             )}
           </div>
           <div className="w-full lg:w-[75%]">
             <div className="w-full mb-6">
-              <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-justify">
+              <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-justify">
                 At Newhall, we raise role models and we provide a range of
                 opportunities that will enable our students develop their
                 talents and interests. We lay emphasis on sound discipline and
                 we believe in the total training of the child which affects
                 spirit, soul and body.
+              </p>
+              <p className="font-OpenSans mt-4 text-[16px] font-semibold leading-[25.6px] text-justify">
+                In our Year 9 which is JSS3, our students write two exams;
+                Checkpoint (British Examination) and BECE (Nigerian Examination)
+                In our Year 12 which is SSS3, our students write two exams;
+                IGCSE (British Examination) and WAEC (Nigerian Examination)
               </p>
             </div>
             <div className="w-full flex sm:flex-row justify-between items-start flex-col gap-6">
@@ -304,7 +310,7 @@ const College = () => {
                 <h2 className="font-OpenSans mb-8 text-[36px] font-normal text-left leading-[44px]">
                   Principal's Welcome
                 </h2>
-                <p className="font-Lato mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                <p className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
                   We are proud of our school where parental involvement is
                   cherished because we believe that the education of our
                   children is a partnership between the home and the school. We
@@ -312,10 +318,10 @@ const College = () => {
                   fulfil their potential and be the best they can.
                 </p>
                 <div className="mt-4 lg:mt-[10%]">
-                  <span className="font-Lato text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
+                  <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
                     Adedeji F.A (Mr),
                   </span>
-                  <span className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">
+                  <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
                     College Principal
                   </span>
                 </div>
