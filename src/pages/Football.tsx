@@ -247,7 +247,7 @@ const Football = () => {
                   combines the latest football and educational philosophies with
                   first-class facilities to make football fun. We develop our
                   players in a positive and supportive environment that focuses
-                  in encouraging players within the parameters of an overall
+                  on encouraging players within the parameters of an overall
                   academic ethos and sports philosophy.
                 </p>
               </div>

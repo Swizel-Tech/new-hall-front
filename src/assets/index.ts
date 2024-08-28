@@ -39,6 +39,7 @@ import avatar from "./images/avatar.png";
 // files
 import EducatorNewHallform from "./images/form/Amended-New-Hall-form.pdf";
 import NewHallform from "./images/form/Application-Form-For-Management-Staffs.pdf";
+import RegistrationForm from "./images/form/RegistrationForm.pdf";
 
 // About Imports
 import happypyjamas from "./images/about/happypyjamas.jpg";
@@ -59,6 +60,15 @@ import LEG_6871 from "./images/nursery/LEG_6871.jpg";
 import primary1 from "./images/primary/Primarystudents1.jpg";
 import primary2 from "./images/primary/Primarystudents2.jpg";
 import primary3 from "./images/primary/Primarystudents3.jpg";
+
+// college
+import college from "./images/college/college.jpg";
+import college2 from "./images/college/college2.jpg";
+import college3 from "./images/college/college3.jpg";
+import college4 from "./images/college/college4.jpg";
+import college5 from "./images/college/college5.jpg";
+import college6 from "./images/college/college6.jpg";
+import college7 from "./images/college/college7.jpg";
 
 export {
   logo,
@@ -94,7 +104,10 @@ export {
   boarding4,
   boarding5,
   career,
+
+  //
   EducatorNewHallform,
+  RegistrationForm,
   NewHallform,
   avatar,
 
@@ -117,4 +130,13 @@ export {
   primary1,
   primary2,
   primary3,
+
+  // college
+  college,
+  college2,
+  college3,
+  college4,
+  college5,
+  college6,
+  college7,
 };

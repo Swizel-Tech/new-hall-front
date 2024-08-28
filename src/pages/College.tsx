@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight, FaMinus, FaPlus } from "react-icons/fa";
-import { slider2 } from "../assets";
+import {
+  college,
+  college2,
+  college3,
+  college4,
+  college5,
+  college6,
+  college7,
+} from "../assets";
 import { AnimatePresence, motion } from "framer-motion";
 import { BaseTable } from "../components/table/Table";
+import Slider from "react-slick";
 
 const College = () => {
   let navigate = useNavigate();
@@ -225,6 +234,17 @@ const College = () => {
     return "";
   };
 
+  var settings = {
+    dots: false,
+    speed: 1500,
+    fade: true,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
     <div className="mt-10 lg:mt-[12rem]">
       <div className="">
@@ -290,7 +310,67 @@ const College = () => {
             )}
           </div>
           <div className="w-full lg:w-[75%]">
-            <div className="w-full mb-6">
+            <div className="w-full lg:w-[50%]">
+              <Slider {...settings}>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college}
+                    alt="Slide 1"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college2}
+                    alt="Slide 2"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college3}
+                    alt="Slide 3"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college4}
+                    alt="Slide 1"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college5}
+                    alt="Slide 2"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college6}
+                    alt="Slide 3"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="relative m-0 p-0 w-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
+                  <img
+                    src={college7}
+                    alt="Slide 3"
+                    className="w-full object-cover"
+                  />
+                </div>
+              </Slider>
+            </div>
+            <div className="w-full my-6">
               <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-justify">
                 At Newhall, we raise role models and we provide a range of
                 opportunities that will enable our students develop their
@@ -304,31 +384,6 @@ const College = () => {
                 In our Year 12 which is SSS3, our students write two exams;
                 IGCSE (British Examination) and WAEC (Nigerian Examination)
               </p>
-            </div>
-            <div className="w-full flex sm:flex-row justify-between items-start flex-col gap-6">
-              <div className="flex flex-col w-full lg:w-[50%] justify-between items-start">
-                <h2 className="font-OpenSans mb-8 text-[36px] font-normal text-left leading-[44px]">
-                  Principal's Welcome
-                </h2>
-                <p className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                  We are proud of our school where parental involvement is
-                  cherished because we believe that the education of our
-                  children is a partnership between the home and the school. We
-                  invite you to join us today to raise a generation that will
-                  fulfil their potential and be the best they can.
-                </p>
-                <div className="mt-4 lg:mt-[10%]">
-                  <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
-                    Adedeji F.A (Mr),
-                  </span>
-                  <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                    College Principal
-                  </span>
-                </div>
-              </div>
-              <div className="w-full lg:w-[50%]">
-                <img src={slider2} alt="secondary" />
-              </div>
             </div>
           </div>
         </div>

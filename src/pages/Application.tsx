@@ -1,7 +1,7 @@
 // import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { slider3, slider4 } from "../assets";
+import { slider3, slider4, RegistrationForm } from "../assets";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
@@ -12,7 +12,6 @@ const autoplaySpeed = 3000;
 const Application = () => {
   let navigate = useNavigate();
   const [infoactive, setInfoactive] = useState(false);
-  const [parentactive, setParentactive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
@@ -151,7 +150,7 @@ const Application = () => {
                   classroom between 10.00am to 4.00pm.
                 </p>
                 <div className="w-full flex flex-col lg:flex-row justify-between items-start mt-8 gap-4">
-                  <div className="w-full lg:w-[50%]">
+                  <div className="w-full">
                     <button
                       className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                       onClick={() => setInfoactive(!infoactive)}
@@ -159,7 +158,7 @@ const Application = () => {
                       <h2
                         className={`text-[16px] font-OpenSans font-normal w-full text-left`}
                       >
-                        Information Sessions:
+                        Information Sessions
                       </h2>
                       {infoactive ? (
                         <GoChevronUp fontSize={25} />
@@ -197,7 +196,7 @@ const Application = () => {
                           applicants will have the opportunity to visit during
                           the admissions process (see details below).
                         </p>
-                        <h2 className="font-OpenSans my-4 text-[26px] font-normal text-left leading-[44px]">
+                        <h2 className="font-OpenSans my-4 text-[16px] font-semibold text-left leading-[44px]">
                           SUBMIT AN APPLICATION
                         </h2>
                         <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
@@ -208,15 +207,22 @@ const Application = () => {
                           January 25 of every year; applications received after
                           that date will be considered if space is available, or
                           for our waiting list. Our application form is
-                          available in our admissions packet or download here. A
-                          application fee is due with the application form
+                          available in our admissions packet or{" "}
+                          <a
+                            href={RegistrationForm}
+                            download="RegistrationForm.pdf"
+                            className="text-[#1EB3FE]"
+                          >
+                            (download here)
+                          </a>{" "}
+                          . A application fee is due with the application form
                           (cheques payable to New Hall School). As soon as we
                           receive the application, we will notify you about
                           scheduling the rest of the process. The sooner the
                           application comes in, the sooner we can schedule your
                           visits.
                         </p>
-                        <h2 className="font-OpenSans  my-4  text-[26px] font-normal text-left leading-[44px]">
+                        <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
                           STUDENT VISITS
                         </h2>
                         <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
@@ -227,7 +233,7 @@ const Application = () => {
                           New Hall is the appropriate environment for your
                           child.
                         </p>
-                        <h2 className="font-OpenSans  my-4  text-[26px] font-normal text-left leading-[44px]">
+                        <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
                           ENROLLMENT
                         </h2>
                         <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
@@ -246,15 +252,15 @@ const Application = () => {
                       </motion.div>
                     )}
                   </div>
-                  <div className="w-full lg:w-[50%]">
+                  {/* <div className="w-full lg:w-[50%]">
                     <button
                       className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                       onClick={() => setParentactive(!parentactive)}
                     >
                       <h2
-                        className={`text-[16px] font-OpenSans font-normal w-full text-left text-[#000]`}
+                        className={`text-[16px] font-OpenSans font-normal w-full text-left`}
                       >
-                        PARENT
+                        Parents
                       </h2>
                       {parentactive ? (
                         <GoChevronUp fontSize={25} />
@@ -328,7 +334,7 @@ const Application = () => {
                         </p>
                       </motion.div>
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
