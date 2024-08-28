@@ -45,6 +45,7 @@ import RegistrationForm from "./images/form/RegistrationForm.pdf";
 import happypyjamas from "./images/about/happypyjamas.jpg";
 import playground from "./images/about/playground.jpg";
 import playingstudent from "./images/about/studentplayingmusic.jpg";
+import dronshot from "./images/about/dronshot.mp4";
 
 // preschool
 import DSC_5277 from "./images/preschool/DSC_5277.jpg";
@@ -55,6 +56,7 @@ import DSC_5273 from "./images/preschool/LEG_6972.jpg";
 import DSC_6564 from "./images/nursery/DSC_6564.jpg";
 import LEG_0246 from "./images/nursery/LEG_0246.jpg";
 import LEG_6871 from "./images/nursery/LEG_6871.jpg";
+import DSC_4672 from "./images/nursery/DSC_4672.jpg";
 
 // primary
 import primary1 from "./images/primary/Primarystudents1.jpg";
@@ -115,6 +117,7 @@ export {
   happypyjamas,
   playground,
   playingstudent,
+  dronshot,
 
   // preschool
   DSC_5277,
@@ -125,6 +128,7 @@ export {
   DSC_6564,
   LEG_0246,
   LEG_6871,
+  DSC_4672,
 
   // nursery
   primary1,

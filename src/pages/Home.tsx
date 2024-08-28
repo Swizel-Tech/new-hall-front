@@ -9,15 +9,17 @@ import {
   homeslider2,
   homeslider3,
   homeslider4,
+  dronshot,
 } from "../assets";
 import Slider from "react-slick";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { CircularProgressBar } from "../components/ui/display/accordion/CircularProgressBar";
 import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 import { useNavigate } from "react-router-dom";
+import { MdCancel } from "react-icons/md";
 
 const autoplaySpeed = 3000;
 const newsItems = [
@@ -57,7 +59,9 @@ const Home = () => {
   let navigate = useNavigate();
   const controlsLeft = useAnimation();
   const refbottomn = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isvideoPlay, setIsvideoPlay] = useState(true);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
@@ -159,8 +163,27 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (isvideoPlay) {
+      // Disable scrolling
+      document.body.classList.add("no-scroll");
+    } else {
+      // Re-enable scrolling
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Clean up the class when the component unmounts
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isvideoPlay]);
+
   const handleNavigate = () => {
     navigate("/aboutus");
+  };
+
+  const handleVideoEnd = () => {
+    setIsvideoPlay(false);
   };
 
   return (
@@ -183,21 +206,29 @@ const Home = () => {
                 Introduction
               </h2>
             </div>
-            <h2 className={`font-OpenSans  mt-10 font-normal text-[44px] leading-[61px] w-full lg:w-[40%] ${isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"}`}>
+            <h2
+              className={`font-OpenSans  mt-10 font-normal text-[44px] leading-[61px] w-full lg:w-[40%] ${
+                isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+              }`}
+            >
               Welcome to
             </h2>
             <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full lg:w-[60%] text-[#3D83F6]">
               New Hall International Schools
             </h2>
-            <p className={`font-OpenSans font-normal w-full lg:w-[80%] text-[18px] text-left ${isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"}`}>
+            <p
+              className={`font-OpenSans font-normal w-full lg:w-[80%] text-[18px] text-left ${
+                isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+              }`}
+            >
               New Hall International runs academic programmes in Pre-Nursery,
               Nursery, Primary and Secondary education as approved by Lagos
               State Ministry of Education and in line with International Schools
               Standards. Emphasis is on National and British curricula. Using
               their professional expertise, the school management and teaching
-              staff deliver a robust scheme of work in various subjects based
-              on both curricula. The results are strong and very vast learners
-              who thrive above and ahead of their contemporaries and can hold their
+              staff deliver a robust scheme of work in various subjects based on
+              both curricula. The results are strong and very vast learners who
+              thrive above and ahead of their contemporaries and can hold their
               own both home and abroad.
             </p>
             <motion.button
@@ -285,73 +316,116 @@ const Home = () => {
           className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${slider4})` }}
         ></div>
-        <div className="absolute top-0 left-8 mt-10 z-10">
+        <div className="lg:absolute lg:top-0 lg:left-8 mt-10 z-10">
           <div className="flex justify-start items-center gap-3">
             <div className="w-[40px] h-[1px] bg-[#fff]"></div>
             <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#fff]">
-            Achievements
+              Achievements
             </h2>
           </div>
           <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full text-[#fff]">
             Celebrating Success
           </h2>
         </div>
-        <div className="w-full h-[300px]">
-        <Slider {...settings}>
-          <div className="m-0 h-full p-0">
-            <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            AISEN Spelling Bee Competition (Junior Category State Level) March 2024 - 1st Position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {90} text="90%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            AISEN Mathematics Competition 2023/2024 September 2023 – 2nd Position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1 bronze
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {90} text="90%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            AISEN Mathematics Competition 2022/2023 session - 15th October, 2022 – 2nd Position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            National Spelling Bee Competition (Junior Category State Level) June 2022- 1st Position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022 – 1st Position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022 – 1st position
-            </h2>
-          </div>
-          <div className="m-0  h-full p-0">
-          <CircularProgressBar percentage = {100} text="100%"/>
-            <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-            African Best in class School of the Year Award 2022 - April, 2022 
-            </h2>
-          </div>
-        </Slider>
+        <div className="w-full h-full lg:h-[300px]">
+          <Slider {...settings}>
+            <div className="m-0 h-full p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                AISEN Spelling Bee Competition (Junior Category State Level)
+                March 2024 - 1st Position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={90} text="90%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                AISEN Mathematics Competition 2023/2024 September 2023 – 2nd
+                Position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1
+                bronze
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={90} text="90%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                AISEN Mathematics Competition 2022/2023 session - 15th October,
+                2022 – 2nd Position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                National Spelling Bee Competition (Junior Category State Level)
+                June 2022- 1st Position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022 –
+                1st Position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022 –
+                1st position
+              </h2>
+            </div>
+            <div className="m-0  h-full lg:h-[300px] p-0">
+              <CircularProgressBar percentage={100} text="100%" />
+              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
+                African Best in class School of the Year Award 2022 - April,
+                2022
+              </h2>
+            </div>
+          </Slider>
         </div>
       </motion.div>
       <div>
         <EventsCalendar events={events} />
       </div>
+      {isvideoPlay && (
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{
+              opacity: isvideoPlay ? 1 : 0,
+              y: isvideoPlay ? 0 : -20,
+            }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed shadow-lg bottom-0 left-0 right-0 top-0 z-[9999] bg-[#000] bg-opacity-60 flex h-full min-h-screen w-full items-center justify-center overflow-y-auto"
+          >
+            <div
+              ref={tooltipRef}
+              className="relative mb-32 h-auto max-h-[540px] w-[50%] p-1 overflow-y-auto bg-[#fff] shadow-md [@media(max-width:1200px)]:w-[50%] [@media(max-width:700px)]:w-[90%]"
+            >
+              <button
+                className="absolute top-2 z-[99999] text-[#000] right-2"
+                onClick={() => setIsvideoPlay(false)}
+              >
+                <MdCancel fontSize={20} />
+              </button>
+              <video
+                width="100%"
+                height="100%"
+                controls
+                autoPlay
+                onEnded={handleVideoEnd}
+              >
+                <source src={dronshot} type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </div>
   );
 };

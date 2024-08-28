@@ -85,7 +85,7 @@ const Cocurriculum = () => {
             Co-Curriculum
           </p>
         </div>
-        <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] ">
+        <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex justify-between items-start gap-4">
           <motion.div
             className="w-full lg:w-[50%]"
             // ref={refRight}
@@ -127,50 +127,36 @@ const Cocurriculum = () => {
               </div>
             </Slider>
           </motion.div>
-        </div>
-        <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col lg:flex-row gap-4 justify-between items-start">
           <div className="w-full lg:w-[50%]">
             <div
               onClick={() => toggleDropdown("sport")}
-              className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
+              className="w-full h-auto"
             >
-              <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+              <h2 className="font-OpenSans my-4 text-[16px] font-semibold text-left leading-[44px]">
                 Sports
+              </h2>
+              <p className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">
+                Sporting activities is a very important area of co-curriculum at
+                New Hall for every class. Every child is introduced to one type
+                of sporting activities that he/she enjoys and trained to be able
+                to excel before completing his or her studies at Newhall. These
+                activities include, football, basketball, swimming, Table
+                tennis, Tennis etc Our school stadium, which is one of the best
+                facilities comparable with high class schools in the world, is
+                laced with astral stuff for running and artificial grass on the
+                football pitch. This creates a lot of enthusiasm for all
+                participation in various sporting activities. The school has
+                well-developed and maintained swimming pools for use by all
+                ages. Our multipurpose hall which houses our college assembly
+                and other school events like Christmas and graduation is fully
+                developed to take care of our indoor games such as basketball
+                and badminton.
               </p>
-              {dropdowns.sport ? (
-                <GoChevronUp fontSize={25} />
-              ) : (
-                <GoChevronDown fontSize={25} />
-              )}
             </div>
-            {dropdowns.sport && (
-              <motion.div
-                className="border-b-[1px] shadow-lg border-l-[1px] border-r-[1px] border-[#ddd]  h-[200px] overflow-y-auto"
-                variants={fadeInVariants}
-                initial="initial"
-                animate="animate"
-              >
-                <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
-                  Sporting activities is a very important area of co-curriculum
-                  at New Hall for every class. Every child is introduced to one
-                  type of sporting activities that he/she enjoys and trained to
-                  be able to excel before completing his or her studies at
-                  Newhall. These activities include, football, basketball,
-                  swimming, Table tennis, Tennis etc Our school stadium, which
-                  is one of the best facilities comparable with high class
-                  schools in the world, is laced with astral stuff for running
-                  and artificial grass on the football pitch. This creates a lot
-                  of enthusiasm for all participation in various sporting
-                  activities. The school has well-developed and maintained
-                  swimming pools for use by all ages. Our multipurpose hall
-                  which houses our college assembly and other school events like
-                  Christmas and graduation is fully developed to take care of
-                  our indoor games such as basketball and badminton.
-                </p>
-              </motion.div>
-            )}
           </div>
-          <div className="w-full lg:w-[25%]">
+        </div>
+        <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col lg:flex-row gap-4 justify-between items-start">
+          <div className="w-full lg:w-[50%]">
             <div
               onClick={() => toggleDropdown("nursery")}
               className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
@@ -192,26 +178,26 @@ const Cocurriculum = () => {
                 animate="animate"
               >
                 <ul className="w-full px-4">
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Ballet
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Chess
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Taekwondo
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Art
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Craft
                   </li>
                 </ul>
               </motion.div>
             )}
           </div>
-          <div className="w-full lg:w-[25%]">
+          <div className="w-full lg:w-[50%]">
             <div
               onClick={() => toggleDropdown("college")}
               className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
@@ -233,25 +219,25 @@ const Cocurriculum = () => {
                 animate="animate"
               >
                 <ul className="w-full px-4">
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Taekwando
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Dance(Hip hop & Ballet)
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Chess
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Robotics
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Music
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Art
                   </li>
-                  <li className="font-Lato text-[18px] py-[2px] font-semibold leading-[25.6px] text-justify">
+                  <li className="font-Lato text-[18px] py-[2px] font-normal leading-[25.6px] text-justify">
                     Home management
                   </li>
                 </ul>

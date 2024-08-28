@@ -168,14 +168,6 @@ const ContactUs = () => {
                 <span className="font-bold">School Director : </span>
                 Mr. Abiodun Agbaje - 08033395673
               </p>
-              <p className="text-[14px] font-normal font-OpenSans ">
-                <span className="font-bold">Primary Principal : </span>
-                Mrs. Chinedu Nkwontah - 07067847977
-              </p>
-              <p className="text-[14px]  my-4 font-normal font-OpenSans ">
-                <span className="font-bold">Vice Principal College : </span>
-                Mrs. Toyin Bot - 01- 2911370
-              </p>
             </div>
           </div>
           <div className="w-full lg:w-[50%]">

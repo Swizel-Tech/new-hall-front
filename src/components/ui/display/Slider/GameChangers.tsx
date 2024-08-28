@@ -100,11 +100,11 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
         <div className="flex justify-start items-center gap-3">
           <div className="w-[40px] h-[1px] bg-[#fff]"></div>
           <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#fff]">
-          Hear from 
+            Hear from
           </h2>
         </div>
-        <h2 className="font-OpenSans mb-10 font-normal text-[44px] leading-[61px] w-full text-[#fff]">
-        Tomorrow’s leaders
+        <h2 className="font-OpenSans mb-10 font-normal text-[18px] lg:text-[44px] leading-[61px] w-full text-[#fff]">
+          Tomorrow’s leaders
         </h2>
       </div>
     </motion.div>

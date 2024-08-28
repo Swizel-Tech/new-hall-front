@@ -1,11 +1,38 @@
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { career, NewHallform, EducatorNewHallform } from "../assets";
+import { career, EducatorNewHallform } from "../assets";
 import { useEffect, useState } from "react";
+import List from "../components/ui/list/List";
 
 const Career = () => {
   let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const values = [
+    {
+      id: "1",
+      description: "Bachelor degree in Education",
+    },
+    {
+      id: "2",
+      description: "Must love children",
+    },
+    {
+      id: "3",
+      description:
+        "Various levels of experience in similar positions will be considered",
+    },
+    {
+      id: "4",
+      description:
+        "Must be computer literate and must have excellent communication skills.",
+    },
+    {
+      id: "5",
+      description:
+        "Post Graduate Diploma Education/Diploma in Montessori Education and a good knowledge of the British curriculum will be an advantage.",
+    },
+  ];
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
@@ -56,35 +83,37 @@ const Career = () => {
             <img src={career} alt="Director" className="w-[40%]" />
             <div className="flex flex-col justify-between items-start w-[60%]">
               <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
-                Newhall School Career Opportunity
+                Thank you for interest in New Hall
               </h2>
-              <p className="font-OpenSans text-[20px] font-normal leading-[25.6px] text-justify">
-                Minimum Qualification: Bachelor degree in Education. Must love
-                children, must be computer literate and must have excellent
-                communication skills. Post Graduate Diploma Education/Diploma in
-                Montessori Education and a good knowledge of British curriculum
-                will be an advantage. Various levels of experience in similar
-                positions will be considered. To apply for a teaching position,
-                send your CV and completed application form{" "}
-                <a
-                  href={EducatorNewHallform}
-                  download="EducatorForm.pdf"
-                  className="text-[#1EB3FE]"
-                >
-                  (download here)
-                </a>{" "}
-                to hr@newhallschool.com.ng. To apply for a management position,
-                send your CV and completed application form{" "}
-                <a
-                  href={NewHallform}
-                  download="ApplicationForm.pdf"
-                  className="text-[#1EB3FE]"
-                >
-                  (download here)
-                </a>{" "}
-                to hr@newhallschool.com.ng. Applications submitted without the
-                completed application form will not be considered.
-              </p>
+              <div className="font-OpenSans text-[20px] font-normal leading-[25.6px] text-justify">
+                <h2 className="font-Raleway text-[18px] font-normal text-left leading-[44px]">
+                  Teaching position
+                </h2>
+                <h2 className="font-Raleway mb-4 text-[18px] font-normal text-left leading-[44px]">
+                  Minimum Qualification:
+                </h2>
+                <List items={values} />
+                <p className="my-2">
+                  To apply for a teaching/management position{" "}
+                  <a
+                    href={EducatorNewHallform}
+                    download="EducatorForm.pdf"
+                    className="text-[#1EB3FE]"
+                  >
+                    fill this application form
+                  </a>{" "}
+                </p>
+                <p>
+                  To apply for a teaching/management position{" "}
+                  <a
+                    href={EducatorNewHallform}
+                    download="EducatorForm.pdf"
+                    className="text-[#1EB3FE]"
+                  >
+                    fill this application form
+                  </a>{" "}
+                </p>
+              </div>
             </div>
           </div>
         </div>

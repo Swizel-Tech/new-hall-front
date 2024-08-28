@@ -1,13 +1,10 @@
 // import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import { slider3, slider4, RegistrationForm } from "../assets";
+import { DSC_4672, RegistrationForm } from "../assets";
 import { motion } from "framer-motion";
-import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
-
-const autoplaySpeed = 3000;
 
 const Application = () => {
   let navigate = useNavigate();
@@ -33,20 +30,6 @@ const Application = () => {
 
   const handleClick = () => {
     navigate("/home");
-  };
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    fade: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: autoplaySpeed,
-    arrows: false,
-    adaptiveHeight: false,
-    lazyLoad: "ondemand" as "ondemand",
   };
 
   return (
@@ -99,40 +82,14 @@ const Application = () => {
                 // initial={{ x: "5%", opacity: 0 }}
                 // animate={controlsRight}
               >
-                <Slider {...settings}>
-                  <div className="relative m-0 p-0 w-[100%]">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-                    <img
-                      src={slider3}
-                      alt="Slide 1"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-                    <img
-                      src={slider4}
-                      alt="Slide 2"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-                    <img
-                      src={slider3}
-                      alt="Slide 3"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-                    <img
-                      src={slider4}
-                      alt="Slide 4"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </Slider>
+                <div className="relative m-0 p-0 w-[100%]">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+                  <img
+                    src={DSC_4672}
+                    alt="Slide 1"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </motion.div>
               <div className="w-full">
                 <h2 className="font-OpenSans text-[26px] font-normal text-left leading-[44px]">

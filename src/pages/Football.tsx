@@ -309,16 +309,16 @@ const Football = () => {
                       The missions of our football academy are:
                     </p>
                     <ul className="list-none px-4">
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To run an in-school, after-school, Open football Camping
                         & Weekends professional development training for our
                         feeder team trainees.
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To run a complete World class residential and
                         educational football academy.
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To provide elite players for the professional team.
                       </li>
                     </ul>

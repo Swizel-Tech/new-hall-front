@@ -22,6 +22,10 @@
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .image-slide {
   animation: slide-out 5s forwards, slide-in 5s 5s forwards;
 }

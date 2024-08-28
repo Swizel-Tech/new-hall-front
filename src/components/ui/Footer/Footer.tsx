@@ -94,18 +94,39 @@ export const Footer = () => {
         </div>
       </div>
       <div className="flex z-10 mb-20 justify-start items-center w-full">
-        <button>
+        <button></button>
+        <a
+          className=""
+          href="https://ng.linkedin.com/company/newhall-international-school"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaLinkedin fontSize={30} className="text-[#fff]" />
-        </button>
-        <button>
+        </a>
+        <a
+          className=""
+          href="https://www.facebook.com/newhallschoollekki/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaSquareFacebook fontSize={30} className="text-[#fff]" />
-        </button>
-        <button>
+        </a>
+        <a
+          className=""
+          href="https://www.instagram.com/newhallschoollekki/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaSquareInstagram fontSize={30} className="text-[#fff]" />
-        </button>
-        <button>
+        </a>
+        <a
+          className=""
+          href="https://twitter.com/newhallng"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaSquareXTwitter fontSize={30} className="text-[#fff]" />
-        </button>
+        </a>
       </div>
       <div className="z-10 mb-20 w-full flex flex-col sm:flex-row justify-between items-start">
         <div className=" w-full flex flex-col justify-start items-start">
@@ -121,7 +142,7 @@ export const Footer = () => {
       <div className="absolute bottom-0 px-6 py-5 bg-black opacity-70 w-full">
         <div className="w-full lg:w-[50%] flex justify-between items-center">
           <h2 className="text-[12px] text-[#fff] font-normal font-OpenSans uppercase text-center">
-            Copyright © 2018 | New Hall International School, Lekki. All Rights
+            Copyright © 2024 | New Hall International School, Lekki. All Rights
             Reserved
           </h2>
         </div>
