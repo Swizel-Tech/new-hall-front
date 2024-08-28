@@ -418,6 +418,7 @@ const Home = () => {
                 height="100%"
                 controls
                 autoPlay
+                muted
                 onEnded={handleVideoEnd}
               >
                 <source src={dronshot} type="video/mp4" />
