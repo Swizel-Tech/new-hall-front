@@ -12,7 +12,7 @@ export const BaseTable: React.FC<TableProps> = ({ data }) => {
           <tr>
             {Object.keys(data[0]).map((key) => (
               <th
-                className="bg-[#DDD] border-[1px] p-2 border-[#ddd] text-left"
+                className="bg-[#DDD] text-[#000] border-[1px] p-2 border-[#ddd] text-left"
                 key={key}
               >
                 {key}
@@ -25,7 +25,7 @@ export const BaseTable: React.FC<TableProps> = ({ data }) => {
             <tr className="" key={index}>
               {Object.values(row).map((value, i) => (
                 <td
-                  className="p-2 border-[1px] uppercase font-Raleway text-[14px] text-left font-semibold border-[#ddd]"
+                  className="p-2 font-Raleway text-[16px] uppercase text-left font-normal"
                   key={i}
                 >
                   {value}

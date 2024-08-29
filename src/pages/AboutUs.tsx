@@ -1,14 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
-import { Director, happypyjamas, playground, playingstudent } from "../assets";
+// import { FaAngleRight } from "react-icons/fa";
+import { Director, happypyjamas } from "../assets";
 import Accordion from "../components/ui/display/accordion/Accordion";
 import { useEffect, useState } from "react";
 import List from "../components/ui/list/List";
-import Slider from "react-slick";
-const autoplaySpeed = 3000;
 
 const AboutUs = () => {
-  let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -103,22 +99,6 @@ const AboutUs = () => {
         "To ensure our pupils leave us at the completion of their course not only equipped for their further education, but also for life.",
     },
   ];
-  const handleClick = () => {
-    navigate("/home");
-  };
-  const settings = {
-    dots: false,
-    infinite: true,
-    fade: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: autoplaySpeed,
-    arrows: false,
-    adaptiveHeight: false,
-    lazyLoad: "ondemand" as "ondemand",
-  };
 
   return (
     <div className="mt-10 lg:mt-[12rem]">
@@ -132,45 +112,49 @@ const AboutUs = () => {
             About Us
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
-          <button
-            onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
-          >
-            Home
-          </button>
-          <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
-            About Us
-          </p>
+        <div className="px-4 my-6 lg:my-[2%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
+          <div className="w-full flex justify-between items-start flex-col lg:flex-row gap-6">
+            <img src={Director} alt="Director" className="w-[200px] h-[20%]" />
+            <div className="flex flex-col justify-between items-start">
+              <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
+                Director’s Welcome
+              </h2>
+              <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                Welcome to New Hall International School Lekki, a new dawn in
+                all-round child education with a first class customized
+                curriculum to give an edge start to our children in life. New
+                Hall International School is a co-educational, multicultural
+                School situated in a quiet, leafy campus inside Chevy view
+                estate, Lekki.
+              </p>
+              <p className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                The primary focus of our Montessori program is to prepare an
+                environment that supports the physical, cognitive, social and
+                emotional development of each child. Our children are inspired
+                and motivated by gifted and well trained teachers in an
+                environment that is stimulating and exciting for every child to
+                be happy and safe and which allows every child to discover his
+                or her God’s given talents.
+              </p>
+              <div className="mt-20">
+                <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
+                  Mr Biodun Agbaje
+                </span>
+                <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                  School Director
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="px-4 lg:px-[8%] w-full lg:w-[50%]">
-          <Slider {...settings}>
-            <div className="relative m-0 p-0 w-[30$]">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-              <img
-                src={happypyjamas}
-                alt="Slide 1"
-                className="w-full object-cover"
-              />
-            </div>
-            <div className="relative m-0 p-0 w-[30$]">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-              <img
-                src={playground}
-                alt="Slide 2"
-                className="w-full object-cover"
-              />
-            </div>
-            <div className="relative m-0 p-0 w-[30$]">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
-              <img
-                src={playingstudent}
-                alt="Slide 3"
-                className="w-full object-cover"
-              />
-            </div>
-          </Slider>
+        <div className="px-4 lg:px-[8%] w-full">
+          <div className="relative m-0 p-0 w-full">
+            <img
+              src={happypyjamas}
+              alt="Slide 1"
+              className="w-full object-cover"
+            />
+          </div>
         </div>
         <div className="px-4 my-6 lg:my-[2%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
           <div className=" w-full flex flex-col justify-start items-start lg:w-[65%]">
@@ -186,18 +170,12 @@ const AboutUs = () => {
               to morals and sports. Our curriculum is a unique blend of British
               and Nigeria based on our philosophy that children’s heritage and
               culture should be preserved even in attempts at internationalism.
-              However, we run full Montessori in our Nursery school. Our school
-              utilizes active learning, creative thinking, global awareness ,
-              I.C.T. and other 21st century learning approaches in our
-              classrooms. The school collaborates with parents and various
-              stakeholders as well as international educational agencies to
-              deliver the best learning outcomes for every child.” to “We run
-              full Montessori in our Nursery school. Our school utilizes active
-              learning, creative thinking, global awareness, I.C.T. and other
-              21st century learning approaches in our classrooms. The school
-              collaborates with parents and various stakeholders as well as
-              international educational agencies to deliver the best learning
-              outcomes for every child
+              We run full Montessori in our Nursery school. Our school utilizes
+              active learning, creative thinking, global awareness, I.C.T. and
+              other 21st century learning approaches in our classrooms. The
+              school collaborates with parents and various stakeholders as well
+              as international educational agencies to deliver the best learning
+              outcomes for every child.
             </p>
             <div className="w-full mt-4 lg:mt-[2%]">
               <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
@@ -252,41 +230,6 @@ const AboutUs = () => {
             Aims & Objectives
           </h2>
           <List items={items} />
-        </div>
-        <div className="px-4 my-6 lg:my-[2%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
-          <div className="w-full flex justify-between items-start flex-col lg:flex-row gap-6">
-            <img src={Director} alt="Director" className="w-[200px] h-[20%]" />
-            <div className="flex flex-col justify-between items-start">
-              <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
-                Director’s Welcome
-              </h2>
-              <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                Welcome to New Hall International School Lekki, a new dawn in
-                all-round child education with a first class customized
-                curriculum to give an edge start to our children in life. New
-                Hall International School is a co-educational, multicultural
-                School situated in a quiet, leafy campus inside Chevy view
-                estate, Lekki.
-              </p>
-              <p className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                The primary focus of our Montessori program is to prepare an
-                environment that supports the physical, cognitive, social and
-                emotional development of each child. Our children are inspired
-                and motivated by gifted and well trained teachers in an
-                environment that is stimulating and exciting for every child to
-                be happy and safe and which allows every child to discover his
-                or her God’s given talents.
-              </p>
-              <div className="mt-20">
-                <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
-                  Mr Biodun Agbaje
-                </span>
-                <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                  School Director
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

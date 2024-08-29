@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
 import {
   player1,
   player2,
@@ -26,7 +24,6 @@ type DropdownKey =
 const autoplaySpeed = 3000;
 
 const Football = () => {
-  let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
@@ -106,9 +103,6 @@ const Football = () => {
       "TRAINING TIME": "7:00am—12:00am",
     },
   ];
-  const handleClick = () => {
-    navigate("/home");
-  };
 
   const toggleDropdown = (key: DropdownKey) => {
     setDropdowns((prevState) => ({
@@ -143,32 +137,23 @@ const Football = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Academy
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
-          <button
-            onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
-          >
-            Home
-          </button>
+        {/* <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
+          <p className="text-[16px] font-normal font-OpenSans">Pastoral Care</p>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[16px] font-normal font-OpenSans text-blue-500">
             Academy
           </p>
-        </div>
+        </div> */}
         <div className="px-4 my-6 lg:px-[8%] flex flex-col sm:flex-row justify-between items-start">
           <div className="w-full">
-            <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
-              New Hall Football Academy
-            </h2>
-            <div className="w-full flex flex-col sm:flex-row justify-between items-start gap-3">
-              <motion.div className="w-full lg:w-[50%]">
+            <div className="w-full">
+              <motion.div className="w-full">
                 <Slider {...settings}>
                   <div className="relative m-0 p-0 w-[100%]">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player1}
                       alt="Slide 1"
@@ -176,7 +161,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player2}
                       alt="Slide 2"
@@ -184,7 +168,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player3}
                       alt="Slide 3"
@@ -192,7 +175,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player4}
                       alt="Slide 4"
@@ -200,7 +182,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0 w-[100%]">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player5}
                       alt="Slide 1"
@@ -208,7 +189,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player6}
                       alt="Slide 2"
@@ -216,7 +196,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player7}
                       alt="Slide 3"
@@ -224,7 +203,6 @@ const Football = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-35 z-10"></div>
                     <img
                       src={player8}
                       alt="Slide 4"
@@ -233,8 +211,8 @@ const Football = () => {
                   </div>
                 </Slider>
               </motion.div>
-              <div className="w-full lg:w-[50%]">
-                <p className="font-Lato text-[16px] mb-8 font-normal leading-[25.6px] text-justify">
+              <div className="w-full">
+                <p className="font-OpenSans text-[16px] mb-8 font-normal leading-[25.6px] text-justify">
                   New Hall Football Academy is a professional football
                   development academy, friendly designed to make positive
                   difference in the lives of young people, giving them the
@@ -242,7 +220,7 @@ const Football = () => {
                   specifically designed football programs and other special
                   social and academic activities running weekly.
                 </p>
-                <p className="font-Lato text-[16px] mb-8 font-normal leading-[25.6px] text-justify">
+                <p className="font-OpenSans text-[16px] mb-8 font-normal leading-[25.6px] text-justify">
                   We are a professional football development Academy which
                   combines the latest football and educational philosophies with
                   first-class facilities to make football fun. We develop our
@@ -258,7 +236,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("vision")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Our Vision
                   </p>
                   {dropdowns.vision ? (
@@ -274,7 +252,7 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Our vision is to provide quality football skills and
                       proper development training for the youths with a
                       harmonized FA/British educational curriculum system
@@ -289,7 +267,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("mission")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Our Mission Statement
                   </p>
                   {dropdowns.mission ? (
@@ -305,20 +283,20 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The missions of our football academy are:
                     </p>
                     <ul className="list-none px-4">
-                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To run an in-school, after-school, Open football Camping
                         & Weekends professional development training for our
                         feeder team trainees.
                       </li>
-                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To run a complete World class residential and
                         educational football academy.
                       </li>
-                      <li className="font-Lato text-[16px] font-normal my-2 leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-normal my-2 leading-[25.6px] text-justify">
                         To provide elite players for the professional team.
                       </li>
                     </ul>
@@ -332,7 +310,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("facility")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Facilities
                   </p>
                   {dropdowns.facility ? (
@@ -348,7 +326,7 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Our football academy facilities are impressive and similar
                       or better than some of the Academies of English Premier
                       League clubs. The Academy has 1 turf field, restaurant,
@@ -366,7 +344,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("team")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Teams
                   </p>
                   {dropdowns.team ? (
@@ -382,24 +360,24 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Our Football Academy has five teams; U5 - The Cub Team,
                       U10 - Star Flyers, U12 - Super Strikers, U14 - Goal
                       Getters, and U17 - Premier Squad.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Some of our Elite players go to school in the mornings and
                       train in the afternoon five days a week. Our U17 – Premier
                       Squad Team signs professional contracts and train twice a
                       day. Practices are typically two hours long on weekdays,
                       but more on weekends.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       All age groups play one game a week on Saturday and
                       Sunday. Our U10, U13, U14 and U15 teams have 25-30 players
                       each.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       About 10-12 players from each team come from out of town
                       and these players live at the Academy on a well-structured
                       plan. They are on a residential –academic focused football
@@ -408,29 +386,29 @@ const Football = () => {
                       being at the Academy for afternoon/evening training
                       (1:00pm -6pm).
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       For others with choice of half-day schools outside Chevy
                       View Estate, a bus shall take them to various schools of
                       their choice and then pick them after half-day school and
                       brings them back to the Academy for afternoon/evening
                       training.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The local players who live at home within Chevy View
                       Estate make their own way to the Academy in the afternoon
                       after school training.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The highly talented U17 and older teams have about 11-21
                       players. These players are on professional contracts and
                       train twice a day during the week.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       New Hall Football Academy has a salary structure for
                       Academy elite players that are highly talented and who
                       have appeared for the pro teams or the National Teams.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The Academy is very careful about how their young talented
                       players are ready to handle the fame and fortune that
                       comes with being a professional soccer player in Nigeria
@@ -439,7 +417,7 @@ const Football = () => {
                       dealing with the pressure of playing with seasoned
                       professionals, etc.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Approximately 30-40% of talented players can be released
                       and replaced during the season or at the end of the
                       season. The Academy has a scouting network that is always
@@ -456,7 +434,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("programs")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Special Programs
                   </p>
                   {dropdowns.programs ? (
@@ -472,11 +450,11 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-justify">
                       Weekends
                     </p>
                     <BaseTable data={weekends} />
-                    <p className="font-Lato mt-4 text-[16px] font-semibold leading-[25.6px] text-justify">
+                    <p className="font-OpenSans mt-4 text-[16px] font-semibold leading-[25.6px] text-justify">
                       Holidays
                     </p>
                     <BaseTable data={holidays} />
@@ -488,7 +466,7 @@ const Football = () => {
                   onClick={() => toggleDropdown("camps")}
                   className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
                 >
-                  <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-left">
+                  <p className="font-OpenSans text-[16px] font-semibold leading-[25.6px] text-left">
                     Summer Football Camps
                   </p>
                   {dropdowns.camps ? (
@@ -504,11 +482,11 @@ const Football = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The New Hall Football Academy football camps are open to
                       boys and girls ages 5 – 18.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The New Hall Football Academy offers football camps for
                       individual football players, football clubs, and high
                       school football teams in Lagos and its environs. Our
@@ -517,11 +495,11 @@ const Football = () => {
                       intend to host international teams from Trinidad, USA and
                       Canada soon.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       We have limited enrollment on a first received basis for
                       all day camps and residential camps.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       The football camps are directed by Henry Iwuanyanwu,
                       ex-International Produta, (UEFA A, ICB A license, NSCAA
                       Premier & Advanced National Diploma, FA Badge – England,
@@ -529,46 +507,46 @@ const Football = () => {
                       International School and Academy Director/Head Coach, New
                       Hall Football Academy, Lekki.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       Yearly, special football personalities (Ex Internationals)
                       are invited to support the summer football camp with an
                       organized football clinic for young players.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-semibold italic leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-semibold italic leading-[25.6px] text-justify">
                       The New Hall Football Academy, Lekki offers several summer
                       football camp programs:
                     </p>
                     <ul className="list-none px-4">
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
                         YOUTH SKILL DEVELOPMENT CAMPS for boys and girls ages 5
                         – 18.
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
                         ELITE CAMP for travel, competitive, and premier level
                         players age 10 – 18
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
                         TEAM CAMPS for youth club football teams and high school
                         football teams.
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
                         SUMMER TRAINING PROGRAM – STP
                       </li>
-                      <li className="font-Lato text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
+                      <li className="font-OpenSans text-[16px] font-semibold my-2 italic leading-[25.6px] text-justify">
                         RESIDENTIAL WEEKEND TOURNAMENT CAMP for TEAMS and
                         INDIVIDUALS.
                       </li>
                     </ul>
 
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       This 2018 Summer Football Camp starts on Monday, 9th July,
                       2018 till Friday, 17th August, 2018. The summer
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       kicks off daily with instructional class at 7:45am and
                       ends with many fun and training activities at 12:00noon.
                     </p>
-                    <p className="font-Lato text-[16px] p-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] p-4 font-normal leading-[25.6px] text-justify">
                       For enquiries, Call 08164049940
                     </p>
                   </motion.div>

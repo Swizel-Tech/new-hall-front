@@ -1,14 +1,12 @@
 // import { SetStateAction, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
+// import { useNavigate } from "react-router-dom";
+// import { FaAngleRight } from "react-icons/fa";
 import { DSC_4672, RegistrationForm } from "../assets";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { GoChevronDown, GoChevronUp } from "react-icons/go";
 
 const Application = () => {
-  let navigate = useNavigate();
-  const [infoactive, setInfoactive] = useState(false);
+  // let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
@@ -28,9 +26,9 @@ const Application = () => {
     };
   }, []);
 
-  const handleClick = () => {
-    navigate("/home");
-  };
+  // const handleClick = () => {
+  //   navigate("/home");
+  // };
 
   return (
     <div className="mt-10 lg:mt-[12rem]">
@@ -44,18 +42,18 @@ const Application = () => {
             Applying to New Hall
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#DDD] lg:px-[8%] justify-start gap-2 items-center">
+        {/* <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#DDD] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-OpenSans"
+            className="text-[16px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
+          <p className="text-[16px] font-normal font-OpenSans text-blue-500">
             Applying to New Hall
           </p>
-        </div>
+        </div> */}
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col sm:flex-row justify-between items-start">
           {/* <div className="border-[1px] mb-5 lg:mb-0 border-[#F3F3F3] w-full flex flex-col justify-start items-start lg:w-[20%]">
             {menus.map((menu) => (
@@ -77,13 +75,12 @@ const Application = () => {
           <div className="w-full gap-2 flex flex-col justify-between items-center">
             <div className="w-full  flex flex-col justify-start items-start gap-2">
               <motion.div
-                className="w-full lg:w-[50%]"
+                className="w-full"
                 // ref={refRight}
                 // initial={{ x: "5%", opacity: 0 }}
                 // animate={controlsRight}
               >
                 <div className="relative m-0 p-0 w-[100%]">
-                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
                   <img
                     src={DSC_4672}
                     alt="Slide 1"
@@ -99,7 +96,7 @@ const Application = () => {
                   We ask parents of applicants to observe a classroom or attend
                   an information session (or both).
                 </p>
-                <h2 className="font-OpenSans my-3 text-[16px] italic font-semibold text-left leading-[44px]">
+                <h2 className="font-OpenSans my-3 text-[16px] font-normal text-left leading-[44px]">
                   Classroom observations:
                 </h2>
                 <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
@@ -108,106 +105,93 @@ const Application = () => {
                 </p>
                 <div className="w-full flex flex-col lg:flex-row justify-between items-start mt-8 gap-4">
                   <div className="w-full">
-                    <button
-                      className="cursor-pointer flex justify-between items-center border-[1px] border-[#ddd] w-full p-3 h-auto"
-                      onClick={() => setInfoactive(!infoactive)}
+                    <h2
+                      className={`text-[16px] font-OpenSans font-semibold uppercase w-full text-left`}
                     >
-                      <h2
-                        className={`text-[16px] font-OpenSans font-normal w-full text-left`}
-                      >
-                        Information Sessions
+                      Information Sessions
+                    </h2>
+                    <motion.div
+                      className="w-full mb-[2rem] shadow-lg"
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <p className="font-OpenSans my-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                        Our information sessions offer you many ways to become
+                        better acquainted with New Hall. First our Admission
+                        officer and Head of School will give a brief overview.
+                        This is very informative, and we encourage you to make
+                        the effort to arrive in time to hear what they have to
+                        say. We also have teachers from every level available in
+                        our auditorium to answer questions and demonstrate
+                        Montessori lessons. Parents, students and faculty
+                        members will also take you on a tour of our campus.
+                        Administrative personnel will be available to answer
+                        questions about New Hall or about the admissions
+                        process.
+                      </p>
+                      <p className="font-OpenSans my-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                        Reservations for an information sessions are not
+                        necessary, but please be sure to sign in when you
+                        arrive. You may bring your children with you if you
+                        would like them to see an overview of the school. All
+                        applicants will have the opportunity to visit during the
+                        admissions process (see details below).
+                      </p>
+                      <h2 className="font-OpenSans my-4 text-[16px] font-semibold text-left leading-[44px]">
+                        SUBMIT AN APPLICATION
                       </h2>
-                      {infoactive ? (
-                        <GoChevronUp fontSize={25} />
-                      ) : (
-                        <GoChevronDown fontSize={25} />
-                      )}
-                    </button>
-                    {infoactive && (
-                      <motion.div
-                        className="w-full mb-[2rem] shadow-lg p-4"
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -20, opacity: 0 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <p className="font-OpenSans my-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                          Our information sessions offer you many ways to become
-                          better acquainted with New Hall. First our Admission
-                          officer and Head of School will give a brief overview.
-                          This is very informative, and we encourage you to make
-                          the effort to arrive in time to hear what they have to
-                          say. We also have teachers from every level available
-                          in our auditorium to answer questions and demonstrate
-                          Montessori lessons. Parents, students and faculty
-                          members will also take you on a tour of our campus.
-                          Administrative personnel will be available to answer
-                          questions about New Hall or about the admissions
-                          process.
-                        </p>
-                        <p className="font-OpenSans my-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                          Reservations for an information sessions are not
-                          necessary, but please be sure to sign in when you
-                          arrive. You may bring your children with you if you
-                          would like them to see an overview of the school. All
-                          applicants will have the opportunity to visit during
-                          the admissions process (see details below).
-                        </p>
-                        <h2 className="font-OpenSans my-4 text-[16px] font-semibold text-left leading-[44px]">
-                          SUBMIT AN APPLICATION
-                        </h2>
-                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                          As soon as we receive an application form, we will
-                          contact you about the rest of the process. To be
-                          considered in our first round of file reviews, the
-                          last possible date to submit an application form is
-                          January 25 of every year; applications received after
-                          that date will be considered if space is available, or
-                          for our waiting list. Our application form is
-                          available in our admissions packet or{" "}
-                          <a
-                            href={RegistrationForm}
-                            download="RegistrationForm.pdf"
-                            className="text-[#1EB3FE]"
-                          >
-                            (download here)
-                          </a>{" "}
-                          . A application fee is due with the application form
-                          (cheques payable to New Hall School). As soon as we
-                          receive the application, we will notify you about
-                          scheduling the rest of the process. The sooner the
-                          application comes in, the sooner we can schedule your
-                          visits.
-                        </p>
-                        <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
-                          STUDENT VISITS
-                        </h2>
-                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                          After your application is received, the admissions
-                          office will schedule a visit for your child. The
-                          purpose of the visit is to allow your child and our
-                          teachers to interact, and to help determine whether
-                          New Hall is the appropriate environment for your
-                          child.
-                        </p>
-                        <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
-                          ENROLLMENT
-                        </h2>
-                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                          The Admissions Committee offers enrollment to students
-                          after it has been determined that the student and New
-                          Hall School are a good match for each other, and
-                          provided that appropriate placement is available.
-                        </p>
-                        <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                          Applicants who have completed all necessary steps by
-                          the appropriate deadlines will be notified. Families
-                          must then make an enrollment decision as soon as
-                          possible. Payment of registration fee is required to
-                          reserve your enrollment.
-                        </p>
-                      </motion.div>
-                    )}
+                      <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                        As soon as we receive an application form, we will
+                        contact you about the rest of the process. To be
+                        considered in our first round of file reviews, the last
+                        possible date to submit an application form is January
+                        25 of every year; applications received after that date
+                        will be considered if space is available, or for our
+                        waiting list. Our application form is available in our
+                        admissions packet or{" "}
+                        <a
+                          href={RegistrationForm}
+                          download="RegistrationForm.pdf"
+                          className="text-[#1EB3FE]"
+                        >
+                          (download here)
+                        </a>
+                        . A application fee is due with the application form
+                        (cheques payable to New Hall School). As soon as we
+                        receive the application, we will notify you about
+                        scheduling the rest of the process. The sooner the
+                        application comes in, the sooner we can schedule your
+                        visits.
+                      </p>
+                      <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
+                        STUDENT VISITS
+                      </h2>
+                      <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                        After your application is received, the admissions
+                        office will schedule a visit for your child. The purpose
+                        of the visit is to allow your child and our teachers to
+                        interact, and to help determine whether New Hall is the
+                        appropriate environment for your child.
+                      </p>
+                      <h2 className="font-OpenSans  my-4  text-[16px] font-semibold text-left leading-[44px]">
+                        ENROLLMENT
+                      </h2>
+                      <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                        The Admissions Committee offers enrollment to students
+                        after it has been determined that the student and New
+                        Hall School are a good match for each other, and
+                        provided that appropriate placement is available.
+                      </p>
+                      <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                        Applicants who have completed all necessary steps by the
+                        appropriate deadlines will be notified. Families must
+                        then make an enrollment decision as soon as possible.
+                        Payment of registration fee is required to reserve your
+                        enrollment.
+                      </p>
+                    </motion.div>
                   </div>
                   {/* <div className="w-full lg:w-[50%]">
                     <button

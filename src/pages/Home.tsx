@@ -14,7 +14,6 @@ import {
 import Slider from "react-slick";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { CircularProgressBar } from "../components/ui/display/accordion/CircularProgressBar";
 import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 import EventsCalendar from "../components/ui/display/Calendar/Calendar";
@@ -330,56 +329,38 @@ const Home = () => {
         <div className="w-full h-full lg:h-[300px]">
           <Slider {...settings}>
             <div className="m-0 h-full p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 AISEN Spelling Bee Competition (Junior Category State Level)
                 March 2024 - 1st Position
               </h2>
-            </div>
-            <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={90} text="90%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 AISEN Mathematics Competition 2023/2024 September 2023 – 2nd
                 Position
               </h2>
-            </div>
-            <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1
                 bronze
               </h2>
             </div>
             <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={90} text="90%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 AISEN Mathematics Competition 2022/2023 session - 15th October,
                 2022 – 2nd Position
               </h2>
-            </div>
-            <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 National Spelling Bee Competition (Junior Category State Level)
                 June 2022- 1st Position
               </h2>
-            </div>
-            <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022 –
                 1st Position
               </h2>
             </div>
             <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022 –
                 1st position
               </h2>
-            </div>
-            <div className="m-0  h-full lg:h-[300px] p-0">
-              <CircularProgressBar percentage={100} text="100%" />
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
                 African Best in class School of the Year Award 2022 - April,
                 2022

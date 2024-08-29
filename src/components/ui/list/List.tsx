@@ -16,10 +16,12 @@ const List: React.FC<ListProps> = ({ items }) => {
       {items.map((item) => (
         <li
           key={item.id}
-          className="h-full w-full py-2 flex gap-6 justify-start items-center"
+          className="h-full w-full flex gap-6 justify-start items-center"
         >
           <FaCheck />
-          <p>{item.description}</p>
+          <p className="font-OpenSans text-[16px] font-normal text-left leading-[44px]">
+            {item.description}
+          </p>
         </li>
       ))}
     </ul>

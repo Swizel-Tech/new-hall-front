@@ -24,7 +24,7 @@ export const Footer = () => {
   return (
     <div className="w-full px-8 h-auto relative flex gap-8 flex-col justify-center items-center bg-black pt-6">
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-10"
         style={{ backgroundImage: `url(${map})` }}
       ></div>
       <div className="absolute top-0 px-4 lg:px-[8%] py-5 bg-black opacity-50 w-full flex justify-center items-center">
@@ -93,8 +93,7 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex z-10 mb-20 justify-start items-center w-full">
-        <button></button>
+      <div className="flex z-10 justify-start items-center w-full">
         <a
           className=""
           href="https://ng.linkedin.com/company/newhall-international-school"
@@ -134,8 +133,8 @@ export const Footer = () => {
             Membership/Partnership
           </h2>
           <div className="flex justify-start overflow-x-auto items-center gap-4">
-            <img src={british} alt="british" className=" w-[200px] p-3" />
-            <img src={AISEN} alt="AISEN" className="w-[200px] p-3" />
+            <img src={british} alt="british" className=" w-[300px] p-3" />
+            <img src={AISEN} alt="AISEN" className="w-[400px] p-3" />
           </div>
         </div>
       </div>

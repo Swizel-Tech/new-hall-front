@@ -72,6 +72,12 @@ import college5 from "./images/college/college5.jpg";
 import college6 from "./images/college/college6.jpg";
 import college7 from "./images/college/college7.jpg";
 
+// co
+import LEG_5251 from "./images/curricular/500_5251.jpg";
+import LEG_7901 from "./images/curricular/LEG_7901.jpg";
+import ND4_9781 from "./images/curricular/ND4_9781.jpg";
+import ND4_9820 from "./images/curricular/ND4_9820.jpg";
+
 export {
   logo,
   logo2,
@@ -143,4 +149,10 @@ export {
   college5,
   college6,
   college7,
+
+  //
+  LEG_5251,
+  LEG_7901,
+  ND4_9781,
+  ND4_9820,
 };

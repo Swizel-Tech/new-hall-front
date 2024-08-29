@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
 import MapComponent from "../components/ui/Map/MapComponent";
 import { FiMapPin } from "react-icons/fi";
 import { FaSquarePhone } from "react-icons/fa6";
@@ -21,7 +19,6 @@ export interface NewsArticle {
 
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
-  let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMailSent, setisMailSent] = useState(false);
   const [formData, setFormData] = useState({
@@ -62,10 +59,6 @@ const ContactUs = () => {
     };
   }, []);
 
-  const handleClick = () => {
-    navigate("/home");
-  };
-
   const boxVariants = {
     initial: { backgroundColor: "#3B82F6" },
     hover: { backgroundColor: "#202942" },
@@ -101,18 +94,6 @@ const ContactUs = () => {
           <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Contact Us
           </h2>
-        </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
-          <button
-            onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
-          >
-            Home
-          </button>
-          <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
-            ContactUs
-          </p>
         </div>
 
         <MapComponent />

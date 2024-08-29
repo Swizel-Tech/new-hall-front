@@ -1,22 +1,17 @@
-// import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight, FaMinus, FaPlus } from "react-icons/fa";
 import { primary1, primary2, primary3 } from "../assets";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { BaseTable } from "../components/table/Table";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 // import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 // import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 // import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 
 const Primary = () => {
-  let navigate = useNavigate();
-  const [menuactive, setmenuactive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLowerPrimary, setIsLowerPrimary] = useState(false);
   const [isUpperPrimary, setIsUpperPrimary] = useState(false);
-  const [isSssSubject, setisSssSubject] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
@@ -35,9 +30,7 @@ const Primary = () => {
     };
   }, []);
   // const refbottom = useRef<HTMLDivElement>(null);
-  const handleClick = () => {
-    navigate("/home");
-  };
+
   const items = [
     {
       SN: 1,
@@ -126,16 +119,6 @@ const Primary = () => {
   //   // Handle view news feed button click
   //   console.log("View News Feed button clicked");
   // };
-  const handleSetJSS = () => {
-    setisSssSubject(true);
-  };
-
-  const getClassNames = () => {
-    if (isSssSubject === false) {
-      return "bg-transparent text-[#fff]";
-    }
-    return "";
-  };
 
   return (
     <div className="mt-10 lg:mt-[12rem]">
@@ -149,26 +132,14 @@ const Primary = () => {
             Primary
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
-          <button
-            onClick={handleClick}
-            className="text-[14px] font-normal font-OpenSans"
-          >
-            Home
-          </button>
-          <FaAngleRight />
-          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
-            Primary
-          </p>
-        </div>
         <div className="px-4 my-6 lg:pb-[3rem] lg:px-[8%]">
           <div className="w-full mb-6">
-            <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-justify">
+            <p className="font-OpenSans border-b-[1px] border-[#ddd] pb-4 text-[16px] font-normal leading-[25.6px] text-justify">
               Each Year Group is known for its peculiarities such as multiple
               intelligence, literacy/verbal skills, numeracy skills, spatial
               skills, musical skills, oratorical skills.
             </p>
-            <p className="font-Lato text-[16px] font-semibold leading-[25.6px] text-justify">
+            <p className="font-OpenSans text-[16px] font-normal pt-4 leading-[25.6px] text-justify">
               At Graduation from Year 6, the set is distinguished, celebrated
               for excellence and published in the School Year Book. They carry
               out major group project as a parting gift, either to the community
@@ -176,8 +147,8 @@ const Primary = () => {
             </p>
           </div>
 
-          <div className="px-4 my-6 gap-4 flex flex-col lg:flex-row justify-between items-start">
-            <div className="border-[1px] shadow-xl mb-5 lg:mb-0 border-[#F3F3F3] w-full flex flex-col justify-start items-start lg:w-[25%]">
+          <div className="my-6 gap-4 flex flex-col lg:flex-row justify-between items-start">
+            {/* <div className="border-[1px] shadow-xl mb-5 lg:mb-0 border-[#F3F3F3] w-full flex flex-col justify-start items-start lg:w-[25%]">
               <button
                 className="bg-blue-500 px-2 w-full flex justify-between items-center"
                 onClick={() => setmenuactive(!menuactive)}
@@ -209,12 +180,11 @@ const Primary = () => {
                   </button>
                 </motion.div>
               )}
-            </div>
-            <div className="w-full lg:w-[75%]">
-              <div className="w-full lg:w-[50%]">
+            </div> */}
+            <div className="w-full">
+              <div className="w-full">
                 <Slider {...settings}>
                   <div className="relative m-0 p-0 w-full">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
                     <img
                       src={primary1}
                       alt="Slide 1"
@@ -222,7 +192,6 @@ const Primary = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0 w-full">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
                     <img
                       src={primary2}
                       alt="Slide 2"
@@ -230,7 +199,6 @@ const Primary = () => {
                     />
                   </div>
                   <div className="relative m-0 p-0 w-full">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 z-10"></div>
                     <img
                       src={primary3}
                       alt="Slide 3"
@@ -240,16 +208,21 @@ const Primary = () => {
                 </Slider>
               </div>
               {/* Lower primary */}
-              <div className="w-full  gap-6">
+              <div className="w-full">
                 <button
-                  className={`font-OpenSans my-[2%] font-semibold italic text-[24px] leading-[61px] w-full ${
+                  className={`font-OpenSans my-[2%] px-4 font-normal text-[24px] leading-[61px] flex justify-between items-center w-full ${
                     isDarkMode
-                      ? "text-[#fff] border-t-[1px] border-b-[1px] border-[#ddd]"
-                      : "text-[#000] border-t-[1px] border-b-[1px] border-[#000]"
+                      ? "text-[#fff] border-[1px] border-[#ddd]"
+                      : "text-[#000] border-[1px] border-[#000]"
                   }`}
                   onClick={() => setIsLowerPrimary(!isLowerPrimary)}
                 >
-                  Lower Primary
+                  <p>Lower Primary</p>
+                  {isLowerPrimary ? (
+                    <IoIosArrowUp className={`text-[#fff]`} />
+                  ) : (
+                    <IoIosArrowDown className={`text-[#fff]`} />
+                  )}
                 </button>
                 {isLowerPrimary && (
                   <motion.div
@@ -308,14 +281,19 @@ const Primary = () => {
               {/* upper primary */}
               <div className="w-full">
                 <button
-                  className={`font-OpenSans my-[2%] font-semibold italic text-[24px] leading-[61px] w-full ${
+                  className={`font-OpenSans my-[2%] px-4 font-normal text-[24px] leading-[61px] flex justify-between items-center w-full ${
                     isDarkMode
-                      ? "text-[#fff] border-t-[1px] border-b-[1px] border-[#ddd]"
-                      : "text-[#000] border-t-[1px] border-b-[1px] border-[#000]"
+                      ? "text-[#fff] border-[1px] border-[#ddd]"
+                      : "text-[#000] border-[1px] border-[#000]"
                   }`}
                   onClick={() => setIsUpperPrimary(!isUpperPrimary)}
                 >
-                  Upper Primary
+                  <p>Upper Primary</p>
+                  {isUpperPrimary ? (
+                    <IoIosArrowUp className={`text-[#fff]`} />
+                  ) : (
+                    <IoIosArrowDown className={`text-[#fff]`} />
+                  )}
                 </button>
 
                 {isUpperPrimary && (
@@ -326,7 +304,7 @@ const Primary = () => {
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <p className="font-Lato text-[16px] mb-6 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] mb-6 font-normal leading-[25.6px] text-justify">
                       Without losing sight of the initial objectives, this stage
                       extends the challenges offered and the demands to be
                       faced. The curriculum becomes more specialized with the
@@ -337,7 +315,7 @@ const Primary = () => {
                       development of practical skills through art and craft
                       initiate the children into the modern world.
                     </p>
-                    <p className="font-Lato text-[16px] mb-4 font-normal leading-[25.6px] text-justify">
+                    <p className="font-OpenSans text-[16px] mb-4 font-normal leading-[25.6px] text-justify">
                       The level of demand in terms of self-discipline and
                       personal organization are raised and responsibilities are
                       increased at both individual and group levels.
@@ -347,26 +325,22 @@ const Primary = () => {
               </div>
             </div>
           </div>
-          <div className="my-6 w-full">
-            <AnimatePresence>
-              {isSssSubject && (
-                <motion.div
-                  className="w-full"
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  variants={slideInVariants}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  <h2 className="font-OpenSans py-4 text-[16px] italic font-semibold text-left leading-[44px]">
-                    Subjects Offered in Primary
-                  </h2>
-                  <div className="flex w-full sm:flex-row flex-col justify-between items-start">
-                    <BaseTable data={items} />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="my-4 w-full">
+            <motion.div
+              className="w-full"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={slideInVariants}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <h2 className="font-OpenSans py-4 text-[16px] font-semibold text-left leading-[44px]">
+                Subjects Offered in Primary
+              </h2>
+              <div className="flex w-full sm:flex-row flex-col justify-between items-start">
+                <BaseTable data={items} />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

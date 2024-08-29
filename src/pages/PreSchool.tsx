@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
 import { DSC_5277, DSC_5272, DSC_5273 } from "../assets";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
@@ -42,7 +40,6 @@ import { useEffect, useState } from "react";
 // ];
 
 const PreSchool = () => {
-  let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
@@ -64,10 +61,6 @@ const PreSchool = () => {
   // const refbottom = useRef<HTMLDivElement>(null);
 
   // const [activeMenu, setActiveMenu] = useState("pre-school");
-  const handleClick = () => {
-    navigate("/home");
-  };
-
   // const handleMenuClick = (menu: { href: SetStateAction<string> }) => {
   //   setActiveMenu(menu.href);
   //   navigate(`/${menu.href}`);
@@ -123,18 +116,18 @@ const PreSchool = () => {
             Pre-School
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
+        {/* <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[16px] font-normal font-Raleway"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[16px] font-normal font-Raleway text-blue-500">
             Pre-School
           </p>
-        </div>
+        </div> */}
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col sm:flex-row justify-between items-start">
           {/* <div className="border-[1px] mb-5 lg:mb-0 border-[#F3F3F3] w-full flex flex-col justify-start items-start lg:w-[20%]">
             {programs.map((program) => (
@@ -154,18 +147,15 @@ const PreSchool = () => {
             ))}
           </div> */}
           <div className="w-full">
-            <div className="w-full lg:w-[50%]">
+            <div className="w-full">
               <Slider {...settings}>
                 <div className="w-full relative">
-                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
                   <img src={DSC_5277} alt="facility1" className="w-full" />
                 </div>
                 <div className="w-full relative">
-                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
                   <img src={DSC_5272} alt="facility1" className="w-full" />
                 </div>
                 <div className="w-full relative">
-                  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
                   <img src={DSC_5273} alt="facility1" className="w-full" />
                 </div>
               </Slider>
@@ -207,24 +197,6 @@ const PreSchool = () => {
             </p>
           </div>
         </div>
-        {/* <div>
-          <NewsSlider
-            newsItems={newsItems}
-            title="News"
-            viewNewsText="View News Feed"
-            onViewNewsClick={handleViewNewsClick}
-          />
-        </div>
-        <div>
-          <GameChangers
-            images={images}
-            scrollLeft={scrollLeft}
-            scrollRight={scrollRight}
-          />
-        </div>
-        <div>
-          <EventsCalendar events={events} />
-        </div> */}
       </div>
     </div>
   );

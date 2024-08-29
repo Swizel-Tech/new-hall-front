@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import { FaAngleRight } from "react-icons/fa";
 import {
   STADIUM,
   boarding1,
@@ -12,7 +10,6 @@ import Slider from "react-slick";
 import { useEffect, useState } from "react";
 
 const BoardingFacility = () => {
-  let navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Detect dark mode using the 'prefers-color-scheme' media query
@@ -31,10 +28,6 @@ const BoardingFacility = () => {
       darkModeMediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
-  const handleClick = () => {
-    navigate("/home");
-  };
-
   var settings = {
     dots: false,
     speed: 1500,
@@ -57,21 +50,9 @@ const BoardingFacility = () => {
             New Hall Boarding School
           </h2>
         </div>
-        <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
-          <button
-            onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
-          >
-            Home
-          </button>
-          <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
-            New Hall Boarding School
-          </p>
-        </div>
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] gap-4 flex flex-col lg:flex-row justify-between items-start">
-          <div className="w-full flex lg:flex-row justify-between items-start flex-col gap-6">
-            <div className="w-full lg:w-[50%]">
+          <div className="w-full">
+            <div className="w-full">
               <Slider {...settings}>
                 <div className="w-full">
                   <img src={STADIUM} alt="nursery" className="w-[100%]" />
@@ -93,7 +74,7 @@ const BoardingFacility = () => {
                 </div>
               </Slider>
             </div>
-            <div className="flex flex-col w-full lg:w-[50%] justify-between items-start">
+            <div className="flex flex-col w-full justify-between items-start">
               <h2 className="font-Raleway mb-6 text-[36px] font-normal text-left leading-[44px]">
                 Our Boarding Facilities!
               </h2>
