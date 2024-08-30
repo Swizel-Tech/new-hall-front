@@ -1,6 +1,6 @@
 // import { useNavigate } from "react-router-dom";
 // import { FaAngleRight } from "react-icons/fa";
-import { career, EducatorNewHallform } from "../assets";
+import { career } from "../assets";
 import { useEffect, useState } from "react";
 import List from "../components/ui/list/List";
 
@@ -84,18 +84,18 @@ const Career = () => {
                 <p className="my-2 font-OpenSans text-[16px] font-normal text-left leading-[44px]">
                   To apply for a teaching/management position{" "}
                   <a
-                    href={EducatorNewHallform}
-                    download="EducatorForm.pdf"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeRdWCmR4BVu7DiHJ14c0tZHDs34EsMeq1e_q2G1B1hPdy7dg/viewform"
+                    target="_blank"
                     className="text-[#1EB3FE]"
                   >
                     fill this application form
-                  </a>{" "}
+                  </a>
                 </p>
                 <p className="font-OpenSans text-[16px] font-normal text-left leading-[44px]">
-                  To apply for a teaching/management position{" "}
+                  If interested in a non-teaching position{" "}
                   <a
-                    href={EducatorNewHallform}
-                    download="EducatorForm.pdf"
+                    // href={EducatorNewHallform}
+                    // download="EducatorForm.pdf"
                     className="text-[#1EB3FE]"
                   >
                     fill this application form
