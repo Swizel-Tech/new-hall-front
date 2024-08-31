@@ -396,7 +396,7 @@ const College = () => {
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <h2 className="font-OpenSans pb-4 text-[16px] font-normal text-left leading-[44px]">
-              Subjects Offered at the Jss level
+              Subjects Offered - JSS/Year 7-9
             </h2>
             <div className="flex w-full sm:flex-row flex-col justify-between items-start">
               <BaseTable data={items} />
@@ -416,7 +416,7 @@ const College = () => {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
             <h2 className="font-OpenSans py-4 text-[16px] font-normal text-left leading-[44px]">
-              Subjects Offered at the SSS level
+              Subjects Offered - SSS/Year 10-12
             </h2>
             <div className="flex w-full sm:flex-row flex-col justify-between items-start">
               <BaseTable data={sssitems} />

@@ -54,6 +54,13 @@ const TimerSlider: React.FC = () => {
     navigate("/calendar");
   };
 
+  const scrollToSection = () => {
+    const targetElement = document.getElementById("story");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative w-full p-0 m-0">
       <div className="absolute flex flex-col justify-between items-center right-0 bottom-20 h-[280px] w-[80px] z-10">
@@ -67,7 +74,8 @@ const TimerSlider: React.FC = () => {
           <FaFacebook className="text-[#fff] text-[12px]" />
         </button>
         <button className="mb-7 p-0">
-          <motion.div
+          <motion.button
+            onClick={scrollToSection}
             className="flex flex-col justify-between gap-10 items-center"
             initial={{ y: 0 }}
             whileHover={{ y: 15 }}
@@ -77,7 +85,7 @@ const TimerSlider: React.FC = () => {
               Explore
             </h2>
             <BsArrowDown className="text-[#fff] text-[18px]" />
-          </motion.div>
+          </motion.button>
         </button>
       </div>
 

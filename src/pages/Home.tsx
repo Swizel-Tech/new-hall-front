@@ -188,7 +188,10 @@ const Home = () => {
   return (
     <div className="relative">
       <TimerSlider />
-      <div className="flex flex-col lg:flex-row  justify-between items-center relative w-full">
+      <div
+        className="flex flex-col lg:flex-row  justify-between items-center relative w-full"
+        id="story"
+      >
         <div
           className={`w-full lg:w-[60%] px-4 lg:px-[6rem] py-4 lg:py-[4rem] relative ${
             isDarkMode ? "bg-transparent" : "bg-[#ddd]"

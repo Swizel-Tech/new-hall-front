@@ -1,5 +1,5 @@
 // import { FaAngleRight } from "react-icons/fa";
-import { Director, happypyjamas } from "../assets";
+import { Director } from "../assets";
 import Accordion from "../components/ui/display/accordion/Accordion";
 import { useEffect, useState } from "react";
 import List from "../components/ui/list/List";
@@ -119,7 +119,15 @@ const AboutUs = () => {
               <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
                 Director’s Welcome
               </h2>
-              <p className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+              <div className="">
+                <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
+                  Mr Biodun Agbaje
+                </span>
+                <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
+                  School Director
+                </span>
+              </div>
+              <p className="mt-20 font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
                 Welcome to New Hall International School Lekki, a new dawn in
                 all-round child education with a first class customized
                 curriculum to give an edge start to our children in life. New
@@ -136,18 +144,10 @@ const AboutUs = () => {
                 be happy and safe and which allows every child to discover his
                 or her God’s given talents.
               </p>
-              <div className="mt-20">
-                <span className="font-OpenSans text-[16px] font-bold mr-4 leading-[25.6px] text-justify">
-                  Mr Biodun Agbaje
-                </span>
-                <span className="font-OpenSans text-[16px] font-normal leading-[25.6px] text-justify">
-                  School Director
-                </span>
-              </div>
             </div>
           </div>
         </div>
-        <div className="px-4 lg:px-[8%] w-full">
+        {/* <div className="px-4 lg:px-[8%] w-full">
           <div className="relative m-0 p-0 w-full">
             <img
               src={happypyjamas}
@@ -155,7 +155,7 @@ const AboutUs = () => {
               className="w-full object-cover"
             />
           </div>
-        </div>
+        </div> */}
         <div className="px-4 my-6 lg:my-[2%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
           <div className=" w-full flex flex-col justify-start items-start lg:w-[65%]">
             <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">

@@ -59,19 +59,15 @@ const Primary = () => {
     },
     {
       SN: 7,
-      Description: "Religious Education",
-    },
-    {
-      SN: 8,
       Description:
         "Religious Education Language (French, Yoruba, Mandarin, Igbo)",
     },
     {
-      SN: 9,
+      SN: 8,
       Description: "Music",
     },
     {
-      SN: 10,
+      SN: 9,
       Description: "Physical and Health Education",
     },
   ];

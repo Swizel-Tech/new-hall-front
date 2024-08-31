@@ -85,7 +85,7 @@ export const Nav = (props: SideNavProps) => {
             )}
             {clicked && (
               <motion.div
-                className="z-20 top-[70px] py-2 absolute left-[-100px] flex flex-col justify-center items-center bg-transparent w-[300px]"
+                className="z-20 top-[70px] py-2 absolute left-0 lg:left-[-100px] flex flex-col justify-center items-center bg-transparent w-[300px]"
                 initial={{ y: "10%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "10%", opacity: 0 }}
@@ -128,9 +128,13 @@ export const Nav = (props: SideNavProps) => {
                   transition={{ duration: 0.5 }}
                 >
                   {children.map((child, index) => (
-                    <NavLink key={index} to={child.href}>
+                    <NavLink
+                      key={index}
+                      to={child.href}
+                      onClick={() => setClicked(false)}
+                    >
                       <span
-                        className={`font-OpenSans text-[#000] text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
+                        className={`font-OpenSans text-[16px] my-2 text-left py-2 px-[5px] font-normal uppercase block ${
                           scrolledState ? "text-[#000]" : `${getTextColor()}`
                         }`}
                       >
