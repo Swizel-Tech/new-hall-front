@@ -78,6 +78,15 @@ import LEG_7901 from "./images/curricular/LEG_7901.jpg";
 import ND4_9781 from "./images/curricular/ND4_9781.jpg";
 import ND4_9820 from "./images/curricular/ND4_9820.jpg";
 
+// Game Changers
+import Folawiyo from "./images/gamechangers/Folawiyo, Teniola Bolanle.jpg";
+import GREGORY from "./images/gamechangers/GREGORY ASHLEY OLERE.jpg";
+import ISHOLA from "./images/gamechangers/ISHOLA FATIAH AGBEKE.jpg";
+import LADENEGAN from "./images/gamechangers/LADENEGAN OLUWADARA RACHAEL.jpg";
+import OBAIGBENA from "./images/gamechangers/OBAIGBENA CHIMAIJEM.jpg";
+import OJEBA from "./images/gamechangers/OJEBA RAFFERTY.jpg";
+import UANZEKIN from "./images/gamechangers/UANZEKIN OHIREME BOLUWATIFE.jpg";
+
 export {
   logo,
   logo2,
@@ -155,4 +164,13 @@ export {
   LEG_7901,
   ND4_9781,
   ND4_9820,
+
+  // GAME CHANGERS
+  Folawiyo,
+  GREGORY,
+  ISHOLA,
+  LADENEGAN,
+  OBAIGBENA,
+  OJEBA,
+  UANZEKIN,
 };

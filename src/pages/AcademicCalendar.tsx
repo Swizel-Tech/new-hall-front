@@ -10,7 +10,6 @@ const AcademicCalendar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
 
-  // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: dark)"

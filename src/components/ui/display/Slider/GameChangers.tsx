@@ -3,16 +3,17 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
+interface GameChanger {
+  image: string;
+  name: string;
+}
+
 interface SliderComponentProps {
-  images: string[];
-  scrollLeft: () => void;
-  scrollRight: () => void;
+  gamechanger: GameChanger[];
 }
 
 export const GameChangers: React.FC<SliderComponentProps> = ({
-  images,
-  scrollLeft,
-  scrollRight,
+  gamechanger,
 }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const controlsbottom = useAnimation();
@@ -23,6 +24,17 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
     hover: { backgroundColor: "#202942" },
   };
 
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -380, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 380, behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     if (inviewbottom) {
       controlsbottom.start({
@@ -44,7 +56,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
     >
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${images[0]})` }}
+        style={{ backgroundImage: `url(${gamechanger[0].image})` }}
       ></div>
       <div className="relative">
         <div className="absolute w-[50px] right-0 top-1/2 z-10 transform -translate-y-1/2">
@@ -75,7 +87,7 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
           ref={sliderRef}
           className="flex justify-between items-center overflow-x-auto overflow-y-hidden scroll-container gap-4 h-[500px]"
         >
-          {images.map((image, index) => (
+          {gamechanger.map((item, index) => (
             <motion.div
               key={index}
               className="relative m-0 p-0 cursor-pointer h-full flex-shrink-0 animate"
@@ -83,13 +95,13 @@ export const GameChangers: React.FC<SliderComponentProps> = ({
               transition={{ duration: 0.5 }}
             >
               <img
-                src={image}
+                src={item.image}
                 alt={`Slide ${index + 1}`}
                 className="w-[300px] h-full object-cover"
               />
               <div className="absolute h-[60px] flex justify-center items-center bottom-0 w-full bg-black z-10">
                 <h2 className="text-[#3D83F6] font-semibold text-[16px] font-OpenSans uppercase">
-                  Name
+                  {item.name}
                 </h2>
               </div>
             </motion.div>

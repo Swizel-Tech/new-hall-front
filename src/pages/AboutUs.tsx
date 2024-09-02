@@ -3,6 +3,7 @@ import { Director } from "../assets";
 import Accordion from "../components/ui/display/accordion/Accordion";
 import { useEffect, useState } from "react";
 import List from "../components/ui/list/List";
+import { FaCheck } from "react-icons/fa6";
 
 const AboutUs = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,28 +34,6 @@ const AboutUs = () => {
       title: "Our Mission Statement",
       content:
         "Providing a rich learning environment by empowering every child to develop his⁄her full potential between Home and School.",
-    },
-  ];
-  const values = [
-    {
-      id: "1",
-      description: "Respect for People",
-    },
-    {
-      id: "2",
-      description: "Ethical Behaviour",
-    },
-    {
-      id: "3",
-      description: "Diligence",
-    },
-    {
-      id: "4",
-      description: "Creativity",
-    },
-    {
-      id: "5",
-      description: "Accountability",
     },
   ];
   const items = [
@@ -181,31 +160,40 @@ const AboutUs = () => {
               <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
                 Philosophy of the School
               </h2>
-              <ul className="list-disc">
-                <li className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                  New Hall is an all-inclusive establishment. The only
-                  conditions for admission are academic merit and the commitment
-                  of learners and their parents or guardians to work with the
-                  school to ensure success in learning.
+              <ul>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[2%]" />
+                  <p className="w-[98%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    New Hall is an all-inclusive establishment. The only
+                    conditions for admission are academic merit and the
+                    commitment of learners and their parents or guardians to
+                    work with the school to ensure success in learning.
+                  </p>
                 </li>
-                <li className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                  We believe that every child can learn if they are adequately
-                  supported and put in the right environment. We also believe
-                  that learning should be fun. We recognize the fact that the
-                  method and direction of education are fast changing given the
-                  global workplace realities. As such, our educators retrain and
-                  update their teaching skills to provide relevant education. We
-                  also recognize the role of teachers as facilitators of the
-                  creative process of learning.{" "}
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[2%]" />
+                  <p className="w-[98%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    We believe that every child can learn if they are adequately
+                    supported and put in the right environment. We also believe
+                    that learning should be fun. We recognize the fact that the
+                    method and direction of education are fast changing given
+                    the global workplace realities. As such, our educators
+                    retrain and update their teaching skills to provide relevant
+                    education. We also recognize the role of teachers as
+                    facilitators of the creative process of learning.
+                  </p>
                 </li>
-                <li className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
-                  At New Hall, we believe that every child should be given the
-                  freedom to participate actively in his/her own education. We
-                  think that children should have opportunities to demonstrate
-                  and develop their unique talents; we understand that children
-                  have different ways of learning and different interests, and
-                  we are committed to providing an environment that inspires
-                  each child to be the best he or she can be.
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[2%]" />
+                  <p className="w-[98%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    At New Hall, we believe that every child should be given the
+                    freedom to participate actively in his/her own education. We
+                    think that children should have opportunities to demonstrate
+                    and develop their unique talents; we understand that
+                    children have different ways of learning and different
+                    interests, and we are committed to providing an environment
+                    that inspires each child to be the best he or she can be.
+                  </p>
                 </li>
               </ul>
             </div>
@@ -221,7 +209,39 @@ const AboutUs = () => {
               <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
                 Core Values
               </h2>
-              <List items={values} />
+              {/* <List items={values} /> */}
+              <ul>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[10%]" />
+                  <p className="w-[90%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    Respect for People
+                  </p>
+                </li>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[10%]" />
+                  <p className="w-[90%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    Ethical Behaviour
+                  </p>
+                </li>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[10%]" />
+                  <p className="w-[90%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    Diligence
+                  </p>
+                </li>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[10%]" />
+                  <p className="w-[90%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    Creativity
+                  </p>
+                </li>
+                <li className="h-full w-full flex gap-6 justify-start items-center">
+                  <FaCheck className="w-[10%]" />
+                  <p className="w-[90%] font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
+                    Accountability
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

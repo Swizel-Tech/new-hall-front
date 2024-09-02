@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import TimerSlider from "../components/ui/display/Slider/TimerSlider";
 import {
+  Folawiyo,
+  GREGORY,
+  ISHOLA,
+  LADENEGAN,
+  OBAIGBENA,
+  OJEBA,
+  UANZEKIN,
   slider1,
   slider2,
   slider3,
@@ -54,10 +61,14 @@ const newsItems = [
   },
 ];
 
+type GameChanger = {
+  image: string;
+  name: string;
+};
+
 const Home = () => {
   let navigate = useNavigate();
   const controlsLeft = useAnimation();
-  const refbottomn = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isvideoPlay, setIsvideoPlay] = useState(true);
@@ -115,28 +126,21 @@ const Home = () => {
     hover: { y: -10, backgroundColor: "#5c93ec" },
   };
 
-  const scrollrrLeft = () => {
-    if (refbottomn.current) {
-      refbottomn.current.scrollBy({
-        left: -refbottomn.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
   const events = [
     { date: "22 Aug 2024", title: "A-level Result Day" },
     { date: "15 Aug 2024", title: "GCSE Result Day" },
     // Add more events here if needed
   ];
-  const scrollrrRight = () => {
-    if (refbottomn.current) {
-      refbottomn.current.scrollBy({
-        left: refbottomn.current.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-  const images = [slider1, slider2, slider3, slider4];
+
+  const gamechanger: GameChanger[] = [
+    { image: Folawiyo, name: "Folawiyo, Teniola Bolanle" },
+    { image: GREGORY, name: "GREGORY ASHLEY OLERE" },
+    { image: ISHOLA, name: "ISHOLA FATIAH AGBEKE" },
+    { image: LADENEGAN, name: "LADENEGAN OLUWADARA RACHAEL" },
+    { image: OBAIGBENA, name: "OBAIGBENA CHIMAIJEM" },
+    { image: OJEBA, name: "OJEBA RAFFERTY" },
+    { image: UANZEKIN, name: "UANZEKIN OHIREME BOLUWATIFE" },
+  ];
 
   const handleViewNewsClick = () => {
     navigate("/news");
@@ -293,11 +297,7 @@ const Home = () => {
         </motion.div>
       </div>
       <div>
-        <GameChangers
-          images={images}
-          scrollLeft={scrollrrLeft}
-          scrollRight={scrollrrRight}
-        />
+        <GameChangers gamechanger={gamechanger} />
       </div>
       <div>
         <NewsSlider
