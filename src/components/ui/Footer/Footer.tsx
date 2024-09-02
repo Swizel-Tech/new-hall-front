@@ -24,7 +24,7 @@ export const Footer = () => {
   return (
     <div className="w-full px-8 h-auto relative flex gap-8 flex-col justify-center items-center bg-black pt-6">
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-10"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-5"
         style={{ backgroundImage: `url(${map})` }}
       ></div>
       <div className="absolute top-0 px-4 lg:px-[8%] py-5 bg-black opacity-50 w-full flex justify-center items-center">
