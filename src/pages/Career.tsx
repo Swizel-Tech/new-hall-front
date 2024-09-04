@@ -42,6 +42,28 @@ const Career = () => {
   ];
 
   useEffect(() => {
+    if (Isteaching || Isnonteaching) {
+      document.body.classList.add("no-scroll");
+
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          tooltipRef.current &&
+          !tooltipRef.current.contains(event.target as Node)
+        ) {
+          setIsteaching(false);
+          setIsnonteaching(false);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.body.classList.remove("no-scroll");
+      };
+    }
+  }, [Isteaching, Isnonteaching]);
+
+  useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: dark)"
     );
@@ -57,16 +79,16 @@ const Career = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (Isteaching || Isnonteaching) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, [Isteaching, Isnonteaching]);
+  // useEffect(() => {
+  //   if (Isteaching || Isnonteaching) {
+  //     document.body.classList.add("no-scroll");
+  //   } else {
+  //     document.body.classList.remove("no-scroll");
+  //   }
+  //   return () => {
+  //     document.body.classList.remove("no-scroll");
+  //   };
+  // }, [Isteaching, Isnonteaching]);
 
   // const handleClick = () => {
   //   navigate("/home");
