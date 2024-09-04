@@ -91,7 +91,7 @@ const TimerSlider: React.FC = () => {
 
       <Slider {...settings}>
         <div className="relative m-0 p-0 h-[800px]">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10"></div>
           <img
             src={slider1}
             alt="Slide 1"
@@ -99,7 +99,7 @@ const TimerSlider: React.FC = () => {
           />
         </div>
         <div className="relative m-0 p-0 h-[800px]">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10"></div>
           <img
             src={slider2}
             alt="Slide 2"
@@ -107,7 +107,7 @@ const TimerSlider: React.FC = () => {
           />
         </div>
         <div className="relative m-0 p-0 h-[800px]">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10"></div>
           <img
             src={slider3}
             alt="Slide 3"
@@ -115,7 +115,7 @@ const TimerSlider: React.FC = () => {
           />
         </div>
         <div className="relative m-0 p-0 h-[800px]">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10"></div>
           <img
             src={slider4}
             alt="Slide 4"

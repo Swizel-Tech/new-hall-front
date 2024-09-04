@@ -33,7 +33,6 @@ import boarding4 from "./images/boarding/boarding4.jpg";
 import boarding5 from "./images/boarding/boarding5.jpg";
 import career from "./images/staff/career-development-logo-1.png";
 
-import map from "./images/map.png";
 import avatar from "./images/avatar.png";
 
 // files
@@ -94,7 +93,6 @@ export {
   slider2,
   slider3,
   slider4,
-  map,
   Director,
   british,
   AISEN,

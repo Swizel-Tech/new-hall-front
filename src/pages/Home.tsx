@@ -262,7 +262,6 @@ const Home = () => {
         >
           <Slider {...settings}>
             <div className="relative m-0 p-0 w-[100%]">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
                 src={homeslider1}
                 alt="Slide 1"
@@ -270,7 +269,6 @@ const Home = () => {
               />
             </div>
             <div className="relative m-0 p-0">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
                 src={homeslider2}
                 alt="Slide 2"
@@ -278,7 +276,6 @@ const Home = () => {
               />
             </div>
             <div className="relative m-0 p-0">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
                 src={homeslider3}
                 alt="Slide 3"
@@ -286,7 +283,6 @@ const Home = () => {
               />
             </div>
             <div className="relative m-0 p-0">
-              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-55 z-10"></div>
               <img
                 src={homeslider4}
                 alt="Slide 4"
@@ -312,10 +308,10 @@ const Home = () => {
         // ref={refbottom}
         // initial={{ y: "100%", opacity: 0 }}
         // animate={controlsbottom}
-        className="w-full px-4 overflow-x-auto relative flex flex-col justify-center items-center bg-black h-[600px] py-8"
+        className="w-full px-4 overflow-x-auto relative flex flex-col justify-center items-center bg-black h-[400px] py-8"
       >
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+          className="absolute h-full inset-0 z-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${slider4})` }}
         ></div>
         <div className="lg:absolute lg:top-0 lg:left-8 mt-10 z-10">
@@ -329,7 +325,7 @@ const Home = () => {
             Celebrating Success
           </h2>
         </div>
-        <div className="w-full h-full lg:h-[300px]">
+        <div className="w-full h-full lg:h-[100px]">
           <Slider {...settings}>
             <div className="m-0 h-full p-0">
               <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">

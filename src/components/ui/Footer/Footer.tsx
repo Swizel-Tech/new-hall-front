@@ -1,4 +1,4 @@
-import { AISEN, british, map } from "../../../assets";
+import { AISEN, british } from "../../../assets";
 import {
   FaLinkedin,
   FaSquareFacebook,
@@ -22,11 +22,11 @@ export const Footer = () => {
     navigate("/contact_us");
   };
   return (
-    <div className="w-full px-8 h-auto relative flex gap-8 flex-col justify-center items-center bg-black pt-6">
-      <div
+    <div className="w-full px-8 mt-14 h-auto relative flex gap-8 flex-col justify-center items-center bg-[#b9b6b6] pt-6">
+      {/* <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-5"
         style={{ backgroundImage: `url(${map})` }}
-      ></div>
+      ></div> */}
       <div className="absolute top-0 px-4 lg:px-[8%] py-5 bg-black opacity-50 w-full flex justify-center items-center">
         <div className="w-full lg:w-[50%] flex justify-between items-center">
           <motion.button
@@ -72,22 +72,22 @@ export const Footer = () => {
       </div> */}
       <div className="flex flex-col mt-20 lg:flex-row justify-between items-center">
         <div className="w-full lg:w-[40%]">
-          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+          <h2 className="text-[12px] lg:text-[16px] text-[#000] font-normal font-OpenSans uppercase text-center">
             12 Adegbenle Street, Chevy View Estate, Off Chevron Drive, Off Udeco
             Medical Road, Lekki, Lagos, Nigeria.
           </h2>
         </div>
-        <div className="w-full flex flex-col sm:flex-row  justify-between items-center lg:w-[20%]">
-          <FaPhone fontSize={30} className="text-[#fff]" />
-          <h2 className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center">
+        <div className="w-full flex flex-col lg:flex-row  justify-between items-center lg:w-[20%]">
+          <FaPhone className="text-[20px] lg:text-[30px] text-[#000]" />
+          <h2 className="text-[12px] lg:text-[16px] text-[#000] font-normal font-OpenSans uppercase text-center">
             014530845, 014530846, 014530847, 08033395673
           </h2>
         </div>
-        <div className="w-full z-10 flex flex-col sm:flex-row justify-between items-center lg:w-[20%]">
-          <MdEmail fontSize={30} className="text-[#fff]" />
+        <div className="w-full z-10 flex flex-col lg:flex-row justify-between items-center lg:w-[20%]">
+          <MdEmail className="text-[20px] lg:text-[30px] text-[#000]" />
           <a
             href="mailto:info@newhallschool.com.ng"
-            className="text-[12px] lg:text-[16px] text-[#fff] font-normal font-OpenSans uppercase text-center no-underline"
+            className="text-[12px] lg:text-[16px] text-[#000] font-normal font-OpenSans uppercase text-center no-underline"
           >
             info@newhallschool.com.ng
           </a>
@@ -100,7 +100,7 @@ export const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaLinkedin fontSize={30} className="text-[#fff]" />
+          <FaLinkedin className="text-[20px] lg:text-[30px] text-[#000]" />
         </a>
         <a
           className=""
@@ -108,7 +108,7 @@ export const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaSquareFacebook fontSize={30} className="text-[#fff]" />
+          <FaSquareFacebook className="text-[20px] lg:text-[30px] text-[#000]" />
         </a>
         <a
           className=""
@@ -116,7 +116,7 @@ export const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaSquareInstagram fontSize={30} className="text-[#fff]" />
+          <FaSquareInstagram className="text-[20px] lg:text-[30px] text-[#000]" />
         </a>
         <a
           className=""
@@ -124,12 +124,12 @@ export const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <FaSquareXTwitter fontSize={30} className="text-[#fff]" />
+          <FaSquareXTwitter className="text-[20px] lg:text-[30px] text-[#000]" />
         </a>
       </div>
       <div className="z-10 mb-20 w-full flex flex-col sm:flex-row justify-between items-start">
         <div className=" w-full flex flex-col justify-start items-start">
-          <h2 className="font-Raleway mb-8 text-[26px] lg:text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans text-[#000] mb-8 text-[26px] lg:text-[36px] font-normal text-left leading-[44px]">
             Membership/Partnership
           </h2>
           <div className="flex justify-start overflow-x-auto items-center gap-4">
