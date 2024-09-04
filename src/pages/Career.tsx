@@ -1,12 +1,19 @@
 // import { useNavigate } from "react-router-dom";
 // import { FaAngleRight } from "react-icons/fa";
 import { career } from "../assets";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import List from "../components/ui/list/List";
+import ApplicationForm from "../components/data/Applications";
+import NonTeachingApplication from "../components/data/NonTeachingApplication";
+import { AnimatePresence, motion } from "framer-motion";
+import { GrClose } from "react-icons/gr";
 
 const Career = () => {
   // let navigate = useNavigate();
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [Isteaching, setIsteaching] = useState(false);
+  const [Isnonteaching, setIsnonteaching] = useState(false);
 
   const values = [
     {
@@ -50,6 +57,17 @@ const Career = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (Isteaching || Isnonteaching) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [Isteaching, Isnonteaching]);
+
   // const handleClick = () => {
   //   navigate("/home");
   // };
@@ -83,28 +101,90 @@ const Career = () => {
                 <List items={values} />
                 <p className="my-2 font-OpenSans text-[16px] font-normal text-left leading-[44px]">
                   To apply for a teaching/management position{" "}
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeRdWCmR4BVu7DiHJ14c0tZHDs34EsMeq1e_q2G1B1hPdy7dg/viewform"
-                    target="_blank"
+                  <button
+                    onClick={() => setIsteaching(true)}
                     className="text-[#1EB3FE]"
                   >
                     fill this application form
-                  </a>
+                  </button>
                 </p>
                 <p className="font-OpenSans text-[16px] font-normal text-left leading-[44px]">
                   If interested in a non-teaching position{" "}
-                  <a
-                    // href={EducatorNewHallform}
-                    // download="EducatorForm.pdf"
+                  <button
+                    onClick={() => setIsnonteaching(true)}
                     className="text-[#1EB3FE]"
                   >
                     fill this application form
-                  </a>{" "}
+                  </button>
                 </p>
               </div>
             </div>
           </div>
         </div>
+        {Isteaching && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{
+                opacity: Isteaching ? 1 : 0,
+                y: Isteaching ? 0 : -20,
+              }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed shadow-lg bottom-0 left-0 right-0 top-0 z-[9999] bg-[#000] bg-opacity-60 flex h-full min-h-screen w-full items-center justify-center overflow-y-auto"
+            >
+              <div
+                ref={tooltipRef}
+                className="relative mb-32 h-auto max-h-[640px] w-[50%] p-1 overflow-y-auto bg-[#fff] shadow-md [@media(max-width:1200px)]:w-[50%] [@media(max-width:700px)]:w-[90%]"
+              >
+                <div className="flex px-4 justify-end items-end py-4">
+                  <button onClick={() => setIsteaching(false)}>
+                    <GrClose />
+                  </button>
+                </div>
+                <h2 className="font-OpenSans text-[#1EB3FE] text-center text-[26px] font-normal leading-[44px]">
+                  To apply for a teaching/management position
+                </h2>
+                <p className="text-center italic font-OpenSans">
+                  Please make sure to answer Everything
+                </p>
+                <ApplicationForm />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        )}
+        {Isnonteaching && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{
+                opacity: Isnonteaching ? 1 : 0,
+                y: Isnonteaching ? 0 : -20,
+              }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed shadow-lg bottom-0 left-0 right-0 top-0 z-[9999] bg-[#000] bg-opacity-60 flex h-full min-h-screen w-full items-center justify-center overflow-y-auto"
+            >
+              <div
+                ref={tooltipRef}
+                className="relative mb-32 h-auto max-h-[640px] w-[50%] p-1 overflow-y-auto bg-[#fff] shadow-md [@media(max-width:1200px)]:w-[50%] [@media(max-width:700px)]:w-[90%]"
+              >
+                <div className="flex px-4 justify-end items-end py-4">
+                  <button onClick={() => setIsnonteaching(false)}>
+                    <GrClose />
+                  </button>
+                </div>
+                <h2 className="font-OpenSans text-[#1EB3FE] text-center text-[26px] font-normal leading-[44px]">
+                  If interested in a non-teaching position
+                </h2>
+                <p className="text-center italic font-OpenSans">
+                  Please make sure to answer Everything
+                </p>
+                <NonTeachingApplication />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        )}
       </div>
     </div>
   );
