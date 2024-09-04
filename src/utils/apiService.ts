@@ -39,6 +39,40 @@ export const get_an_event = async (eventId: string) => {
   }
 };
 
+export const submit_form = async (data: object) => {
+  try {
+    const response = await axios.post(
+      `${StringapiUrl}staff/new_application`,
+      data,
+      {
+        headers: {
+          "x-api-key": `${StringapiKey}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const non_submit_form = async (data: object) => {
+  try {
+    const response = await axios.post(
+      `${StringapiUrl}staff/non_teaching`,
+      data,
+      {
+        headers: {
+          "x-api-key": `${StringapiKey}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const get_staff = async (staffId: string | boolean | undefined) => {
   try {
     const response = await axios.get(

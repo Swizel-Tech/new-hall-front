@@ -170,7 +170,7 @@ const Career = () => {
                 <p className="text-center italic font-OpenSans">
                   Please make sure to answer Everything
                 </p>
-                <ApplicationForm />
+                <ApplicationForm onClose={() => setIsteaching(false)} />
               </div>
             </motion.div>
           </AnimatePresence>
@@ -202,7 +202,9 @@ const Career = () => {
                 <p className="text-center italic font-OpenSans">
                   Please make sure to answer Everything
                 </p>
-                <NonTeachingApplication />
+                <NonTeachingApplication
+                  onClose={() => setIsnonteaching(false)}
+                />
               </div>
             </motion.div>
           </AnimatePresence>

@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { FilePdf } from "react-huge-icons/outline";
-
-function NonTeachingApplication() {
+import { non_submit_form } from "../../utils/apiService";
+interface ApplicationFormProps {
+  onClose: () => void;
+}
+const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
+  onClose,
+}) => {
+  const [cvName, setCvName] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     position: "",
     lastName: "",
@@ -39,7 +45,7 @@ function NonTeachingApplication() {
     conviction: "",
     disqualification: "",
     details: "",
-    cv: null,
+    cv: null as File | null,
     declaration: "",
   });
 
@@ -51,17 +57,32 @@ function NonTeachingApplication() {
     });
   };
 
-  const handleFileChange = (e: any) => {
-    setFormData({
-      ...formData,
-      cv: e.target.files[0],
-    });
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData({ ...formData, cv: file });
+      setCvName(file.name);
+    }
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic
+    try {
+      const data = new FormData();
+      Object.keys(formData).forEach((key) => {
+        data.append(
+          key,
+          formData[key as keyof typeof formData] as string | Blob
+        );
+      });
+
+      const res = await non_submit_form(data);
+      if (res) {
+        onClose();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -593,9 +614,11 @@ function NonTeachingApplication() {
 
       {/* Upload CV */}
       <div className="flex w-full flex-col items-start justify-center gap-2">
-        <p className="font-semibold">Upload your CV</p>
+        <p className="font-semibold">
+          Upload your CV <span className="italic">.pdf</span>
+        </p>
         <label className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal">
-          <FilePdf fontSize={30} />
+          {cvName ? cvName : <FilePdf fontSize={30} color="red" />}
           <input
             type="file"
             className="hidden h-full"
@@ -634,6 +657,6 @@ function NonTeachingApplication() {
       </button>
     </form>
   );
-}
+};
 
 export default NonTeachingApplication;

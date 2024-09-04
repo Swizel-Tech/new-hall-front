@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { FilePdf } from "react-huge-icons/outline";
+import { submit_form } from "../../utils/apiService";
+interface ApplicationFormProps {
+  onClose: () => void;
+}
 
-const ApplicationForm = () => {
+const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
+  const [cvName, setCvName] = useState<string | null>(null);
   const [formData, setFormData] = useState({
-    timestamp: "",
     position: "",
     lastName: "",
     name: "",
@@ -40,7 +44,7 @@ const ApplicationForm = () => {
     referee2Phone: "",
     referee2Email: "",
     referee2Relation: "",
-    cv: null,
+    cv: null as File | null,
     staffRelation: "",
     relationDetails: "",
     conviction: "",
@@ -73,17 +77,37 @@ const ApplicationForm = () => {
     });
   };
 
-  const handleFileChange = (e: any) => {
-    setFormData({
-      ...formData,
-      cv: e.target.files[0],
-    });
+  // const handleFileChange = (e: any) => {
+  //   setFormData({
+  //     ...formData,
+  //     cv: e.target.files[0],
+  //   });
+  //   setCvName(cv.name);
+  // };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData({ ...formData, cv: file });
+      setCvName(file.name); // Update the file name in state
+    }
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    try {
+      const data = new FormData();
+      Object.keys(formData).forEach((key) => {
+        data.append(key, (formData as any)[key]);
+      });
+
+      const res = await submit_form(data);
+      if (res) {
+        onClose();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -93,17 +117,6 @@ const ApplicationForm = () => {
     >
       {/* Basic Information */}
       <div className="flex flex-col w-full justify-between items-start gap-4">
-        {/* <div className="flex w-full flex-col items-start justify-center gap-2">
-          <label>Timestamp:</label>
-          <input
-            type="datetime-local"
-            name="timestamp"
-            value={formData.timestamp}
-            onChange={handleChange}
-            className="w-full py-2 bg-slate-50 rounded-lg px-2"
-          />
-        </div> */}
-
         <div className="flex flex-col w-full items-start justify-center gap-2">
           <input
             type="text"
@@ -293,7 +306,7 @@ const ApplicationForm = () => {
             value={formData.dateAppointed}
             onChange={handleChange}
             placeholder="Date Appointed"
-            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+            className="w-full py-2 bg-[#ddd] border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
@@ -303,7 +316,7 @@ const ApplicationForm = () => {
             value={formData.endDate}
             onChange={handleChange}
             placeholder="End Date"
-            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+            className="w-full py-2 bg-[#ddd] border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
@@ -537,9 +550,11 @@ const ApplicationForm = () => {
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
-          <p className="font-semibold">Upload your CV</p>
+          <p className="font-semibold">
+            Upload your CV <span className="italic">.pdf</span>
+          </p>
           <label className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal">
-            <FilePdf fontSize={30} />
+            {cvName ? cvName : <FilePdf fontSize={30} color="red" />}
             <input
               type="file"
               className="hidden h-full"
