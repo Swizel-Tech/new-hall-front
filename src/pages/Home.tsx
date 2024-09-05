@@ -15,7 +15,6 @@ import {
   homeslider1,
   homeslider2,
   homeslider3,
-  homeslider4,
   dronshot,
 } from "../assets";
 import Slider from "react-slick";
@@ -279,13 +278,6 @@ const Home = () => {
               <img
                 src={homeslider3}
                 alt="Slide 3"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative m-0 p-0">
-              <img
-                src={homeslider4}
-                alt="Slide 4"
                 className="w-full h-full object-cover"
               />
             </div>
