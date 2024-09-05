@@ -25,6 +25,8 @@ import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 import { useNavigate } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { FaAward } from "react-icons/fa";
 
 const autoplaySpeed = 3000;
 const newsItems = [
@@ -71,6 +73,9 @@ const Home = () => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isvideoPlay, setIsvideoPlay] = useState(true);
+  const controlsbottom = useAnimation();
+  const sliderRef = useRef<Slider>(null);
+  const { ref: refbottom, inView: inviewbottom } = useInView();
 
   // Detect dark mode using the 'prefers-color-scheme' media query
   useEffect(() => {
@@ -109,7 +114,6 @@ const Home = () => {
   const settings = {
     dots: false,
     infinite: true,
-    fade: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -157,24 +161,20 @@ const Home = () => {
       const images = document.querySelectorAll<HTMLElement>(".image-slide");
       images.forEach((image) => {
         image.classList.remove("animate");
-        void image.offsetWidth; // Trigger reflow
+        void image.offsetWidth;
         image.classList.add("animate");
       });
-    }, 10000); // Time must be equal to animation duration
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     if (isvideoPlay) {
-      // Disable scrolling
       document.body.classList.add("no-scroll");
     } else {
-      // Re-enable scrolling
       document.body.classList.remove("no-scroll");
     }
-
-    // Clean up the class when the component unmounts
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -186,6 +186,35 @@ const Home = () => {
 
   const handleVideoEnd = () => {
     setIsvideoPlay(false);
+  };
+
+  useEffect(() => {
+    if (inviewbottom) {
+      controlsbottom.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    } else {
+      controlsbottom.start({ y: "10%", opacity: 0 });
+    }
+  }, [controlsbottom, inviewbottom]);
+
+  const btnVariants = {
+    initial: { backgroundColor: "#3D83F6" },
+    hover: { backgroundColor: "#202942" },
+  };
+
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev(); // Access slickPrev from Slider instance
+    }
+  };
+
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext(); // Access slickNext from Slider instance
+    }
   };
 
   return (
@@ -297,16 +326,16 @@ const Home = () => {
       </div>
       {/*  */}
       <motion.div
-        // ref={refbottom}
-        // initial={{ y: "100%", opacity: 0 }}
-        // animate={controlsbottom}
-        className="w-full px-4 overflow-x-auto relative flex flex-col justify-center items-center bg-black h-[400px] py-8"
+        ref={refbottom}
+        initial={{ y: "100%", opacity: 0 }}
+        animate={controlsbottom}
+        className="w-full pl-4 pr-0 overflow-x-auto overflow-y-hidden relative flex flex-col justify-center items-center bg-black h-[600px] lg:h-[300px] py-8"
       >
         <div
-          className="absolute h-full inset-0 z-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${slider4})` }}
         ></div>
-        <div className="lg:absolute lg:top-0 lg:left-8 mt-10 z-10">
+        <div className="lg:absolute lg:top-0 h-[200px] lg:left-8 mt-10 z-10">
           <div className="flex justify-start items-center gap-3">
             <div className="w-[40px] h-[1px] bg-[#fff]"></div>
             <h2 className="uppercase font-OpenSans font-semibold text-[16px] text-[#fff]">
@@ -317,45 +346,97 @@ const Home = () => {
             Celebrating Success
           </h2>
         </div>
-        <div className="w-full h-full lg:h-[100px]">
-          <Slider {...settings}>
+        <div className="relative w-full h-[150px] lg:h-[30px]">
+          <div className="absolute hidden lg:block w-[50px] right-0 top-1/2 z-10 transform -translate-y-1/2">
+            <motion.button
+              className="text-[16px] w-full flex justify-center items-center h-[60px] text-[#fff] font-normal font-OpenSans text-center"
+              initial="initial"
+              whileHover="hover"
+              variants={btnVariants}
+              onClick={scrollLeft}
+              transition={{ duration: 0.5 }}
+              type="button"
+            >
+              <GoArrowRight className="text-[20px]" />
+            </motion.button>
+            <motion.button
+              className="text-[16px] w-full flex justify-center items-center h-[60px] text-[#fff] font-normal font-OpenSans text-center"
+              initial="initial"
+              whileHover="hover"
+              variants={btnVariants}
+              onClick={scrollRight}
+              transition={{ duration: 0.5 }}
+              type="button"
+            >
+              <GoArrowLeft className="text-[20px]" />
+            </motion.button>
+          </div>
+          <Slider
+            ref={sliderRef}
+            {...settings}
+            className="flex justify-between items-center overflow-x-auto scroll-container gap-8 h-[400px]"
+          >
             <div className="m-0 h-full p-0">
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                AISEN Spelling Bee Competition (Junior Category State Level)
-                March 2024 - 1st Position
-              </h2>
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                AISEN Mathematics Competition 2023/2024 September 2023 – 2nd
-                Position
-              </h2>
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1
-                bronze
-              </h2>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] hidden lg:block text-orange-400 lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  AISEN Spelling Bee Competition (Junior Category State Level)
+                  March 2024 - 1st Position
+                </h2>
+              </div>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px]  hidden lg:block text-orange-400 lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  AISEN Mathematics Competition 2023/2024 September 2023 – 2nd
+                  Position
+                </h2>
+              </div>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  Olympiad Mathematics Competition 2023 - 1 gold, 3 silver, 1
+                  bronze
+                </h2>
+              </div>
             </div>
             <div className="m-0  h-full lg:h-[300px] p-0">
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                AISEN Mathematics Competition 2022/2023 session - 15th October,
-                2022 – 2nd Position
-              </h2>
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                National Spelling Bee Competition (Junior Category State Level)
-                June 2022- 1st Position
-              </h2>
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022 –
-                1st Position
-              </h2>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  AISEN Mathematics Competition 2022/2023 session - 15th
+                  October, 2022 – 2nd Position
+                </h2>
+              </div>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  National Spelling Bee Competition (Junior Category State
+                  Level) June 2022- 1st Position
+                </h2>
+              </div>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  AISEN Spelling Bee Competition Key Stage 1 – 12th March, 2022
+                  – 1st Position
+                </h2>
+              </div>
             </div>
             <div className="m-0  h-full lg:h-[300px] p-0">
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022 –
-                1st position
-              </h2>
-              <h2 className="font-OpenSans font-semibold text-[18px] lg:text-[22px] mt-4 text-[#fff]">
-                African Best in class School of the Year Award 2022 - April,
-                2022
-              </h2>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  AISEN Spelling Bee Competition Key Stage 2 – 12th March, 2022
+                  – 1st position
+                </h2>
+              </div>
+              <div className="flex justify-start items-center gap-4">
+                <FaAward className="text-[14px] text-orange-400  hidden lg:block lg:text-[20px] " />
+                <h2 className="font-OpenSans font-semibold text-[16px] lg:text-[22px] text-[#fff]">
+                  African Best in class School of the Year Award 2022 - April,
+                  2022
+                </h2>
+              </div>
             </div>
           </Slider>
         </div>

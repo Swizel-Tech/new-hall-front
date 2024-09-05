@@ -49,12 +49,18 @@ const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
               Events
             </h2>
           </div>
-          <h2 className={`font-OpenSans font-normal text-[44px] leading-[61px] w-full ${isDarkMode ? "text-[#fff]": "text-[#3B3B3B]"}`}>
+          <h2
+            className={`font-OpenSans font-normal text-[44px] leading-[61px] w-full ${
+              isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+            }`}
+          >
             Calendar
           </h2>
         </div>
         <motion.button
-          className="text-[12px] w-[50%] lg:w-[10%] h-full border-b-[2px] text-center border-[#000] uppercase font-OpenSans font-normal text-[#000] leading-[117px]"
+          className={`text-[15px] w-[50%] lg:w-[10%] h-full border-b-[2px] text-center border-[#000] uppercase font-OpenSans font-normal leading-[117px] ${
+            isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+          }`}
           whileHover={{
             borderColor: "#BC0E0E",
             color: "#BC0E0E",
