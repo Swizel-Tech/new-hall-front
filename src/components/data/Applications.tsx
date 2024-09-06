@@ -34,6 +34,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
     greatestAchievement: "",
     teachingReason: "",
     whyNewHall: "",
+    newstudentChallenge: "",
     referee1Name: "",
     referee1Position: "",
     referee1Phone: "",
@@ -123,7 +124,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
             name="position"
             value={formData.position}
             onChange={handleChange}
-            placeholder="Position"
+            placeholder="Position Applied for"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
@@ -229,6 +230,9 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
 
       {/* Education and Work Experience */}
       <div className="flex flex-col mt-4 w-full justify-between items-start gap-4">
+        <h2 className="w-full text-left bg-transparent font-OpenSans font-normal">
+          Highest Qualification Obtained
+        </h2>
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <input
             type="text"
@@ -279,6 +283,10 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
+
+        <h2 className="w-full text-left bg-transparent font-OpenSans font-normal">
+          Present Appointment/Most Recent Employment
+        </h2>
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <input
             type="text"
@@ -300,6 +308,9 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label htmlFor="dateAppointed" className="font-OpenSans font-normal">
+            Date Appointed
+          </label>
           <input
             type="date"
             name="dateAppointed"
@@ -310,6 +321,9 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label htmlFor="endDate" className="font-OpenSans font-normal">
+            End Date
+          </label>
           <input
             type="date"
             name="endDate"
@@ -434,6 +448,9 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
 
       {/* References */}
       <div className="flex flex-col mt-4 w-full justify-between items-start gap-4">
+        <h3 className="w-full text-left bg-transparent font-OpenSans font-normal">
+          Referee 1 Information
+        </h3>
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <input
             type="text"
@@ -481,10 +498,13 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
             name="referee1Relation"
             value={formData.referee1Relation}
             onChange={handleChange}
-            placeholder="Referee 1 Relation"
+            placeholder="Relationship to Referee"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
+        <h3 className="w-full text-left bg-transparent font-OpenSans font-normal">
+          Referee 2 Information
+        </h3>
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <input
             type="text"
@@ -531,7 +551,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
             name="referee2Relation"
             value={formData.referee2Relation}
             onChange={handleChange}
-            placeholder="Referee 2 Relation"
+            placeholder="Relationship to Referee"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
@@ -546,6 +566,26 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ onClose }) => {
             value={formData.whyNewHall}
             onChange={handleChange}
             placeholder="Why New Hall?"
+            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+          />
+        </div>
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label className="font-semibold">
+            A new student has just been admitted to your class, you noticed the
+            student is always struggling with reading and most times absent
+            minded in class. He is an orphan, who lives with an illiterate
+            grandparent.
+            <ul className="list-disc">
+              <li>What would you do to understand the situation?</li>
+              <li>What possibilities would you consider and why?</li>
+              <li>What steps would you take for a desired result?</li>
+            </ul>
+          </label>
+          <textarea
+            name="whyNewHall"
+            value={formData.newstudentChallenge}
+            onChange={handleChange}
+            placeholder="(Should not exceed 300 words)"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>

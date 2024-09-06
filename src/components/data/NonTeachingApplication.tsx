@@ -41,6 +41,10 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
     referee2Email: "",
     referee2Relation: "",
     relatedToStaff: "",
+    tools: "",
+    priorities: "",
+    softwaresfamiliar: "",
+    msfamiliar: "",
     relationDetails: "",
     conviction: "",
     disqualification: "",
@@ -297,8 +301,10 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
 
       {/* Present Appointment/Most Recent Employment */}
       <div className="w-full">
-        <h3>Present Appointment/Most Recent Employment</h3>
-        <div className="w-full">
+        <h3 className="w-full text-left bg-transparent font-OpenSans font-normal">
+          Present Appointment/Most Recent Employment
+        </h3>
+        <div className="w-full mt-4">
           <input
             type="text"
             name="organizationName"
@@ -322,6 +328,9 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="w-full mt-4">
+          <label htmlFor="dateAppointed" className="font-OpenSans font-normal">
+            Date Appointed
+          </label>
           <input
             type="date"
             name="dateAppointed"
@@ -346,6 +355,9 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="w-full mt-4">
+          <label htmlFor="endDate" className="font-OpenSans font-normal">
+            End Date
+          </label>
           <input
             type="date"
             name="endDate"
@@ -369,7 +381,10 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
       </div>
 
       {/* Referee 1 */}
-      <div className="w-full mt-4">
+      <h3 className="w-full text-left bg-transparent font-OpenSans font-normal">
+        Referee 1 Information
+      </h3>
+      <div className="w-full">
         <input
           type="text"
           name="referee1Name"
@@ -424,13 +439,16 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
           value={formData.referee1Relation}
           onChange={handleChange}
           required
-          placeholder="Referee 1 Relationship"
+          placeholder="Relationship to referee"
           className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
         />
       </div>
 
       {/* Referee 2 */}
-      <div className="w-full mt-4">
+      <h3 className="w-full text-left bg-transparent font-OpenSans font-normal">
+        Referee 2 Information
+      </h3>
+      <div className="w-full">
         <input
           type="text"
           name="referee2Name"
@@ -485,7 +503,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
           value={formData.referee2Relation}
           onChange={handleChange}
           required
-          placeholder="Referee 2 Relationship"
+          placeholder="Relationship to referee"
           className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
         />
       </div>
@@ -610,6 +628,59 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             ></textarea>
           </div>
         )}
+
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label className="font-semibold">
+            What tools do you use to stay organized (Limit 200 words)
+          </label>
+          <textarea
+            name="whyNewHall"
+            value={formData.tools}
+            onChange={handleChange}
+            placeholder="Why New Hall?"
+            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+          />
+        </div>
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label className="font-semibold">
+            How do you juggle completing high priority projects (Limit 200
+            words)
+          </label>
+          <textarea
+            name="whyNewHall"
+            value={formData.priorities}
+            onChange={handleChange}
+            placeholder="Why New Hall?"
+            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+          />
+        </div>
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label className="font-semibold">
+            What computer programs and software are you comfortable using
+          </label>
+          <textarea
+            name="whyNewHall"
+            value={formData.softwaresfamiliar}
+            onChange={handleChange}
+            placeholder="Why New Hall?"
+            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+          />
+        </div>
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <label className="font-semibold">
+            State the level of proficiency in the following applications
+            MS-WORD, MS-EXCEL, MS-POWERPOINT, MS-ACCESS, GRAPHICS, DATA
+            ANALYSIS, AND SOCIAL MEDIA MARKETING. Please give them a dropdown
+            with three options for each (Basic, Intermediate and Advance)
+          </label>
+          <textarea
+            name="whyNewHall"
+            value={formData.msfamiliar}
+            onChange={handleChange}
+            placeholder="Why New Hall?"
+            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
+          />
+        </div>
       </div>
 
       {/* Upload CV */}
