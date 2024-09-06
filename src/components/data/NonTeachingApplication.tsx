@@ -789,6 +789,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             type="file"
             className="hidden h-full"
             name="cv"
+            accept=" .pdf"
             onChange={handleFileChange}
           />
         </label>
