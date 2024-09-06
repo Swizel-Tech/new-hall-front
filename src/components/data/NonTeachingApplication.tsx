@@ -649,8 +649,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             name="whyNewHall"
             value={formData.priorities}
             onChange={handleChange}
-            placeholder="(Limit 200
-            words)"
+            placeholder="(Limit 200 words)"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
