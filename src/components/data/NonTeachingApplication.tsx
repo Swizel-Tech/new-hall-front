@@ -673,9 +673,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
           />
         </div>
         <h3 className="w-full mt-4 text-left bg-transparent font-OpenSans font-normal">
-          State the level of proficiency in the following applications MS-WORD,
-          MS-EXCEL, MS-POWERPOINT, MS-ACCESS, GRAPHICS, DATA ANALYSIS, AND
-          SOCIAL MEDIA MARKETING.
+          State the level of proficiency in the following applications
         </h3>
         <div className="flex mt-4 justify-start items-center gap-4">
           <label
