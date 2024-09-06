@@ -63,12 +63,18 @@ export const NewsSlider: React.FC<NewsSliderProps> = ({
       <div className="w-full mt-10 mb-8 lg:mb-[10rem] border-b-[1px] border-[#b9b6b6] flex  lg:w-[90%] justify-between items-center p-0">
         <div className="flex justify-start items-center gap-4  w-[50%] lg:w-[80%]">
           <LiaDotCircle className="text-[50px]" />
-          <h2 className={`text-[42px] font-OpenSans text-left font-normal leading-[54.6px ${isDarkMode ? "text-[#fff]": "text-[#3B3B3B]"}`}>
+          <h2
+            className={`text-[42px] font-OpenSans text-left font-normal leading-[54.6px ${
+              isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+            }`}
+          >
             {title}
           </h2>
         </div>
         <motion.button
-          className={`text-[15px] w-[50%] lg:w-[10%] h-full border-b-[2px] text-center border-[#000] uppercase font-OpenSans font-normal leading-[117px] ${isDarkMode ? "text-[#fff]": "text-[#3B3B3B]"}`}
+          className={`text-[15px] w-[50%] lg:w-[10%] h-full border-b-[2px] text-center border-[#000] uppercase font-OpenSans font-normal leading-[117px] ${
+            isDarkMode ? "text-[#fff]" : "text-[#3B3B3B]"
+          }`}
           whileHover={{
             borderColor: "#BC0E0E",
             color: "#BC0E0E",
@@ -120,7 +126,7 @@ export const NewsSlider: React.FC<NewsSliderProps> = ({
               className="relative shadow-2xl m-0 p-0 cursor-pointer h-full flex-shrink-0"
             >
               <img
-                src={item.imgSrc}
+                src={`http://localhost:3001/${item.imgSrc.replace(/\\/g, "/")}`}
                 alt={`Slide ${index + 1}`}
                 className="w-[380px] h-full object-cover"
               />

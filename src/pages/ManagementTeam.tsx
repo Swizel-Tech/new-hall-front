@@ -67,19 +67,19 @@ const ManagementTeam = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Management Team
           </h2>
         </div>
         <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[14px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
             Management Team
           </p>
         </div>
@@ -98,7 +98,7 @@ const ManagementTeam = () => {
               of Academics and Head of Examinations.
             </p>
 
-            <h2 className="font-Raleway mb-3 text-[36px] font-normal text-left leading-[44px]">
+            <h2 className="font-OpenSans mb-3 text-[36px] font-normal text-left leading-[44px]">
               Staff
             </h2>
             <div className="mt-10">
@@ -121,7 +121,7 @@ const ManagementTeam = () => {
                       alt="teacher1"
                       className="rounded-lg"
                     />
-                    <h2 className="font-Raleway text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
+                    <h2 className="font-OpenSans text-[18px] font-normal leading-[22px] text-left px-2 mt-2 hover:text-blue-500 cursor-pointer">
                       {staff.name}
                     </h2>
                     <p className="font-Lato text-[16px] px-2 my-2 text-blue-500 font-semibold leading-[25px] text-left">

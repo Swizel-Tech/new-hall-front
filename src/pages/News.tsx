@@ -133,8 +133,6 @@ const News = () => {
   };
 
   const handleNewsView = (blogId: string) => {
-    console.log(blogId);
-
     navigate(`/post/${blogId}`);
   };
   return (
@@ -145,19 +143,19 @@ const News = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             News
           </h2>
         </div>
         <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[14px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
             News
           </p>
         </div>
@@ -191,12 +189,14 @@ const News = () => {
                     </p>
                   </div>
                 </div>
-                <h3 className="text-[24px] font-semibold font-Raleway leading-[31px] my-4">
+                <h3 className="text-[24px] font-semibold font-OpenSans leading-[31px] my-4">
                   {article.title}
                 </h3>
                 <div
                   dangerouslySetInnerHTML={{ __html: article.content }}
-                  className="overflow-x-hidden mt-2 px-2 rounded-lg text-justify overflow-y-hidden h-[110px] text-[#000] font-normal font-DMSans text-[14px]"
+                  className={`overflow-x-hidden mt-2 px-2 rounded-lg text-justify overflow-y-hidden h-[110px] font-normal font-OpenSans text-[14px] ${
+                    isDarkMode ? "text-white" : "text-[#000]"
+                  }`}
                 ></div>
                 <motion.button
                   className="text-[14px] font-semibold font-OpenSans leading-[25.5px] text-white px-6 py-4 mt-4 lg:mt-[2rem]"
@@ -246,14 +246,14 @@ const News = () => {
               />
               <FaSearch className="absolute right-3 top-3 text-gray-400" />
             </div>
-            <h2 className="text-[16px] mb-4 leading-[22px] font-Raleway font-semibold ">
+            <h2 className="text-[16px] mb-4 leading-[22px] font-OpenSans font-semibold ">
               Latest Posts
             </h2>
             {recentNews.length > 0 ? (
               recentNews.map((article) => (
                 <ul key={article._id} className="list-none">
                   <li className="border-b-[1px] border-[#DDD] py-3">
-                    <button className="text-[14px] font-normal font-Raleway text-blue-500 hover:text-[#fba59d]">
+                    <button className="text-[14px] font-normal font-OpenSans text-blue-500 hover:text-[#fba59d]">
                       {article.title}
                     </button>
                     <p className="font-OpenSans py-2 font-normal uppercase text-[11px] leading-[17.6px] flex justify-start items-center gap-2">
@@ -267,7 +267,7 @@ const News = () => {
               <p>No news articles found.</p>
             )}
 
-            <h2 className="text-[16px] uppercase my-4 leading-[22px] font-Raleway font-semibold ">
+            <h2 className="text-[16px] uppercase my-4 leading-[22px] font-OpenSans font-semibold ">
               Category
             </h2>
             <ul>

@@ -104,19 +104,19 @@ const Post = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             {newsData.title}
           </h2>
         </div>
         <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[14px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
             Post
           </p>
         </div>
@@ -152,12 +152,14 @@ const Post = () => {
                   </p>
                 </div>
               </div>
-              <h3 className="text-[24px] font-semibold font-Raleway leading-[31px] my-6">
+              <h3 className="text-[24px] font-semibold font-OpenSans leading-[31px] my-6">
                 {newsData.title}
               </h3>
               <div
                 dangerouslySetInnerHTML={{ __html: newsData.content }}
-                className="overflow-x-hidden mt-2 px-2 rounded-lg text-justify text-[#000] font-normal font-DMSans text-[14px]"
+                className={`overflow-x-hidden mt-2 px-2 rounded-lg text-justify font-normal font-OpenSans text-[14px] ${
+                  isDarkMode ? "text-white" : "text-[#000]"
+                }`}
               ></div>
             </div>
             <div className="flex border-t-[1.5px] border-b-[1.5px] py-4 border-[#ddd]">
@@ -257,16 +259,16 @@ const Post = () => {
             </div>
 
             <div>
-              <h2 className="font-Raleway px-4 lg:px-[4%] text-[18px] font-semibold text-left leading-[44px]">
+              <h2 className="font-OpenSans px-4 lg:px-[4%] text-[18px] font-semibold text-left leading-[44px]">
                 1 Comment:
               </h2>
               <div className="px-4 lg:px-[4%] flex justify-start gap-3 items-end">
                 <img src={avatar} alt="Avatar" />
                 <div>
-                  <h2 className="font-Raleway text-[14px] font-semibold text-left">
+                  <h2 className="font-OpenSans text-[14px] font-semibold text-left">
                     Admin
                   </h2>
-                  <p className="font-Raleway text-[18px] font-normal text-left">
+                  <p className="font-OpenSans text-[18px] font-normal text-left">
                     Hello Hello
                   </p>
                 </div>
@@ -366,7 +368,7 @@ const Post = () => {
               />
               <FaSearch className="absolute right-3 top-3 text-gray-400" />
             </div>
-            <h2 className="text-[16px] mb-4 leading-[22px] font-Raleway font-semibold ">
+            <h2 className="text-[16px] mb-4 leading-[22px] font-OpenSans font-semibold ">
               Latest Posts
             </h2>
             <p>No recent news articles available in this view.</p>

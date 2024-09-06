@@ -25,7 +25,7 @@ export const BaseTable: React.FC<TableProps> = ({ data }) => {
             <tr className="" key={index}>
               {Object.values(row).map((value, i) => (
                 <td
-                  className="p-2 font-Raleway text-[16px] uppercase text-left font-normal"
+                  className="p-2 font-OpenSans text-[16px] uppercase text-left font-normal"
                   key={i}
                 >
                   {value}

@@ -164,14 +164,14 @@ const Events: React.FC<CalendarProps> = ({ events, eventsPerPage = 5 }) => {
               <>
                 <FaFilePdf fontSize={70} className="text-red-600" />
                 <button
-                  className="font-semibold text-blue-500 text-left w-full text-[16px] font-DMSans ml-3"
+                  className="font-semibold text-blue-500 text-left w-full text-[16px] font-OpenSans ml-3"
                   onClick={downloadpdf}
                 >
                   Download Calendar
                 </button>
               </>
             ) : (
-              <b className="font-bold text-left w-full text-[20px] font-DMSans my-4">
+              <b className="font-bold text-left w-full text-[20px] font-OpenSans my-4">
                 No file Uploaded
               </b>
             )}

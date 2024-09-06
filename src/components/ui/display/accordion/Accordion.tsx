@@ -31,11 +31,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       ) : (
         <CiCirclePlus className="text-[30px]" />
       )}
-      <p className="text-[14px] font-semibold font-Raleway ml-2">{title}</p>
+      <p className="text-[14px] font-semibold font-OpenSans ml-2">{title}</p>
     </div>
     {isOpen && (
       <div>
-        <p className="text-[16px] font-normal font-Raleway ml-2">{content}</p>
+        <p className="text-[16px] font-normal font-OpenSans ml-2">{content}</p>
       </div>
     )}
   </div>

@@ -91,7 +91,7 @@ const ContactUs = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Contact Us
           </h2>
         </div>
@@ -153,7 +153,7 @@ const ContactUs = () => {
           </div>
           <div className="w-full lg:w-[50%]">
             <div className={`w-full p-4 border-[1px] border-[#ddd] shadow-lg`}>
-              <h2 className="font-Raleway text-[26px] font-semibold text-center my-3 leading-[44px]">
+              <h2 className="font-OpenSans text-[26px] font-semibold text-center my-3 leading-[44px]">
                 Send Us a Message
               </h2>
               <form ref={form}>

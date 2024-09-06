@@ -69,19 +69,19 @@ const Cocurriculum = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Co-curricular activities
           </h2>
         </div>
         {/* <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#F3F3F3] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[14px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-[#FF7264]">
+          <p className="text-[14px] font-normal font-OpenSans text-[#FF7264]">
             Co-Curriculum
           </p>
         </div> */}

@@ -46,7 +46,7 @@ const BoardingFacility = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             New Hall Boarding School
           </h2>
         </div>
@@ -75,7 +75,7 @@ const BoardingFacility = () => {
               </Slider>
             </div>
             <div className="flex flex-col w-full justify-between items-start">
-              <h2 className="font-Raleway mb-6 text-[36px] font-normal text-left leading-[44px]">
+              <h2 className="font-OpenSans mb-6 text-[36px] font-normal text-left leading-[44px]">
                 Our Boarding Facilities!
               </h2>
               <p className="font-Lato text-[16px] mb-4 font-normal leading-[25.6px] text-justify">

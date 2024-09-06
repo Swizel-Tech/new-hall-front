@@ -105,19 +105,19 @@ const PreNursery = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Pre-Nursery
           </h2>
         </div>
         {/* <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[16px] font-normal font-Raleway"
+            className="text-[16px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[16px] font-normal font-Raleway text-blue-500">
+          <p className="text-[16px] font-normal font-OpenSans text-blue-500">
             Pre-Nursery
           </p>
         </div> */}

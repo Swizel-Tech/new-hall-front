@@ -8,9 +8,6 @@ import {
   OBAIGBENA,
   OJEBA,
   UANZEKIN,
-  slider1,
-  slider2,
-  slider3,
   slider4,
   homeslider1,
   homeslider2,
@@ -27,45 +24,22 @@ import { useNavigate } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { FaAward } from "react-icons/fa";
+import { get_all_event, get_blogs } from "../utils/apiService";
+import { format } from "date-fns";
 
 const autoplaySpeed = 3000;
-const newsItems = [
-  {
-    imgSrc: slider1,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: slider2,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: slider3,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: slider4,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: slider3,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-  {
-    imgSrc: slider4,
-    date: "13 Sep",
-    title: "Better Times Magazine - Issues 16",
-  },
-];
 
 type GameChanger = {
   image: string;
   name: string;
 };
+
+interface NewsArticle {
+  _id: string;
+  imgSrc: string;
+  date: string;
+  title: string;
+}
 
 const Home = () => {
   let navigate = useNavigate();
@@ -73,6 +47,13 @@ const Home = () => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isvideoPlay, setIsvideoPlay] = useState(true);
+  const [newsData, setNewsData] = useState<NewsArticle[]>([]);
+  const [events, setEvents] = useState([
+    {
+      date: "",
+      title: "",
+    },
+  ]);
   const controlsbottom = useAnimation();
   const sliderRef = useRef<Slider>(null);
   const { ref: refbottom, inView: inviewbottom } = useInView();
@@ -128,12 +109,6 @@ const Home = () => {
     initial: { y: 0, backgroundColor: "#3D83F6" },
     hover: { y: -10, backgroundColor: "#5c93ec" },
   };
-
-  const events = [
-    { date: "22 Aug 2024", title: "A-level Result Day" },
-    { date: "15 Aug 2024", title: "GCSE Result Day" },
-    // Add more events here if needed
-  ];
 
   const gamechanger: GameChanger[] = [
     { image: Folawiyo, name: "Folawiyo, Teniola Bolanle" },
@@ -216,6 +191,59 @@ const Home = () => {
       sliderRef.current.slickNext(); // Access slickNext from Slider instance
     }
   };
+
+  const getallEvent = async () => {
+    try {
+      const allEvent = await get_all_event();
+      const sortedEvents = allEvent.data.sort(
+        (
+          a: { createdAt: string | number | Date },
+          b: { createdAt: string | number | Date }
+        ) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
+      const recentEvents = sortedEvents.slice(0, 2);
+      const formattedEvents = recentEvents.map((event: any) => ({
+        date: new Date(event.startDate).toLocaleDateString("en-US", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        }),
+        title: event.title,
+      }));
+
+      setEvents(formattedEvents);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getallEvent();
+  }, []);
+
+  const getAllNews = async () => {
+    try {
+      const blogs = await get_blogs();
+      const mappedData = blogs.data.map((item: any) => ({
+        _id: item._id,
+        imgSrc:
+          item.images && item.images.length > 0
+            ? item.images[0]
+            : "fallback-image-url",
+        title: item.title,
+        date: format(new Date(item.createdAt), "MMM do, yyyy"),
+      }));
+
+      setNewsData(mappedData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllNews();
+    console.log("NWWWWWWW", newsData);
+  }, []);
 
   return (
     <div className="relative">
@@ -318,7 +346,7 @@ const Home = () => {
       </div>
       <div>
         <NewsSlider
-          newsItems={newsItems}
+          newsItems={newsData}
           title="News"
           viewNewsText="View News Feed"
           onViewNewsClick={handleViewNewsClick}

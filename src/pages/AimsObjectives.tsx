@@ -165,19 +165,19 @@ const AimsObjectives = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             Aims & Objectives
           </h2>
         </div>
         <div className="flex mb-6 px-4 py-4 border-b-[1.5px] border-[#ddd] lg:px-[8%] justify-start gap-2 items-center">
           <button
             onClick={handleClick}
-            className="text-[14px] font-normal font-Raleway"
+            className="text-[14px] font-normal font-OpenSans"
           >
             Home
           </button>
           <FaAngleRight />
-          <p className="text-[14px] font-normal font-Raleway text-blue-500">
+          <p className="text-[14px] font-normal font-OpenSans text-blue-500">
             Aims & Objectives
           </p>
         </div>
@@ -230,7 +230,7 @@ const AimsObjectives = () => {
             <div className="w-full  flex flex-col sm:flex-row justify-between items-center">
               <div className="w-full mr-4">
                 <img src={slider4} alt="facility1" className="w-[100%]" />
-                <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
+                <h2 className="font-OpenSans my-3 text-[26px] font-normal text-left leading-[44px]">
                   Our Vision
                 </h2>
                 <p className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">
@@ -241,7 +241,7 @@ const AimsObjectives = () => {
               </div>
               <div className="w-full">
                 <img src={slider4} alt="facility1" className="w-[100%]" />
-                <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
+                <h2 className="font-OpenSans my-3 text-[26px] font-normal text-left leading-[44px]">
                   Our Mission
                 </h2>
                 <p className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">
@@ -255,7 +255,7 @@ const AimsObjectives = () => {
             <div className="w-full mt-2 lg:mt-6 flex flex-col sm:flex-row justify-between items-center">
               <div className="w-full mr-4">
                 <img src={slider2} alt="facility1" className="w-[100%]" />
-                <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
+                <h2 className="font-OpenSans my-3 text-[26px] font-normal text-left leading-[44px]">
                   Core Beliefs
                 </h2>
                 <p className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">
@@ -266,7 +266,7 @@ const AimsObjectives = () => {
               </div>
               <div className="w-full">
                 <img src={slider2} alt="facility1" className="w-[100%]" />
-                <h2 className="font-Raleway my-3 text-[26px] font-normal text-left leading-[44px]">
+                <h2 className="font-OpenSans my-3 text-[26px] font-normal text-left leading-[44px]">
                   Pupil Care
                 </h2>
                 <p className="font-Lato text-[16px] font-normal leading-[25.6px] text-justify">

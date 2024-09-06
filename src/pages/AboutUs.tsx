@@ -87,7 +87,7 @@ const AboutUs = () => {
             isDarkMode ? "bg-transparent" : "bg-[#F3F3F3]"
           }`}
         >
-          <h2 className="font-Raleway px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans px-4 lg:px-[8%] text-[36px] font-normal text-left leading-[44px]">
             About Us
           </h2>
         </div>
@@ -95,7 +95,7 @@ const AboutUs = () => {
           <div className="w-full flex justify-between items-start flex-col lg:flex-row gap-6">
             <img src={Director} alt="Director" className="w-[200px] h-[20%]" />
             <div className="flex flex-col justify-between items-start">
-              <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
+              <h2 className="font-OpenSans mb-8 text-[36px] font-normal text-left leading-[44px]">
                 Director’s Welcome
               </h2>
               <div className="">
@@ -137,7 +137,7 @@ const AboutUs = () => {
         </div> */}
         <div className="px-4 my-6 lg:my-[2%] lg:px-[8%] flex flex-col lg:flex-row justify-between items-start">
           <div className=" w-full flex flex-col justify-start items-start lg:w-[65%]">
-            <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
+            <h2 className="font-OpenSans mb-8 text-[36px] font-normal text-left leading-[44px]">
               Introduction
             </h2>
             <p className="font-OpenSans mt-4 text-[16px] font-normal leading-[25.6px] text-justify">
@@ -157,7 +157,7 @@ const AboutUs = () => {
               outcomes for every child.
             </p>
             <div className="w-full mt-4 lg:mt-[2%]">
-              <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
+              <h2 className="font-OpenSans text-[36px] font-normal text-left leading-[44px]">
                 Philosophy of the School
               </h2>
               <ul>
@@ -200,13 +200,13 @@ const AboutUs = () => {
           </div>
           <div className=" w-full flex flex-col justify-start items-start lg:w-[30%]">
             <div className="w-full">
-              <h2 className="font-Raleway mb-8 text-[36px] font-normal text-left leading-[44px]">
+              <h2 className="font-OpenSans mb-8 text-[36px] font-normal text-left leading-[44px]">
                 Mission & Vision
               </h2>
               <Accordion items={accordionItems} />
             </div>
             <div className="w-full mt-4 lg:mt-[2%] flex flex-col justify-start items-start gap-2">
-              <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
+              <h2 className="font-OpenSans text-[36px] font-normal text-left leading-[44px]">
                 Core Values
               </h2>
               {/* <List items={values} /> */}
@@ -246,7 +246,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="w-full px-4 lg:px-[8%] flex flex-col justify-start items-start gap-2">
-          <h2 className="font-Raleway text-[36px] font-normal text-left leading-[44px]">
+          <h2 className="font-OpenSans text-[36px] font-normal text-left leading-[44px]">
             Aims & Objectives
           </h2>
           <List items={items} />
