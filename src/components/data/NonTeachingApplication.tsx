@@ -631,26 +631,26 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
 
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <label className="font-semibold">
-            What tools do you use to stay organized (Limit 200 words)
+            What tools do you use to stay organized
           </label>
           <textarea
             name="whyNewHall"
             value={formData.tools}
             onChange={handleChange}
-            placeholder="Why New Hall?"
+            placeholder=" (Limit 200 words)"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-2">
           <label className="font-semibold">
-            How do you juggle completing high priority projects (Limit 200
-            words)
+            How do you juggle completing high priority projects
           </label>
           <textarea
             name="whyNewHall"
             value={formData.priorities}
             onChange={handleChange}
-            placeholder="Why New Hall?"
+            placeholder="(Limit 200
+            words)"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
@@ -662,7 +662,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             name="whyNewHall"
             value={formData.softwaresfamiliar}
             onChange={handleChange}
-            placeholder="Why New Hall?"
+            placeholder="Software Knowledge"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
@@ -671,13 +671,13 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             State the level of proficiency in the following applications
             MS-WORD, MS-EXCEL, MS-POWERPOINT, MS-ACCESS, GRAPHICS, DATA
             ANALYSIS, AND SOCIAL MEDIA MARKETING. Please give them a dropdown
-            with three options for each (Basic, Intermediate and Advance)
+            with three options for each
           </label>
           <textarea
             name="whyNewHall"
             value={formData.msfamiliar}
             onChange={handleChange}
-            placeholder="Why New Hall?"
+            placeholder="(Basic, Intermediate and Advance)"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
