@@ -1,4 +1,4 @@
-import { slider1, slider2, slider4 } from "../assets";
+import { LEG_2854, CBEN6725 } from "../assets";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
 // import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
@@ -142,13 +142,10 @@ const PreNursery = () => {
           <div className="w-full">
             <Slider {...settings}>
               <div className="w-full">
-                <img src={slider4} alt="facility1" className="w-full" />
+                <img src={LEG_2854} alt="facility1" className="w-full" />
               </div>
               <div className="w-full">
-                <img src={slider1} alt="facility1" className="w-full" />
-              </div>
-              <div className="w-full">
-                <img src={slider2} alt="facility1" className="w-full" />
+                <img src={CBEN6725} alt="facility1" className="w-full" />
               </div>
             </Slider>
             <p className="font-Lato text-[16px] my-4 font-normal leading-[25.6px] text-justify">

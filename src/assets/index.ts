@@ -86,6 +86,10 @@ import OBAIGBENA from "./images/gamechangers/OBAIGBENA CHIMAIJEM.jpg";
 import OJEBA from "./images/gamechangers/OJEBA RAFFERTY.jpg";
 import UANZEKIN from "./images/gamechangers/UANZEKIN OHIREME BOLUWATIFE.jpg";
 
+import CBEN3222 from "./images/preschool/CBEN3222.jpg";
+import LEG_2854 from "./images/preschool/LEG_2854.jpg";
+import CBEN6725 from "./images/preschool/CBEN6725.jpg";
+
 export {
   logo,
   logo2,
@@ -171,4 +175,7 @@ export {
   OBAIGBENA,
   OJEBA,
   UANZEKIN,
+  CBEN3222,
+  LEG_2854,
+  CBEN6725,
 };

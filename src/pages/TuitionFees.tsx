@@ -1,4 +1,4 @@
-import { slider3 } from "../assets";
+import { CBEN3222 } from "../assets";
 import { useEffect, useState } from "react";
 
 const TuitionFees = () => {
@@ -47,7 +47,7 @@ const TuitionFees = () => {
         <div className="px-4 my-6 lg:my-[5%] lg:px-[8%] flex flex-col sm:flex-row justify-between items-start">
           <div className="w-full gap-6 flex flex-col justify-between items-center">
             <div className="w-full  flex flex-col justify-start items-start gap-2">
-              <img src={slider3} alt="aims_and_obj" className="" />
+              <img src={CBEN3222} alt="aims_and_obj" className="" />
               <div className="w-full">
                 <h2 className="font-OpenSans text-[16px] font-semibold text-left leading-[44px]">
                   SCHOOL FEES

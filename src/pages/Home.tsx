@@ -17,7 +17,7 @@ import {
 import Slider from "react-slick";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
+// import { NewsSlider } from "../components/ui/display/Slider/NewsSlider";
 import { GameChangers } from "../components/ui/display/Slider/GameChangers";
 import EventsCalendar from "../components/ui/display/Calendar/Calendar";
 import { useNavigate } from "react-router-dom";
@@ -120,9 +120,9 @@ const Home = () => {
     { image: UANZEKIN, name: "UANZEKIN OHIREME BOLUWATIFE" },
   ];
 
-  const handleViewNewsClick = () => {
-    navigate("/news");
-  };
+  // const handleViewNewsClick = () => {
+  //   navigate("/news");
+  // };
 
   // const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -344,14 +344,14 @@ const Home = () => {
       <div>
         <GameChangers gamechanger={gamechanger} />
       </div>
-      <div>
+      {/* <div>
         <NewsSlider
           newsItems={newsData}
           title="News"
           viewNewsText="View News Feed"
           onViewNewsClick={handleViewNewsClick}
         />
-      </div>
+      </div> */}
       {/*  */}
       <motion.div
         ref={refbottom}
