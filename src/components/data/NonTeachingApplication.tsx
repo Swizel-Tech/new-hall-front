@@ -51,6 +51,13 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
     details: "",
     cv: null as File | null,
     declaration: "",
+    msWord: "",
+    msExcel: "",
+    msPowerPoint: "",
+    msAccess: "",
+    graphics: "",
+    dataAnalysis: "",
+    socialMediaMarketing: "",
   });
 
   const handleChange = (e: any) => {
@@ -634,7 +641,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             What tools do you use to stay organized
           </label>
           <textarea
-            name="whyNewHall"
+            name="tools"
             value={formData.tools}
             onChange={handleChange}
             placeholder=" (Limit 200 words)"
@@ -646,7 +653,7 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             How do you juggle completing high priority projects
           </label>
           <textarea
-            name="whyNewHall"
+            name="priorities"
             value={formData.priorities}
             onChange={handleChange}
             placeholder="(Limit 200 words)"
@@ -658,27 +665,116 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             What computer programs and software are you comfortable using
           </label>
           <textarea
-            name="whyNewHall"
+            name="softwaresfamiliar"
             value={formData.softwaresfamiliar}
             onChange={handleChange}
             placeholder="Software Knowledge"
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
-        <div className="flex w-full flex-col items-start justify-center gap-2">
-          <label className="font-semibold">
-            State the level of proficiency in the following applications
-            MS-WORD, MS-EXCEL, MS-POWERPOINT, MS-ACCESS, GRAPHICS, DATA
-            ANALYSIS, AND SOCIAL MEDIA MARKETING. Please give them a dropdown
-            with three options for each
-          </label>
-          <textarea
-            name="whyNewHall"
-            value={formData.msfamiliar}
+        <div className="flex mt-4 justify-start items-center gap-4">
+          <label htmlFor="msWord">MS Word</label>
+          <select
+            name="msWord"
+            value={formData.msWord}
             onChange={handleChange}
-            placeholder="(Basic, Intermediate and Advance)"
-            className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
-          />
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="msExcel">MS Excel</label>
+          <select
+            name="msExcel"
+            value={formData.msExcel}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="msPowerPoint">MS PowerPoint</label>
+          <select
+            name="msPowerPoint"
+            value={formData.msPowerPoint}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="msAccess">MS Access</label>
+          <select
+            name="msAccess"
+            value={formData.msAccess}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="graphics">Graphics</label>
+          <select
+            name="graphics"
+            value={formData.graphics}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="dataAnalysis">Data Analysis</label>
+          <select
+            name="dataAnalysis"
+            value={formData.dataAnalysis}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div className="flex mt-3 justify-start items-center gap-4">
+          <label htmlFor="socialMediaMarketing">Social Media Marketing</label>
+          <select
+            name="socialMediaMarketing"
+            value={formData.socialMediaMarketing}
+            onChange={handleChange}
+            className="bg-white border-[1px] border-[#ddd] rounded-lg"
+          >
+            <option value="">Select proficiency</option>
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
         </div>
       </div>
 
