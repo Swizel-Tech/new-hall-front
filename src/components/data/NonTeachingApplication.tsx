@@ -672,8 +672,18 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
             className="w-full py-2 bg-transparent border-[0.5px] outline-none border-[#ddd] rounded-lg px-2 font-OpenSans font-normal"
           />
         </div>
+        <h3 className="w-full mt-4 text-left bg-transparent font-OpenSans font-normal">
+          State the level of proficiency in the following applications MS-WORD,
+          MS-EXCEL, MS-POWERPOINT, MS-ACCESS, GRAPHICS, DATA ANALYSIS, AND
+          SOCIAL MEDIA MARKETING.
+        </h3>
         <div className="flex mt-4 justify-start items-center gap-4">
-          <label htmlFor="msWord">MS Word</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="msWord"
+          >
+            MS Word
+          </label>
           <select
             name="msWord"
             value={formData.msWord}
@@ -688,7 +698,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="msExcel">MS Excel</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="msExcel"
+          >
+            MS Excel
+          </label>
           <select
             name="msExcel"
             value={formData.msExcel}
@@ -703,7 +718,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="msPowerPoint">MS PowerPoint</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="msPowerPoint"
+          >
+            MS PowerPoint
+          </label>
           <select
             name="msPowerPoint"
             value={formData.msPowerPoint}
@@ -718,7 +738,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="msAccess">MS Access</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="msAccess"
+          >
+            MS Access
+          </label>
           <select
             name="msAccess"
             value={formData.msAccess}
@@ -733,7 +758,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="graphics">Graphics</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="graphics"
+          >
+            Graphics
+          </label>
           <select
             name="graphics"
             value={formData.graphics}
@@ -748,7 +778,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="dataAnalysis">Data Analysis</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="dataAnalysis"
+          >
+            Data Analysis
+          </label>
           <select
             name="dataAnalysis"
             value={formData.dataAnalysis}
@@ -763,7 +798,12 @@ const NonTeachingApplication: React.FC<ApplicationFormProps> = ({
         </div>
 
         <div className="flex mt-3 justify-start items-center gap-4">
-          <label htmlFor="socialMediaMarketing">Social Media Marketing</label>
+          <label
+            className="w-full text-left bg-transparent font-OpenSans font-normal"
+            htmlFor="socialMediaMarketing"
+          >
+            Social Media Marketing
+          </label>
           <select
             name="socialMediaMarketing"
             value={formData.socialMediaMarketing}
