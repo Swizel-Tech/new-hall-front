@@ -73,7 +73,7 @@ const TimerSlider: React.FC = () => {
         <button className="mb-14">
           <FaFacebook className="text-[#fff] text-[12px]" />
         </button>
-        <button className="mb-7 p-0">
+        <div className="mb-7 p-0">
           <motion.button
             onClick={scrollToSection}
             className="flex flex-col justify-between gap-10 items-center"
@@ -86,7 +86,7 @@ const TimerSlider: React.FC = () => {
             </h2>
             <BsArrowDown className="text-[#fff] text-[18px]" />
           </motion.button>
-        </button>
+        </div>
       </div>
 
       <Slider {...settings}>
